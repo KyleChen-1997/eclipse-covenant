@@ -1,0 +1,137 @@
+[
+  {
+    "id": "tessa",
+    "dir": "heroes",
+    "subject": "N rarity young adult female wandering medic Tessa, short chestnut hair, teal traveling cloak over practical linen clothing, small medicine satchel and wooden lantern staff, friendly determined face, humble handcrafted details, no magic halo",
+    "prompt": "Use case: stylized-concept. Asset type: individual fantasy collectible card character portrait. Subject: N rarity young adult female wandering medic Tessa, short chestnut hair, teal traveling cloak over practical linen clothing, small medicine satchel and wooden lantern staff, friendly determined face, humble handcrafted details, no magic halo. Style: premium detailed anime fantasy game concept art, painterly cinematic 3D-like material rendering, exquisitely polished, cohesive dark celestial fantasy aesthetics. Composition: portrait 2:3 canvas, single full figure from head to knees centered, face and torso clearly readable, atmospheric midnight navy background, character occupies 80% of height, elegant unobstructed silhouette, keep head inside canvas. No text, no lettering, no card borders, no logos, no watermark.",
+    "path": "assets/heroes/tessa.png",
+    "source": "/Users/handsomechen/.codex/generated_images/01a0f4e6-2758-7943-8c9c-1d83585b2483/exec-f9a7fe1e-9b28-49a1-8cb3-db812c74ac7f.png",
+    "sha256": "cd51030749d3f6d4ce8c5070d7f5af2e34d21d1d21092cf52b1463f7b4527a54"
+  },
+  {
+    "id": "rune",
+    "dir": "heroes",
+    "subject": "R rarity young adult male frost cartographer Rune, silver-blue short hair, navy explorer coat with silver fasteners, rolled celestial map and slim frost wand, snow crystal sparks, calm intelligent eyes",
+    "prompt": "Use case: stylized-concept. Asset type: individual fantasy collectible card character portrait. Subject: R rarity young adult male frost cartographer Rune, silver-blue short hair, navy explorer coat with silver fasteners, rolled celestial map and slim frost wand, snow crystal sparks, calm intelligent eyes. Style: premium detailed anime fantasy game concept art, painterly cinematic 3D-like material rendering, exquisitely polished, cohesive dark celestial fantasy aesthetics. Composition: portrait 2:3 canvas, single full figure from head to knees centered, face and torso clearly readable, atmospheric midnight navy background, character occupies 80% of height, elegant unobstructed silhouette, keep head inside canvas. No text, no lettering, no card borders, no logos, no watermark.",
+    "path": "assets/heroes/rune.png",
+    "source": "/Users/handsomechen/.codex/generated_images/01a0f4e6-2758-7943-8c9c-1d83585b2483/exec-f4af76e6-4de5-4afb-a0d8-bcfadcafd632.png",
+    "sha256": "4293534f01d724bff3ada665faaba54ef4c4278495ef86c775ebf018d67f2627"
+  },
+  {
+    "id": "ignis",
+    "dir": "heroes",
+    "subject": "SR rarity adult female crimson lancer Ignis, flowing scarlet ponytail, layered dark steel and copper armor, enormous elegant crimson spear diagonally behind her, warm ember ribbons and ruby crystals, fierce heroic poise",
+    "prompt": "Use case: stylized-concept. Asset type: individual fantasy collectible card character portrait. Subject: SR rarity adult female crimson lancer Ignis, flowing scarlet ponytail, layered dark steel and copper armor, enormous elegant crimson spear diagonally behind her, warm ember ribbons and ruby crystals, fierce heroic poise. Style: premium detailed anime fantasy game concept art, painterly cinematic 3D-like material rendering, exquisitely polished, cohesive dark celestial fantasy aesthetics. Composition: portrait 2:3 canvas, single full figure from head to knees centered, face and torso clearly readable, atmospheric midnight navy background, character occupies 80% of height, elegant unobstructed silhouette, keep head inside canvas. No text, no lettering, no card borders, no logos, no watermark.",
+    "path": "assets/heroes/ignis.png",
+    "source": "/Users/handsomechen/.codex/generated_images/01a0f4e6-2758-7943-8c9c-1d83585b2483/exec-f1724576-f977-4eff-a67e-8f34ef93a03d.png",
+    "sha256": "4c6bed13d07373da08086c0d627ae0e4b8bd28704d36af9b0597e4bd5405e7b7"
+  },
+  {
+    "id": "eirene",
+    "dir": "heroes",
+    "subject": "SSR rarity adult female dawn high priestess Eirene, long platinum hair, exquisite ivory and jade ceremonial gown, floating gold prayer rings, staff with branching white lilies, luminous green-gold healing motes, dignified serene expression",
+    "prompt": "Use case: stylized-concept. Asset type: individual fantasy collectible card character portrait. Subject: SSR rarity adult female dawn high priestess Eirene, long platinum hair, exquisite ivory and jade ceremonial gown, floating gold prayer rings, staff with branching white lilies, luminous green-gold healing motes, dignified serene expression. Style: premium detailed anime fantasy game concept art, painterly cinematic 3D-like material rendering, exquisitely polished, cohesive dark celestial fantasy aesthetics. Composition: portrait 2:3 canvas, single full figure from head to knees centered, face and torso clearly readable, atmospheric midnight navy background, character occupies 80% of height, elegant unobstructed silhouette, keep head inside canvas. No text, no lettering, no card borders, no logos, no watermark.",
+    "path": "assets/heroes/eirene.png",
+    "source": "/Users/handsomechen/.codex/generated_images/01a0f4e6-2758-7943-8c9c-1d83585b2483/exec-42e113d8-b24d-499c-9096-88e62af948b9.png",
+    "sha256": "fe46709155e70e445b9befd85b2543e684d7d6a990b76d7465a02981aab87b56"
+  },
+  {
+    "id": "caelum",
+    "dir": "heroes",
+    "subject": "UR rarity adult male celestial dragon sovereign Caelum, long midnight-blue hair, elaborate white-gold armor with sapphire inlays, six immense translucent cosmic dragon wings, brilliant star halo, elegant radiant longblade, shattered constellations orbiting him, majestic divine beauty and extremely intricate ornament",
+    "prompt": "Use case: stylized-concept. Asset type: individual fantasy collectible card character portrait. Subject: UR rarity adult male celestial dragon sovereign Caelum, long midnight-blue hair, elaborate white-gold armor with sapphire inlays, six immense translucent cosmic dragon wings, brilliant star halo, elegant radiant longblade, shattered constellations orbiting him, majestic divine beauty and extremely intricate ornament. Style: premium detailed anime fantasy game concept art, painterly cinematic 3D-like material rendering, exquisitely polished, cohesive dark celestial fantasy aesthetics. Composition: portrait 2:3 canvas, single full figure from head to knees centered, face and torso clearly readable, atmospheric midnight navy background, character occupies 80% of height, elegant unobstructed silhouette, keep head inside canvas. No text, no lettering, no card borders, no logos, no watermark.",
+    "path": "assets/heroes/caelum.png",
+    "source": "/Users/handsomechen/.codex/generated_images/01a0f4e6-2758-7943-8c9c-1d83585b2483/exec-dd389862-d78a-4ada-b14d-1e2b3adcccb2.png",
+    "sha256": "75fa12ccc7fe2219bc566b35f0090f3dd7602ccef7ba921b4507395cc760f176"
+  },
+  {
+    "id": "scout-bow-n",
+    "dir": "equipment",
+    "subject": "N rarity humble scout shortbow, curved ash wood, neatly wrapped brown leather grip, taut pale bowstring, small ivory star charm, restrained practical craftsmanship, no magical glow",
+    "prompt": "Use case: stylized-concept. Asset type: individual fantasy RPG inventory equipment cutout. Subject: N rarity humble scout shortbow, curved ash wood, neatly wrapped brown leather grip, taut pale bowstring, small ivory star charm, restrained practical craftsmanship, no magical glow. Style: premium detailed anime fantasy game concept art, painterly cinematic 3D-like material rendering, exquisitely polished, cohesive dark celestial fantasy aesthetics. Composition: square canvas, single item fully visible centered with 12% empty margin all around, three-quarter product view, sharp silhouette, premium studio lighting with soft rim light, physically convincing metal leather and crystal materials, truly transparent background; no person, no mannequin, no stand, no floor. No text, no lettering, no card borders, no logos, no watermark.",
+    "path": "assets/equipment/scout-bow-n.png",
+    "source": "/Users/handsomechen/.codex/generated_images/01a0f4e6-2758-7943-8c9c-1d83585b2483/exec-f38a4bd0-d753-4f0e-aa2e-292115d5a5c5.png",
+    "sha256": "cc4042779864e4723e8501bccbd2760365bde55ad7d1234293aae076f5e6b641"
+  },
+  {
+    "id": "pilgrim-coat-n",
+    "dir": "equipment",
+    "subject": "N rarity sleeveless traveling leather brigandine cuirass, warm chestnut leather, quilted dark teal cloth and bronze buckles, small embossed star compass on chest, practical refined handmade tailoring",
+    "prompt": "Use case: stylized-concept. Asset type: individual fantasy RPG inventory equipment cutout. Subject: N rarity sleeveless traveling leather brigandine cuirass, warm chestnut leather, quilted dark teal cloth and bronze buckles, small embossed star compass on chest, practical refined handmade tailoring. Style: premium detailed anime fantasy game concept art, painterly cinematic 3D-like material rendering, exquisitely polished, cohesive dark celestial fantasy aesthetics. Composition: square canvas, single item fully visible centered with 12% empty margin all around, three-quarter product view, sharp silhouette, premium studio lighting with soft rim light, physically convincing metal leather and crystal materials, truly transparent background; no person, no mannequin, no stand, no floor. No text, no lettering, no card borders, no logos, no watermark.",
+    "path": "assets/equipment/pilgrim-coat-n.png",
+    "source": "/Users/handsomechen/.codex/generated_images/01a0f4e6-2758-7943-8c9c-1d83585b2483/exec-9a66770d-4b1b-448b-92e2-a5faea3ecae0.png",
+    "sha256": "c307d88ae4b752cd8d6897048aa1d85fa210f78c834ba57cc353aa4bd2ad87fc"
+  },
+  {
+    "id": "tide-spear-r",
+    "dir": "equipment",
+    "subject": "R rarity elegant tide spear, long dark shaft, silver forked leaf blade, turquoise crystal at guard, polished brushed metal, subtle flowing water engraving, delicate teal glow",
+    "prompt": "Use case: stylized-concept. Asset type: individual fantasy RPG inventory equipment cutout. Subject: R rarity elegant tide spear, long dark shaft, silver forked leaf blade, turquoise crystal at guard, polished brushed metal, subtle flowing water engraving, delicate teal glow. Style: premium detailed anime fantasy game concept art, painterly cinematic 3D-like material rendering, exquisitely polished, cohesive dark celestial fantasy aesthetics. Composition: square canvas, single item fully visible centered with 12% empty margin all around, three-quarter product view, sharp silhouette, premium studio lighting with soft rim light, physically convincing metal leather and crystal materials, truly transparent background; no person, no mannequin, no stand, no floor. No text, no lettering, no card borders, no logos, no watermark.",
+    "path": "assets/equipment/tide-spear-r.png",
+    "source": "/Users/handsomechen/.codex/generated_images/01a0f4e6-2758-7943-8c9c-1d83585b2483/exec-07196688-28cb-4068-a2f8-234f7457c410.png",
+    "sha256": "67c533c70f7c0482830c03cb3fc9dfa14b3a0e272bf6ecc8f9cd4222ab91ef64"
+  },
+  {
+    "id": "wind-compass-r",
+    "dir": "equipment",
+    "subject": "R rarity open silver wind compass, octagonal ivory dial with turquoise crystal needle, mechanical concentric rings and fine etched stars, hanging dark teal ribbon, subtle airy light",
+    "prompt": "Use case: stylized-concept. Asset type: individual fantasy RPG inventory equipment cutout. Subject: R rarity open silver wind compass, octagonal ivory dial with turquoise crystal needle, mechanical concentric rings and fine etched stars, hanging dark teal ribbon, subtle airy light. Style: premium detailed anime fantasy game concept art, painterly cinematic 3D-like material rendering, exquisitely polished, cohesive dark celestial fantasy aesthetics. Composition: square canvas, single item fully visible centered with 12% empty margin all around, three-quarter product view, sharp silhouette, premium studio lighting with soft rim light, physically convincing metal leather and crystal materials, truly transparent background; no person, no mannequin, no stand, no floor. No text, no lettering, no card borders, no logos, no watermark.",
+    "path": "assets/equipment/wind-compass-r.png",
+    "source": "/Users/handsomechen/.codex/generated_images/01a0f4e6-2758-7943-8c9c-1d83585b2483/exec-157ed1b4-85a0-40da-8462-c8f090e7c5e0.png",
+    "sha256": "da7a68b8d342d3857c87d59868aa959d03f976ee951e6f13f861b79fa65d4d71"
+  },
+  {
+    "id": "thunder-bow-sr",
+    "dir": "equipment",
+    "subject": "SR rarity arcane thunder warbow, asymmetric layered polished black steel and violet crystal limbs, glowing blue energy bowstring, engraved silver lightning filigree, bright controlled electric arcs",
+    "prompt": "Use case: stylized-concept. Asset type: individual fantasy RPG inventory equipment cutout. Subject: SR rarity arcane thunder warbow, asymmetric layered polished black steel and violet crystal limbs, glowing blue energy bowstring, engraved silver lightning filigree, bright controlled electric arcs. Style: premium detailed anime fantasy game concept art, painterly cinematic 3D-like material rendering, exquisitely polished, cohesive dark celestial fantasy aesthetics. Composition: square canvas, single item fully visible centered with 12% empty margin all around, three-quarter product view, sharp silhouette, premium studio lighting with soft rim light, physically convincing metal leather and crystal materials, truly transparent background; no person, no mannequin, no stand, no floor. No text, no lettering, no card borders, no logos, no watermark.",
+    "path": "assets/equipment/thunder-bow-sr.png",
+    "source": "/Users/handsomechen/.codex/generated_images/01a0f4e6-2758-7943-8c9c-1d83585b2483/exec-1c024de5-229c-45e3-ab68-c95b586c9eb6.png",
+    "sha256": "346393c55f08b42849122c4372a33aa9b279c9505b9f26aa187ed5685f414bd9"
+  },
+  {
+    "id": "ember-mail-sr",
+    "dir": "equipment",
+    "subject": "SR rarity splendid phoenix chest armor cuirass, blackened metal with crimson enamel scale panels, copper feather filigree and layered shoulder guards, ruby fire core in breastplate, ember light leaking between plates",
+    "prompt": "Use case: stylized-concept. Asset type: individual fantasy RPG inventory equipment cutout. Subject: SR rarity splendid phoenix chest armor cuirass, blackened metal with crimson enamel scale panels, copper feather filigree and layered shoulder guards, ruby fire core in breastplate, ember light leaking between plates. Style: premium detailed anime fantasy game concept art, painterly cinematic 3D-like material rendering, exquisitely polished, cohesive dark celestial fantasy aesthetics. Composition: square canvas, single item fully visible centered with 12% empty margin all around, three-quarter product view, sharp silhouette, premium studio lighting with soft rim light, physically convincing metal leather and crystal materials, truly transparent background; no person, no mannequin, no stand, no floor. No text, no lettering, no card borders, no logos, no watermark.",
+    "path": "assets/equipment/ember-mail-sr.png",
+    "source": "/Users/handsomechen/.codex/generated_images/01a0f4e6-2758-7943-8c9c-1d83585b2483/exec-1c5da27b-0384-4b6b-90d5-ea3223de28c7.png",
+    "sha256": "c20abe4fbf58aa62683366ad247818f1f5a4135c8e34665704188620779978f8"
+  },
+  {
+    "id": "dawn-staff-ssr",
+    "dir": "equipment",
+    "subject": "SSR rarity sacred dawn staff, long tapered ivory and polished gold shaft, luminous jade crystal suspended inside a complex lily shaped branching crown, fine celestial filigree, tiny orbiting gold rings, ethereal soft green light",
+    "prompt": "Use case: stylized-concept. Asset type: individual fantasy RPG inventory equipment cutout. Subject: SSR rarity sacred dawn staff, long tapered ivory and polished gold shaft, luminous jade crystal suspended inside a complex lily shaped branching crown, fine celestial filigree, tiny orbiting gold rings, ethereal soft green light. Style: premium detailed anime fantasy game concept art, painterly cinematic 3D-like material rendering, exquisitely polished, cohesive dark celestial fantasy aesthetics. Composition: square canvas, single item fully visible centered with 12% empty margin all around, three-quarter product view, sharp silhouette, premium studio lighting with soft rim light, physically convincing metal leather and crystal materials, truly transparent background; no person, no mannequin, no stand, no floor. No text, no lettering, no card borders, no logos, no watermark.",
+    "path": "assets/equipment/dawn-staff-ssr.png",
+    "source": "/Users/handsomechen/.codex/generated_images/01a0f4e6-2758-7943-8c9c-1d83585b2483/exec-e16f7f3a-d419-449f-b7df-1f886b890632.png",
+    "sha256": "5934ca20826b6b80a55100a7eb30cc58f933cab6a52f94bb4716f9eab3c35f9d"
+  },
+  {
+    "id": "tempest-heart-ssr",
+    "dir": "equipment",
+    "subject": "SSR rarity storm heart relic, faceted amethyst crystal core floating inside three interlocking engraved silver gyroscope rings, royal blue enamel, delicate needle finials and energetic controlled violet lightning",
+    "prompt": "Use case: stylized-concept. Asset type: individual fantasy RPG inventory equipment cutout. Subject: SSR rarity storm heart relic, faceted amethyst crystal core floating inside three interlocking engraved silver gyroscope rings, royal blue enamel, delicate needle finials and energetic controlled violet lightning. Style: premium detailed anime fantasy game concept art, painterly cinematic 3D-like material rendering, exquisitely polished, cohesive dark celestial fantasy aesthetics. Composition: square canvas, single item fully visible centered with 12% empty margin all around, three-quarter product view, sharp silhouette, premium studio lighting with soft rim light, physically convincing metal leather and crystal materials, truly transparent background; no person, no mannequin, no stand, no floor. No text, no lettering, no card borders, no logos, no watermark.",
+    "path": "assets/equipment/tempest-heart-ssr.png",
+    "source": "/Users/handsomechen/.codex/generated_images/01a0f4e6-2758-7943-8c9c-1d83585b2483/exec-4f9843be-77e7-48e4-bb99-52008f9c19a6.png",
+    "sha256": "14124e66c65098e3cae91d51662151ee3b233dcf26af6582cd0dbbce715d5093"
+  },
+  {
+    "id": "dragon-spear-ur",
+    "dir": "equipment",
+    "subject": "UR rarity divine dragon sovereign spear, magnificent sapphire-blue and ivory-gold blade with six miniature swept dragon wing guards, exquisitely sculpted gold dragon curling around long midnight shaft, floating star shards and luminous celestial runes without readable text, majestic premium mythic detail",
+    "prompt": "Use case: stylized-concept. Asset type: individual fantasy RPG inventory equipment cutout. Subject: UR rarity divine dragon sovereign spear, magnificent sapphire-blue and ivory-gold blade with six miniature swept dragon wing guards, exquisitely sculpted gold dragon curling around long midnight shaft, floating star shards and luminous celestial runes without readable text, majestic premium mythic detail. Style: premium detailed anime fantasy game concept art, painterly cinematic 3D-like material rendering, exquisitely polished, cohesive dark celestial fantasy aesthetics. Composition: square canvas, single item fully visible centered with 12% empty margin all around, three-quarter product view, sharp silhouette, premium studio lighting with soft rim light, physically convincing metal leather and crystal materials, truly transparent background; no person, no mannequin, no stand, no floor. No text, no lettering, no card borders, no logos, no watermark.",
+    "path": "assets/equipment/dragon-spear-ur.png",
+    "source": "/Users/handsomechen/.codex/generated_images/01a0f4e6-2758-7943-8c9c-1d83585b2483/exec-0cd96318-5a0e-479d-9eeb-1dde03fcec5d.png",
+    "sha256": "69446b420c0c0643e7a5fa9df272ef3edb79462004dacfbd489182cec28b595e"
+  },
+  {
+    "id": "seraph-armor-ur",
+    "dir": "equipment",
+    "subject": "UR rarity seraph sovereign breastplate with elaborate shoulder pauldrons, pearl-white celestial metal and intricate antique gold filigree, sapphire heart gem, six swept luminous crystal wing ornaments, beautiful crownlike collar and fluted abdominal armor, extremely intricate divine craftsmanship",
+    "prompt": "Use case: stylized-concept. Asset type: individual fantasy RPG inventory equipment cutout. Subject: UR rarity seraph sovereign breastplate with elaborate shoulder pauldrons, pearl-white celestial metal and intricate antique gold filigree, sapphire heart gem, six swept luminous crystal wing ornaments, beautiful crownlike collar and fluted abdominal armor, extremely intricate divine craftsmanship. Style: premium detailed anime fantasy game concept art, painterly cinematic 3D-like material rendering, exquisitely polished, cohesive dark celestial fantasy aesthetics. Composition: square canvas, single item fully visible centered with 12% empty margin all around, three-quarter product view, sharp silhouette, premium studio lighting with soft rim light, physically convincing metal leather and crystal materials, truly transparent background; no person, no mannequin, no stand, no floor. No text, no lettering, no card borders, no logos, no watermark.",
+    "path": "assets/equipment/seraph-armor-ur.png",
+    "source": "/Users/handsomechen/.codex/generated_images/01a0f4e6-2758-7943-8c9c-1d83585b2483/exec-556271d4-dfcd-4f63-860c-ef8f50fa4f4f.png",
+    "sha256": "0e54148ee5b70aef14c2d20dcd8abad4e5530044aaa7a117ca5c4b34a87f2a99"
+  }
+]

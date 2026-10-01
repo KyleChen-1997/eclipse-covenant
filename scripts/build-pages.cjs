@@ -1,0 +1,42 @@
+'use strict';
+const fs = require('node:fs');
+const path = require('node:path');
+const root = path.resolve(__dirname, '..');
+const source = path.join(root, 'eclipse');
+const output = path.join(root, 'dist');
+
+// Only this generated directory is replaced. The earlier FPS project stays intact.
+fs.rmSync(output, { recursive: true, force: true });
+fs.mkdirSync(output, { recursive: true });
+for (const entry of fs.readdirSync(source, { withFileTypes: true })) {
+  if (entry.isFile() && (entry.name === 'index.html' || /\.(js|css)$/.test(entry.name))) {
+    fs.copyFileSync(path.join(source, entry.name), path.join(output, entry.name));
+  }
+}
+const media = new Set(['.png', '.jpg', '.jpeg', '.webp', '.svg', '.wav', '.mp3', '.ogg', '.glb', '.gltf', '.bin', '.woff', '.woff2']);
+fs.cpSync(path.join(source, 'assets'), path.join(output, 'assets'), {
+  recursive: true,
+  filter(file) {
+    return fs.statSync(file).isDirectory() || media.has(path.extname(file)) || file === path.join(source, 'assets/models/manifest.json');
+  }
+});
+fs.cpSync(path.join(source, 'vendor'), path.join(output, 'vendor'), { recursive: true });
+fs.writeFileSync(path.join(output, '.nojekyll'), '');
+
+// Confirm that the exported homepage resolves its scripts and styles below a repository path.
+const html = fs.readFileSync(path.join(output, 'index.html'), 'utf8');
+for (const [, ref] of html.matchAll(/(?:src|href)="([^"]+)"/g)) {
+  if (/^(?:#|data:|https?:)/.test(ref)) continue;
+  if (ref.startsWith('/') || !fs.existsSync(path.join(output, ref))) throw new Error(`Invalid Pages entry reference: ${ref}`);
+}
+let size = 0, count = 0;
+function measure(dir) {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const file = path.join(dir, entry.name);
+    if (entry.isDirectory()) measure(file);
+    else { size += fs.statSync(file).size; count++; }
+  }
+}
+measure(output);
+console.log(`星蚀契约：群星回响 → dist/ · ${count} files · ${(size / 1024 / 1024).toFixed(1)} MiB`);
+

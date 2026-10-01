@@ -1,0 +1,17 @@
+/* Only the figure's local joints, eyelids and loose materials move. The card is fixed. */
+.living-portrait > .living-surface {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  display:block;
+  opacity:0;
+  pointer-events:none;
+}
+.living-portrait.is-painted > .living-surface {opacity:1}
+/* Leave the source artwork still during load or when motion is disabled. */
+.portrait.living-portrait,.hero-card:hover .portrait.living-portrait {animation:none;transform:none}
+.living-portrait::after {content:none!important}
+@media(prefers-reduced-motion:reduce) {
+  .living-portrait > .living-surface {display:none}
+}

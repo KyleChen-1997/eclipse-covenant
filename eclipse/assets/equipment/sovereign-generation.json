@@ -1,0 +1,53 @@
+{
+  "generator": "image_gen.imagegen (built-in)",
+  "assets": [
+    {
+      "id": "weapon-sp",
+      "name": "赤冕·断罪",
+      "subject": "a majestic long execution greatsword, slender onyx blade split by a molten crimson core, thorn-like rubies, blackened gold filigree crossguard shaped as an imperial crown, suspended blood-red crystalline shards",
+      "prompt": "Production game inventory equipment illustration for Eclipse Covenant, high-end dark fantasy collectible RPG. Square 1024x1024 composition. One isolated artifact centered, fully visible, ample 12 percent margin all sides. Three-quarter view, dramatic museum studio lighting, exquisite crisp material detail and clear silhouette readable as a small icon. Near-black midnight navy #090f1d seamless background with subtle colored atmospheric glow confined near object; no floor or scene. No letters, no text, no labels, no border, no watermark, no hands, no human. Subject: a majestic long execution greatsword, slender onyx blade split by a molten crimson core, thorn-like rubies, blackened gold filigree crossguard shaped as an imperial crown, suspended blood-red crystalline shards. The sovereign red tier: imperial crimson, deep black and antique gold, rich ruby glow, ominous and magnificent.",
+      "source": "/Users/handsomechen/.codex/generated_images/01a0f4e6-2758-7943-8c9c-1d83585b2483/exec-3cc9a03d-a1d9-48ff-b7ea-2a2cf168474b.png",
+      "file": "weapon-sp.png"
+    },
+    {
+      "id": "armor-sp",
+      "name": "绯誓·王铠",
+      "subject": "an empty regal chest armor cuirass with grand layered shoulders, blackened gold engraved metal, deep crimson enamel, large faceted ruby heart, ornate thorn and rose engravings, crimson fabric side drapes; no body and no helmet",
+      "prompt": "Production game inventory equipment illustration for Eclipse Covenant, high-end dark fantasy collectible RPG. Square 1024x1024 composition. One isolated artifact centered, fully visible, ample 12 percent margin all sides. Three-quarter view, dramatic museum studio lighting, exquisite crisp material detail and clear silhouette readable as a small icon. Near-black midnight navy #090f1d seamless background with subtle colored atmospheric glow confined near object; no floor or scene. No letters, no text, no labels, no border, no watermark, no hands, no human. Subject: an empty regal chest armor cuirass with grand layered shoulders, blackened gold engraved metal, deep crimson enamel, large faceted ruby heart, ornate thorn and rose engravings, crimson fabric side drapes; no body and no helmet. The sovereign red tier: imperial crimson, deep black and antique gold, rich ruby glow, ominous and magnificent.",
+      "source": "/Users/handsomechen/.codex/generated_images/01a0f4e6-2758-7943-8c9c-1d83585b2483/exec-179ec9d0-ecfa-48ee-be38-d3423e1c69da.png",
+      "file": "armor-sp.png"
+    },
+    {
+      "id": "relic-sp",
+      "name": "血月·圣契",
+      "subject": "a floating exquisite small lunar reliquary, blood red crescent rings and imperial black-gold metal, central suspended faceted ruby, a delicate hanging chain, tiny crimson crystal sparks",
+      "prompt": "Production game inventory equipment illustration for Eclipse Covenant, high-end dark fantasy collectible RPG. Square 1024x1024 composition. One isolated artifact centered, fully visible, ample 12 percent margin all sides. Three-quarter view, dramatic museum studio lighting, exquisite crisp material detail and clear silhouette readable as a small icon. Near-black midnight navy #090f1d seamless background with subtle colored atmospheric glow confined near object; no floor or scene. No letters, no text, no labels, no border, no watermark, no hands, no human. Subject: a floating exquisite small lunar reliquary, blood red crescent rings and imperial black-gold metal, central suspended faceted ruby, a delicate hanging chain, tiny crimson crystal sparks. The sovereign red tier: imperial crimson, deep black and antique gold, rich ruby glow, ominous and magnificent.",
+      "source": "/Users/handsomechen/.codex/generated_images/01a0f4e6-2758-7943-8c9c-1d83585b2483/exec-60dfc6ee-2c58-452f-8d0b-f22c2bb3dca2.png",
+      "file": "relic-sp.png"
+    },
+    {
+      "id": "weapon-ssp",
+      "name": "初光·裁星",
+      "subject": "a transcendental slender greatsword of faceted diamond and platinum, iridescent rainbow edges, opal core, openwork winged guard, impossible delicate orbit rings hovering around the blade",
+      "prompt": "Production game inventory equipment illustration for Eclipse Covenant, high-end dark fantasy collectible RPG. Square 1024x1024 composition. One isolated artifact centered, fully visible, ample 12 percent margin all sides. Three-quarter view, dramatic museum studio lighting, exquisite crisp material detail and clear silhouette readable as a small icon. Near-black midnight navy #090f1d seamless background with subtle colored atmospheric glow confined near object; no floor or scene. No letters, no text, no labels, no border, no watermark, no hands, no human. Subject: a transcendental slender greatsword of faceted diamond and platinum, iridescent rainbow edges, opal core, openwork winged guard, impossible delicate orbit rings hovering around the blade. The supreme iridescent tier: radiant pearl, soft cyan, pink and gold dispersion, refined restrained rainbow colors, visibly more precious than gold rarity.",
+      "source": "/Users/handsomechen/.codex/generated_images/01a0f4e6-2758-7943-8c9c-1d83585b2483/exec-51af555c-902c-4dfe-96c3-ef0ec8a5053a.png",
+      "file": "weapon-ssp.png"
+    },
+    {
+      "id": "armor-ssp",
+      "name": "万象·天衣",
+      "subject": "an empty divine platinum and opalescent chest cuirass with six elegant crystalline wing-shaped shoulder layers, smooth pearl enamel, fine gold constellation engravings, faceted rainbow heart, draped luminous sheer silk; no body and no helmet",
+      "prompt": "Production game inventory equipment illustration for Eclipse Covenant, high-end dark fantasy collectible RPG. Square 1024x1024 composition. One isolated artifact centered, fully visible, ample 12 percent margin all sides. Three-quarter view, dramatic museum studio lighting, exquisite crisp material detail and clear silhouette readable as a small icon. Near-black midnight navy #090f1d seamless background with subtle colored atmospheric glow confined near object; no floor or scene. No letters, no text, no labels, no border, no watermark, no hands, no human. Subject: an empty divine platinum and opalescent chest cuirass with six elegant crystalline wing-shaped shoulder layers, smooth pearl enamel, fine gold constellation engravings, faceted rainbow heart, draped luminous sheer silk; no body and no helmet. The supreme iridescent tier: radiant pearl, soft cyan, pink and gold dispersion, refined restrained rainbow colors, visibly more precious than gold rarity.",
+      "source": "/Users/handsomechen/.codex/generated_images/01a0f4e6-2758-7943-8c9c-1d83585b2483/exec-1d9c4a16-1bc7-4e7f-94c4-1d4db9b2aa9f.png",
+      "file": "armor-ssp.png"
+    },
+    {
+      "id": "relic-ssp",
+      "name": "永恒·零界",
+      "subject": "a celestial orrery relic, concentric delicate platinum and opal orbital rings, central radiant diamond star prism, pearl-and-gold miniature constellations, chromatic glass shards orbiting in perfect symmetry",
+      "prompt": "Production game inventory equipment illustration for Eclipse Covenant, high-end dark fantasy collectible RPG. Square 1024x1024 composition. One isolated artifact centered, fully visible, ample 12 percent margin all sides. Three-quarter view, dramatic museum studio lighting, exquisite crisp material detail and clear silhouette readable as a small icon. Near-black midnight navy #090f1d seamless background with subtle colored atmospheric glow confined near object; no floor or scene. No letters, no text, no labels, no border, no watermark, no hands, no human. Subject: a celestial orrery relic, concentric delicate platinum and opal orbital rings, central radiant diamond star prism, pearl-and-gold miniature constellations, chromatic glass shards orbiting in perfect symmetry. The supreme iridescent tier: radiant pearl, soft cyan, pink and gold dispersion, refined restrained rainbow colors, visibly more precious than gold rarity.",
+      "source": "/Users/handsomechen/.codex/generated_images/01a0f4e6-2758-7943-8c9c-1d83585b2483/exec-8d4c6ffc-3733-4f37-a2ec-cc89a48897a7.png",
+      "file": "relic-ssp.png"
+    }
+  ]
+}

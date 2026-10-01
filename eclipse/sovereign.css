@@ -1,0 +1,53 @@
+/* Compact, portrait-first formation picker. */
+.candidate-roster{margin:36px 0 25px;scroll-margin-top:24px}
+.candidate-heading{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.candidate-heading .eyebrow{font-size:9px;color:#a99e88;letter-spacing:.25em;margin-bottom:8px}
+.candidate-heading h2{font:27px var(--serif);letter-spacing:3px;color:#ecdfc4}
+.candidate-heading h2 small{font:11px var(--sans);letter-spacing:0;color:#8c98ad;margin-left:12px}
+.candidate-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:21px 0 18px;padding:13px 0;border-block:1px solid #a9b5cd20;font-size:11px;color:#9da9bd}
+.candidate-toolbar strong{color:#e2cfaa;margin-left:6px}
+.candidate-toolbar label{display:flex;align-items:center;gap:12px;white-space:nowrap}
+.candidate-toolbar select{padding:8px 32px 8px 12px;background:#111a2b;border:1px solid #b1a27e50;border-radius:3px;color:#deceb0;font:12px var(--sans)}
+.team-candidates{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:13px}
+.candidate-card{position:relative;display:block;min-width:0;padding:4px;text-align:left;border:1px solid color-mix(in srgb,var(--rarity),transparent 55%);border-radius:7px;background:#0d1423;overflow:hidden;transition:transform .2s,border-color .2s,box-shadow .2s}
+.candidate-card:hover{transform:translateY(-3px);border-color:var(--rarity);box-shadow:0 7px 20px #0004}
+.candidate-visual{position:relative;display:block;height:124px;overflow:hidden;border-radius:3px;background:#172031}
+.candidate-visual .portrait{position:absolute;inset:0;width:100%;height:100%;background-position:var(--art-x,50%) 0%;transform:scale(1.65);transform-origin:50% 0%}
+.candidate-shade{position:absolute;inset:0;background:linear-gradient(#03081135,transparent 30%,transparent 52%,#050a15cd)}
+.candidate-rarity{position:absolute;left:7px;top:4px;color:var(--rarity);font:700 19px Georgia,serif;text-shadow:0 1px 5px #000,0 1px 10px #000}
+.candidate-level{position:absolute;bottom:6px;left:8px;color:#f3ead9;font:12px Georgia,serif;letter-spacing:.06em}
+.candidate-selected{position:absolute;right:5px;bottom:5px;padding:3px 6px;color:#1b201e;background:#ead8ae;border-radius:3px;font:bold 10px var(--sans)}
+.candidate-caption{display:flex;flex-direction:column;gap:2px;padding:9px 6px 6px}
+.candidate-caption strong{font:15px var(--serif);color:#e8dfce;letter-spacing:1px}
+.candidate-caption small{font-size:9px;color:#8190a6}
+.candidate-card.in-team{border-color:#e9cf94;box-shadow:inset 0 0 0 1px #ddc39366,0 0 14px #dbc48510}
+.candidate-card.in-team .candidate-caption small{color:#d7c291}
+.candidate-card.rarity-SP{background:linear-gradient(160deg,#301323,#110f1d);border-color:#e9577970}
+.candidate-card.rarity-SSP{background:linear-gradient(140deg,#67507d,#345668 45%,#77714b);border-color:#d1dcffb0}
+.candidate-card.rarity-SSP .candidate-caption{background:#101625cf;border-radius:0 0 4px 4px}
+.candidate-card.rarity-SSP .candidate-rarity{background:var(--spectrum);background-clip:text;-webkit-background-clip:text;color:transparent;filter:drop-shadow(0 1px 3px #000);text-shadow:none}
+.candidate-card:is(.rarity-SP,.rarity-SSP).in-team{border-color:#f8e1ad;box-shadow:inset 0 0 0 1px #f1d39899,0 0 14px #dbc48525}
+/* Sovereign and origin equipment keep their own visual identity throughout the UI. */
+.gear-SP{--rarity:var(--SP);border-color:#d751746e;background:radial-gradient(ellipse at 50% 25%,#63223950,transparent 66%),linear-gradient(135deg,#211321,#101421);box-shadow:inset 0 0 0 2px #ff648414}
+.gear-SSP{--rarity:var(--SSP);border-color:#bedfeb99;background:radial-gradient(ellipse at 15% 10%,#88d5dd26,transparent 48%),radial-gradient(ellipse at 90% 75%,#ce9bf22b,transparent 56%),linear-gradient(140deg,#252538,#141c2b);box-shadow:inset 0 0 0 2px #cbe9ff1a,0 0 24px #bdd9ff0c}
+.gear-SSP .rarity{background:var(--spectrum);background-clip:text;-webkit-background-clip:text;color:transparent}
+.gear-SP .gear-art:after,.gear-SSP .gear-art:after{content:'✧';position:absolute;right:8%;top:12%;font-size:26px;color:var(--rarity);text-shadow:0 0 13px currentColor;pointer-events:none}
+.gear-source-gate{padding:14px;margin-top:16px;border:1px solid #c1d1eb30;background:#151b2b}
+.gear-source-gate p{font-size:12px;line-height:1.9;margin-top:7px}
+.gear-rates-scroll{overflow-x:auto}
+.gear-rates-scroll table{min-width:570px}
+.forge-requirements{padding:16px;margin:17px 0;border:1px solid #c4b0d339;background:#10142175;font-size:11px}
+.forge-requirements>strong{display:block;color:#e9d4b0;letter-spacing:.05em;margin-bottom:12px}
+.forge-requirements>div{display:flex;align-items:flex-start;gap:8px;line-height:1.8;margin:7px 0;color:#a4adbf}
+.forge-requirements .met>span:first-child{color:#97dabf}
+.forge-requirements .unmet>span:first-child{color:#d889a1}
+.forge-requirements small{display:block;line-height:1.8;color:#8792a9;margin-top:12px}
+.stage.region-crimson .stage-art,.sweep-banner.region-crimson{background:radial-gradient(ellipse at 50% 80%,#95405770,transparent 70%),linear-gradient(135deg,#2c1122,#100e19)}
+.stage.region-prism .stage-art,.sweep-banner.region-prism{background:radial-gradient(ellipse at 20% 75%,#7aaec850,transparent 60%),radial-gradient(ellipse at 85% 25%,#b897c650,transparent 60%),linear-gradient(135deg,#27273e,#102331)}
+.stage.region-crimson{border-color:#de547a55}.stage.region-prism{border-color:#b5d1e767}
+.stage.region-crimson .stage-emblem{color:#ff7d99}.stage.region-prism .stage-emblem{color:#d3f6ff}
+.sovereign-stage .stage-info>p:not(.eyebrow){min-height:0;font-size:12px;line-height:1.9}
+.sovereign-stage .stage-info .btn{white-space:normal}
+@media(min-width:1060px){.sovereign-stage{grid-column:span 1}.dungeon-stages{align-items:start}}
+@media(max-width:760px){.candidate-heading h2{font-size:23px}.candidate-toolbar{align-items:flex-start;gap:12px;flex-direction:column}.candidate-toolbar label{width:100%;justify-content:space-between}.candidate-toolbar select{min-width:190px}.team-candidates{grid-template-columns:repeat(auto-fill,minmax(94px,1fr));gap:10px}.candidate-visual{height:116px}.candidate-caption strong{font-size:14px}.candidate-rarity{font-size:17px}.sovereign-stage{display:block}.sovereign-stage .stage-art{min-height:145px;height:145px}.forge-requirements{padding:13px}.candidate-caption{padding:8px 4px 5px}.candidate-selected{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.candidate-card{transition:none}.candidate-card:hover{transform:none}}

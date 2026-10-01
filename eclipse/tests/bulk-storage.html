@@ -1,0 +1,15 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>大批量存档故障验收</title>
+<style>body{margin:0;background:#111827;color:#ead8b4;font:13px system-ui}header{padding:12px}button{padding:8px;margin:4px}iframe{width:100%;height:calc(100vh - 130px);border:0}pre{margin:4px 12px}</style>
+<header>隔离内存存档，不读取或修改玩家进度。<button id="fail">模拟保存失败</button><button id="okay">恢复保存</button><button id="worker-fail">模拟 Worker 失败</button></header>
+<pre id="report">准备测试游戏…</pre><iframe title="故障验收游戏"></iframe>
+<script>
+const frame=document.querySelector('iframe'),report=document.getElementById('report');
+document.getElementById('fail').onclick=()=>{frame.contentWindow.fixtureFailure='save';report.textContent='保存失败模式已开启。';};
+document.getElementById('okay').onclick=()=>{frame.contentWindow.fixtureFailure='';report.textContent='保存已恢复。';};
+document.getElementById('worker-fail').onclick=()=>{frame.contentWindow.fixtureFailure='worker';report.textContent='Worker 失败模式已开启。';};
+window.addEventListener('message',e=>{if(e.source===frame.contentWindow&&e.data?.fixtureReport)report.textContent=e.data.fixtureReport;});
+fetch('../index.html').then(r=>r.text()).then(html=>{
+ html=html.replace('<head>','<head><base href="../">').replace('<script defer src="app.js">','<script defer src="tests/bulk-storage-fixture.js"><\/script><script defer src="app.js">');
+ frame.srcdoc=html;
+});
+</script></html>

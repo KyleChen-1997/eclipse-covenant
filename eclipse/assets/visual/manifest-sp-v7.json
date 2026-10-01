@@ -1,0 +1,25 @@
+{
+  "version": 7,
+  "tool": "built-in image_gen",
+  "date": "2026-10-01",
+  "assets": [
+    {
+      "id": "seraphine-sp",
+      "prompt": "Use case: stylized-concept. Asset type: premium original fantasy collectible game character portrait. Create one extraordinarily polished vertical 2:3 illustration, 1024x1536, cinematic painterly anime realism, refined adult face, extremely detailed jewelry and armor materials, elegant proportions. Center the head around x50% y18%, torso central, three-quarter standing figure to knees, face large enough for a small card. No words, typography, logo, card borders, watermarks or collage. Full painted background. Subject: an adult crimson eclipse empress, long ivory hair flowing in fine strands, ruby eyes, a delicate black-gold pointed crown, elaborate fully covered ruby-red and obsidian ceremonial armor, graceful black lace gloves, ruby chains and gold embroidery. She holds a slender blood-moon rapier diagonally at her side. Behind her a monumental red crescent moon and symmetrical crystalline scarlet wing-like shards, drifting rose petals and red ember motes, dark ruined celestial throne. Palette rich crimson, garnet, obsidian, gold highlights. Majestic quiet power, sophisticated beautiful face, dramatic red rim light, crisp focal figure, dark atmospheric depth. Not horror, no gore, not chibi.",
+      "path": "assets/heroes/seraphine-sp.png",
+      "sha256": "198dcfa033a8b8b666bdda9f2a9a1ba958f578298e7b4c3a9fc2e6ed34a7ec88"
+    },
+    {
+      "id": "ragnar-sp",
+      "prompt": "Use case: stylized-concept. Asset type: premium original fantasy collectible game character portrait. Create one extraordinarily polished vertical 2:3 illustration, 1024x1536, cinematic painterly anime realism, refined adult face, extremely detailed jewelry and armor materials, elegant proportions. Center the head around x50% y18%, torso central, three-quarter standing figure to knees, face large enough for a small card. No words, typography, logo, card borders, watermarks or collage. Full painted background. Subject: an adult male sovereign of the dying sun, striking stern face with warm bronze skin, swept-back charcoal hair with silver streaks, red eyes, grand sculpted obsidian plate armor with intricate gold engravings and glowing ruby inlays, a heavy burgundy cloak swirling behind his shoulders, a broken floating dark crown. He grips a magnificent black greatsword containing molten crimson light, blade angled downward. Behind him a huge eclipsed crimson sun, shattered cathedral spires and fiery red phoenix-like energy wings, finely suspended ash and glowing scarlet runes without readable lettering. Palette deep crimson, black steel, antique gold. Noble imposing regal silhouette, exceptional luxury game illustration, cinematic chiaroscuro, not horror, no gore.",
+      "path": "assets/heroes/ragnar-sp.png",
+      "sha256": "ae605cd0e98e244186aa9a12415c9a007235f60f3d0464ef0657d190258ba776"
+    },
+    {
+      "id": "elysium-sp",
+      "prompt": "Use case: stylized-concept. Asset type: premium original fantasy collectible game character portrait. Create one extraordinarily polished vertical 2:3 illustration, 1024x1536, cinematic painterly anime realism, refined adult face, extremely detailed jewelry and armor materials, elegant proportions. Center the head around x50% y18%, torso central, three-quarter standing figure to knees, face large enough for a small card. No words, typography, logo, card borders, watermarks or collage. Full painted background. Subject: an adult ethereal female deity of first light, opalescent silver hair flowing in long delicate ribbons, calm luminous face, pearl-white and platinum intricate ceremonial armor and long silk mantle, fine prism crystal gemstones and elaborate filigree, a small levitating faceted crystal between her elegant hands. Six exquisite translucent crystalline wings radiate softly shifting rainbow colors, floating concentric prismatic halos and fractured aurora glass behind her, infinite starry midnight cosmos. Pearl-white highlights with iridescent pink violet cyan emerald gold diffraction, rainbow light confined to crystalline edges for an elegant luxurious appearance, superb material fidelity, sublime rare once-in-an-era deity, absolutely not generic fairy or chibi.",
+      "path": "assets/heroes/elysium-sp.png",
+      "sha256": "fc4e234622667dd1feb5809cc60d932d7ac34758952dae355dea1613adc53b12"
+    }
+  ]
+}

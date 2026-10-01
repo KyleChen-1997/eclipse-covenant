@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>动态立绘 · 渲染检查</title>
+<link rel="stylesheet" href="../living-portraits.css">
+<style>
+  body{margin:30px;background:#101624;color:#eee;font:16px/1.7 system-ui}
+  #main{display:flex;gap:24px;flex-wrap:wrap}article{width:250px}
+  .portrait{display:block;position:relative;width:250px;height:375px;overflow:hidden;background-size:cover;background-position:50% 25%}
+  button{padding:12px 20px;margin:20px 0}pre{white-space:pre-wrap}
+  dialog{background:#151e2e;color:white;padding:25px}dialog::backdrop{background:#000b}
+</style>
+<h1>动态立绘 · 渲染检查</h1>
+<p>此页不读取游戏存档。检查人物画布像素随时间变化、文字位置保持稳定，以及弹窗打开后背景暂停。</p>
+<main id="main">
+  <article><h2>UR · 阿斯忒拉</h2><span class="portrait" data-living="UR" data-live-hero="astra" data-live-art="../assets/heroes/astra-v6.png" style="background-image:url('../assets/heroes/astra-v6.png')"></span><p>卡牌文字应保持稳定</p></article>
+  <article><h2>SSR · 塞勒涅</h2><span class="portrait" data-living="SSR" data-live-hero="selene" data-live-art="../assets/heroes/selene-v6.png" style="background-image:url('../assets/heroes/selene-v6.png')"></span><p>卡牌文字应保持稳定</p></article>
+  <article><h2>普通静态对照</h2><span class="portrait" style="background-image:url('../assets/heroes/eirene.png')"></span><p>普通立绘不分配动态画布</p></article>
+</main>
+<button id="sample">检查自然待机</button>
+<button id="open">检查弹窗暂停</button>
+<button id="fallback">检查 GPU 降级</button>
+<pre id="result" role="status">等待操作</pre>
+<dialog id="dialog"><h2>背景动画应已暂停</h2><button id="paused">采样暂停状态</button><button id="close">关闭</button><pre id="pause-result" role="status"></pre></dialog>
+<script>
+  if(new URLSearchParams(location.search).has('fallback')){
+    const original=HTMLCanvasElement.prototype.getContext;
+    HTMLCanvasElement.prototype.getContext=function(type,...args){return type==='webgl'?null:original.call(this,type,...args);};
+  }
+</script>
+<script src="../portrait-motion.js"></script>
+<script src="../living-portraits.js"></script>
+<script>
+  const result=document.getElementById('result'),dialog=document.getElementById('dialog');
+  const nodes=()=>[...document.querySelectorAll('[data-living]')];
+  function pixels(node){const c=node.querySelector('canvas');return c.getContext('2d').getImageData(0,0,c.width,c.height).data;}
+  function delta(a,b){let changed=0;for(let i=0;i<a.length;i+=4)if(Math.abs(a[i]-b[i])+Math.abs(a[i+1]-b[i+1])+Math.abs(a[i+2]-b[i+2])>6)changed++;return changed/(a.length/4);}
+  function bounds(){return [...document.querySelectorAll('article p')].map(n=>{const r=n.getBoundingClientRect();return [r.x,r.y,r.width,r.height].join(',');}).join(';');}
+  document.getElementById('sample').onclick=()=>{
+    if(nodes().some(n=>!n.classList.contains('is-painted'))){result.textContent='等待人物画布，或当前已启用减少动画偏好。';return;}
+    const before=nodes().map(pixels),position=bounds();result.textContent='正在对比两次真实画布采样…';
+    setTimeout(()=>{result.textContent=nodes().map((n,i)=>{const difference=delta(before[i],pixels(n));return `${difference>(n.dataset.renderer==='canvas2d'?.00005:.001)?'PASS':'FAIL'} ${n.dataset.living} 人物像素变化 ${(difference*100).toFixed(1)}%`;}).concat(`${bounds()===position?'PASS':'FAIL'} 卡牌文字位置稳定`,`${document.querySelector('article:last-child canvas')?'FAIL':'PASS'} 普通卡牌保持静态`).join('\n');},1300);
+  };
+  document.getElementById('open').onclick=()=>dialog.showModal();
+  document.getElementById('close').onclick=()=>dialog.close();
+  document.getElementById('paused').onclick=()=>{
+    const before=nodes().map(pixels),out=document.getElementById('pause-result');out.textContent='正在检查暂停后的画布…';
+    setTimeout(()=>{out.textContent=nodes().map((n,i)=>`${delta(before[i],pixels(n))===0&&!n.classList.contains('is-live-visible')?'PASS':'FAIL'} ${n.dataset.living} 背景画布冻结`).join('\n');},800);
+  };
+  // Reload this page after the check to restore the normal GPU path.
+  document.getElementById('fallback').onclick=()=>{
+    location.href=location.pathname+'?fallback=1';
+  };
+</script>
+</html>

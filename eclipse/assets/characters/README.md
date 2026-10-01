@@ -1,0 +1,9 @@
+# 角色面部纹理 · V8
+
+`face-albedo-v8.png` 由内置 image_gen 工具生成，原文件复制到本项目后使用，未经过外部生成 API 或图像修改。
+
+左右两块分别为成年女性与成年男性的面部漫反射纹理，应用在 `hero-models.js` 的曲面面部几何体上。不是将整张人物立绘放进战场。脸部、鼻梁、下颌、服装、发束、武器与配件仍使用三维几何体，位置与原有 CC0 骨骼动画绑定。23 位角色分别配置卡面的发色、服装、冠饰、武器、翼饰与衣装轮廓；材质细节属于风格化表现，并非原画的高模扫描。
+
+生成提示词：
+
+> Use case: stylized-concept. Asset type: flat albedo texture atlas for a Three.js fantasy game character head, NOT an illustration poster. Create a wide 2:1 atlas containing exactly two equal square UV texture tiles, no gutters, labels or text. Left square: the FRONT FACIAL SKIN of a beautiful adult female high-fantasy heroine, delicate symmetric aristocratic features, elegant gray eyes with fine lashes, subtle rose lips, ethereal Chinese fantasy RPG painterly realism. Right square: the FRONT FACIAL SKIN of a beautiful adult male high-fantasy hero, refined symmetric masculine features, gray eyes, fine dark eyebrows, neutral mouth, clean shaven. BOTH tiles are flat diffuse skin albedo maps from forehead to chin, full straight-on orthographic symmetry, no perspective. The whole square is filled edge-to-edge by warm ivory skin color, with facial features in the center. No head silhouette, no hair at all, no ears, no neck, no shoulders, no crown, no clothing, no background. Top 20% of each tile is plain forehead skin, bottom 12% plain chin skin. Eyes centered at x=32% and 68%, y=40%; nose tip center y=59%; lips center y=74% of each tile. Very subtle diffuse pigmentation; no highlights, no strong shadows, no ambient occlusion, no baked directional light. High fidelity painted facial detail for mapping onto a curved 3D face surface. Skin color on all outer edges uniform warm ivory #e3bdab; keep borders free from dark areas. Neither face is a photograph, creepy mask, doll or low-poly style. Refined realistic fantasy game texture.

@@ -1,0 +1,60 @@
+{
+  "generator": "OpenAI imagegen (built-in)",
+  "created": "2026-10-01",
+  "assets": [
+    {
+      "id": "astra-v6",
+      "subject": "Astra, adult celestial goddess of the final eclipse, very long silver lavender hair, deep amethyst eyes, intricate pearl-white and black violet gown with engraved antique gold armor accents, holding a miniature eclipsed sun between her delicate hands, immense translucent violet cosmic wings and broken circular astrolabe halo, powerful serene divine expression",
+      "tier": "UR",
+      "prompt": "Use case: stylized-concept. Asset type: premium original fantasy RPG collectible character portrait. Composition: single adult character, 2:3 portrait, head to knees, face clearly visible in upper third, centered regal pose, character fills 86% of canvas, no crop to hair or weapon. Style: extremely detailed painterly anime realism, refined beautiful face and hands, cinematic 3D-like material lighting, jewelry-quality filigree, silk and brushed metal microdetail, sophisticated dark midnight celestial palette. No typography, text, logos, watermark, borders, cards, interface, modern objects. Character: Astra, adult celestial goddess of the final eclipse, very long silver lavender hair, deep amethyst eyes, intricate pearl-white and black violet gown with engraved antique gold armor accents, holding a miniature eclipsed sun between her delicate hands, immense translucent violet cosmic wings and broken circular astrolabe halo, powerful serene divine expression. Rarity: UR; highest tier divine spectacle, layered celestial ornaments and luminous cosmic aura.",
+      "destination": "assets/heroes/astra-v6.png",
+      "sha256": "2ed7e0701a34eba5b57ef03830b1e527ffab4b4e6ba52259411db4225f423184"
+    },
+    {
+      "id": "aurelia-v6",
+      "subject": "Aurelia, adult female sovereign of the sun dragon, long flowing pale-gold hair, intense amber eyes, exquisite ivory and gold ceremonial armor, ruby sun medallion, majestic layered golden dragon wings and a miniature incandescent solar orb, proud graceful divine expression",
+      "tier": "UR",
+      "prompt": "Use case: stylized-concept. Asset type: premium original fantasy RPG collectible character portrait. Composition: single adult character, 2:3 portrait, head to knees, face clearly visible in upper third, centered regal pose, character fills 86% of canvas, no crop to hair or weapon. Style: extremely detailed painterly anime realism, refined beautiful face and hands, cinematic 3D-like material lighting, jewelry-quality filigree, silk and brushed metal microdetail, sophisticated dark midnight celestial palette. No typography, text, logos, watermark, borders, cards, interface, modern objects. Character: Aurelia, adult female sovereign of the sun dragon, long flowing pale-gold hair, intense amber eyes, exquisite ivory and gold ceremonial armor, ruby sun medallion, majestic layered golden dragon wings and a miniature incandescent solar orb, proud graceful divine expression. Rarity: UR; highest tier divine spectacle, layered celestial ornaments and luminous cosmic aura.",
+      "destination": "assets/heroes/aurelia-v6.png",
+      "sha256": "e35a511e0dfc7304cc42197a1f2a4eb82f0172384368e131f8aebcf3ef19bf5f"
+    },
+    {
+      "id": "noctis-v6",
+      "subject": "Noctis, adult male lord of suspended time, long dark silver hair, cold violet eyes, tailored midnight blue and silver longcoat with extremely fine metallic clockwork embroidery, ornate silver rapier and floating shattered clock rings, violet cosmic feathers and crescent crown, elegant mysterious expression",
+      "tier": "UR",
+      "prompt": "Use case: stylized-concept. Asset type: premium original fantasy RPG collectible character portrait. Composition: single adult character, 2:3 portrait, head to knees, face clearly visible in upper third, centered regal pose, character fills 86% of canvas, no crop to hair or weapon. Style: extremely detailed painterly anime realism, refined beautiful face and hands, cinematic 3D-like material lighting, jewelry-quality filigree, silk and brushed metal microdetail, sophisticated dark midnight celestial palette. No typography, text, logos, watermark, borders, cards, interface, modern objects. Character: Noctis, adult male lord of suspended time, long dark silver hair, cold violet eyes, tailored midnight blue and silver longcoat with extremely fine metallic clockwork embroidery, ornate silver rapier and floating shattered clock rings, violet cosmic feathers and crescent crown, elegant mysterious expression. Rarity: UR; highest tier divine spectacle, layered celestial ornaments and luminous cosmic aura.",
+      "destination": "assets/heroes/noctis-v6.png",
+      "sha256": "6678d84c78bd671b2895c544e05735d1bc9df533c4fd47035bf4b0042c9c2da1"
+    },
+    {
+      "id": "selene-v6",
+      "subject": "Selene, adult female knight of the moon coffin, long silver-blue hair, calm blue eyes, ornate blue-silver plate armor with moon engraving over dark navy fabric, large intricate lunar tower shield beside her and elegant sword, pale blue butterfly spirits and small silver crescent behind her shoulders",
+      "tier": "SSR",
+      "prompt": "Use case: stylized-concept. Asset type: premium original fantasy RPG collectible character portrait. Composition: single adult character, 2:3 portrait, head to knees, face clearly visible in upper third, centered regal pose, character fills 86% of canvas, no crop to hair or weapon. Style: extremely detailed painterly anime realism, refined beautiful face and hands, cinematic 3D-like material lighting, jewelry-quality filigree, silk and brushed metal microdetail, sophisticated dark midnight celestial palette. No typography, text, logos, watermark, borders, cards, interface, modern objects. Character: Selene, adult female knight of the moon coffin, long silver-blue hair, calm blue eyes, ornate blue-silver plate armor with moon engraving over dark navy fabric, large intricate lunar tower shield beside her and elegant sword, pale blue butterfly spirits and small silver crescent behind her shoulders. Rarity: SSR; restrained regal silver-lilac aura with finely crafted ornament, less elaborate than a god.",
+      "destination": "assets/heroes/selene-v6.png",
+      "sha256": "8d7eb13bb41119e3e70d2767c41b160a53264a8fefb914a9494d1726303c9e9d"
+    },
+    {
+      "id": "vesper-v6",
+      "subject": "Vesper, adult male noble vampire swordsman, long burgundy-black hair tied low, red eyes, tailored black leather and crimson brocade coat with fine silver armor and rose motif, elaborate narrow blood-red rapier, curling crimson energy and a few black rose petals, beautiful reserved expression",
+      "tier": "SSR",
+      "prompt": "Use case: stylized-concept. Asset type: premium original fantasy RPG collectible character portrait. Composition: single adult character, 2:3 portrait, head to knees, face clearly visible in upper third, centered regal pose, character fills 86% of canvas, no crop to hair or weapon. Style: extremely detailed painterly anime realism, refined beautiful face and hands, cinematic 3D-like material lighting, jewelry-quality filigree, silk and brushed metal microdetail, sophisticated dark midnight celestial palette. No typography, text, logos, watermark, borders, cards, interface, modern objects. Character: Vesper, adult male noble vampire swordsman, long burgundy-black hair tied low, red eyes, tailored black leather and crimson brocade coat with fine silver armor and rose motif, elaborate narrow blood-red rapier, curling crimson energy and a few black rose petals, beautiful reserved expression. Rarity: SSR; restrained regal silver-lilac aura with finely crafted ornament, less elaborate than a god.",
+      "destination": "assets/heroes/vesper-v6.png",
+      "sha256": "b065bf7fbd33f993c731bfa8d790a30a8a6cadfa217dcae0109626615a84239c"
+    },
+    {
+      "id": "orion-v6",
+      "subject": "Orion, adult male constellation thunder general, layered dark indigo hair, luminous ice blue eyes, intricate storm-blue and polished silver plate armor with dark flowing cape, a magnificent violet-lightning spear, a constellation halo and restrained electric arcs, powerful heroic expression",
+      "tier": "SSR",
+      "prompt": "Use case: stylized-concept. Asset type: premium original fantasy RPG collectible character portrait. Composition: single adult character, 2:3 portrait, head to knees, face clearly visible in upper third, centered regal pose, character fills 86% of canvas, no crop to hair or weapon. Style: extremely detailed painterly anime realism, refined beautiful face and hands, cinematic 3D-like material lighting, jewelry-quality filigree, silk and brushed metal microdetail, sophisticated dark midnight celestial palette. No typography, text, logos, watermark, borders, cards, interface, modern objects. Character: Orion, adult male constellation thunder general, layered dark indigo hair, luminous ice blue eyes, intricate storm-blue and polished silver plate armor with dark flowing cape, a magnificent violet-lightning spear, a constellation halo and restrained electric arcs, powerful heroic expression. Rarity: SSR; restrained regal silver-lilac aura with finely crafted ornament, less elaborate than a god.",
+      "destination": "assets/heroes/orion-v6.png",
+      "sha256": "e561a63325c00dd03ff7fd81debcc481b141db9769f4ccef5354186350835938"
+    },
+    {
+      "id": "celestial-sanctum-v6",
+      "prompt": "Use case: stylized-concept. Asset type: cinematic fantasy RPG environment backdrop for a real-time 3D battle arena. Wide panoramic 16:9 landscape, no people or creatures. A breathtaking ruined celestial gothic sanctuary suspended above a sea of clouds at blue hour, monumental ivory arches with worn gold inlay and dark stone spires in the far midground at left and right edges, deep indigo celestial sky and a brilliant enormous white solar eclipse slightly right of center in the upper third, distant floating islands, fine star fields, shafts of pale blue moonlight and gold embers. Keep lower central half mostly dark mist and clouds with no foreground floors, no furniture, no large center obstruction: an actual 3D arena will be rendered over it. Very high detail, painterly realism, atmospheric depth and dramatic film lighting, premium dark fantasy game art, desaturated slate navy with delicate antique gold. No text, logos, UI, watermarks, no card frames.",
+      "destination": "assets/visual/celestial-sanctum-v6.png",
+      "sha256": "99878eba35fad530b4df6284245ebd92405fd231c871a879bc5d301bd14151d4"
+    }
+  ]
+}

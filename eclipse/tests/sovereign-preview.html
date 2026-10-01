@@ -1,0 +1,10 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>高阶装备隔离验收</title>
+<style>body{margin:0;background:#111827;color:#ead8b4;font:13px system-ui}header{padding:12px}button{padding:8px;margin:4px}iframe{width:100%;height:calc(100vh - 105px);border:0}pre{margin:4px 12px}</style>
+<header>纯内存存档 · 实战数值不改 · 胜利强制稀有掉落以检查展示 <button data-tier="sp">SP 入场阵容</button><button data-tier="ssp">SSP 入场阵容</button></header>
+<pre id="report">准备测试…</pre><iframe title="高阶装备测试游戏"></iframe>
+<script>
+window.fixtureTier='sp';const frame=document.querySelector('iframe');
+window.addEventListener('message',e=>{if(e.source===frame.contentWindow&&e.data?.fixtureReport)document.getElementById('report').textContent=e.data.fixtureReport;});
+frame.src='sovereign-game.html?fixture=sp';
+document.querySelectorAll('[data-tier]').forEach(b=>b.onclick=()=>{window.fixtureTier=b.dataset.tier;frame.src='sovereign-game.html?fixture='+window.fixtureTier;});
+</script></html>

@@ -1,0 +1,194 @@
+{
+  "generator": "image_gen.imagegen",
+  "assets": [
+    {
+      "id": "weapon-n",
+      "name": "旅人短剑",
+      "file": "weapon-n.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 621254,
+      "sha256": "a302108ce69245707938251981e4b02af018d675686309d5f6363f356167b9ba"
+    },
+    {
+      "id": "armor-n",
+      "name": "巡星轻甲",
+      "file": "armor-n.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2068623,
+      "sha256": "e85e65a55bbbca0a786bb8bc5877923f104ef0cb556876d508da694cf91c47d8"
+    },
+    {
+      "id": "relic-n",
+      "name": "微光吊坠",
+      "file": "relic-n.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1249358,
+      "sha256": "f59387f8ffa4034d4578c18efcdd871928ad6d7b6651f77e52bc481cf723134b"
+    },
+    {
+      "id": "weapon-r",
+      "name": "风语长刃",
+      "file": "weapon-r.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 721180,
+      "sha256": "7bccaef0d06fe658ecf53e6a4bb3a02847c3afc7cc043e369c45e2421a6c76f5"
+    },
+    {
+      "id": "armor-r",
+      "name": "银月护甲",
+      "file": "armor-r.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1919377,
+      "sha256": "71f1ebd90a34487eee9b952de4983ded1c6289b40af9060dc05b02feab0fd1a2"
+    },
+    {
+      "id": "relic-r",
+      "name": "晨露晶石",
+      "file": "relic-r.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1188248,
+      "sha256": "2565249c0505b6a63a15455a2ef0c42f1be3583a37afeeb31ea6c0b3b71db6b3"
+    },
+    {
+      "id": "weapon-sr",
+      "name": "赤烬裁决",
+      "file": "weapon-sr.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 916930,
+      "sha256": "2fc1147863acb23f3e6add8f3464705bc341723bd3abb018a35e03f3984b973e"
+    },
+    {
+      "id": "armor-sr",
+      "name": "霜镜战衣",
+      "file": "armor-sr.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1821270,
+      "sha256": "a2172cd1bae9fed871d13b439787042c28239f94b51e63391bb796482f45cf0c"
+    },
+    {
+      "id": "relic-sr",
+      "name": "潮汐之心",
+      "file": "relic-sr.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2068189,
+      "sha256": "87617a8b564e3aeb00be66f4cfa1c27ef524e790e241beac7532fbe2757deaa4"
+    },
+    {
+      "id": "weapon-ssr",
+      "name": "月陨圣剑",
+      "file": "weapon-ssr.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1309780,
+      "sha256": "870047aa6b93c7adf3cf5864f63766fe53bede142761d544d5f8be1ccd931dc5"
+    },
+    {
+      "id": "armor-ssr",
+      "name": "星穹壁垒",
+      "file": "armor-ssr.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2546199,
+      "sha256": "69d4631e8332c3651d02e7dffb820ebba5f9a19f2caf63ea23a2ab3e7fa01574"
+    },
+    {
+      "id": "relic-ssr",
+      "name": "时隙沙漏",
+      "file": "relic-ssr.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1513863,
+      "sha256": "81ee97c171a1c5d97b9f24b9002d632d616dd40995297c6d4936142201c5ad5d"
+    },
+    {
+      "id": "weapon-ur",
+      "name": "终焉·破晓",
+      "file": "weapon-ur.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1281832,
+      "sha256": "4bb3436726a154fec344f35155e3646d905886daf19e65e4ccb789611dbfe8c8"
+    },
+    {
+      "id": "armor-ur",
+      "name": "神谕·永恒",
+      "file": "armor-ur.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2185166,
+      "sha256": "b770814aec05894d8ba191247b4530cfd596b402c3d2be31714d5498bdaddc50"
+    },
+    {
+      "id": "relic-ur",
+      "name": "创世·星核",
+      "file": "relic-ur.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1768417,
+      "sha256": "927f179d90c78652a3380c855cbc372cfdb05e276976e58d77488ab8f9fea73e"
+    },
+    {
+      "id": "weapon-sp",
+      "name": "赤冕·断罪",
+      "file": "weapon-sp.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1614084,
+      "sha256": "36d14f305755d6fa610ee52588bad25418a32b79f02ed65e61149e0e98682a42"
+    },
+    {
+      "id": "armor-sp",
+      "name": "绯誓·王铠",
+      "file": "armor-sp.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2312545,
+      "sha256": "5529f706ba2958bd3aca62c657cb49a3a7acefb419cbe6f0623dc3d918aa2b61"
+    },
+    {
+      "id": "relic-sp",
+      "name": "血月·圣契",
+      "file": "relic-sp.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1698236,
+      "sha256": "97e488c602512a4d1cf038ef321fbe1623bdf5f63cb34e51e42be3901fcd82cc"
+    },
+    {
+      "id": "weapon-ssp",
+      "name": "初光·裁星",
+      "file": "weapon-ssp.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1788584,
+      "sha256": "274a6f388cf4a03ec013a1946ce4e04af9825172ea37bfd2b9075a37edf8528d"
+    },
+    {
+      "id": "armor-ssp",
+      "name": "万象·天衣",
+      "file": "armor-ssp.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2351809,
+      "sha256": "09048f487aaa70763a5392b5171329c272cbe4d1d98c44b7f09f4e4d252b4806"
+    },
+    {
+      "id": "relic-ssp",
+      "name": "永恒·零界",
+      "file": "relic-ssp.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2117146,
+      "sha256": "a16bdad343494276047b8c315577eabf115e2105dd48164de450e46f1364a911"
+    }
+  ]
+}

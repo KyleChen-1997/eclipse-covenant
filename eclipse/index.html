@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="星蚀契约：群星回响。收集 N 至 SSP 契约者，组建五人旅团，探索 48 个关卡与 8 座装备秘境，体验 3D 自动战斗。免费网页即玩。">
+  <meta property="og:title" content="星蚀契约：群星回响 · Eclipse Covenant">
+  <meta property="og:description" content="在群星黯淡之际，与你的契约者并肩而行。幻想卡牌收集与 3D 自动战斗，打开网页即可游玩。">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <title>星蚀契约：群星回响 · Eclipse Covenant</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b1020'/%3E%3Cpath d='M32 7L39 25L57 32L39 39L32 57L25 39L7 32L25 25Z' fill='%23dac599'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="visual-v6.css">
+  <link rel="stylesheet" href="living-portraits.css">
+  <link rel="stylesheet" href="sp-covenant.css">
+  <link rel="stylesheet" href="expansion-v8.css">
+  <link rel="stylesheet" href="bulk.css">
+  <link rel="stylesheet" href="sovereign.css">
+  <script defer src="roster.js"></script>
+  <script defer src="progression.js"></script>
+  <script defer src="gear-system.js"></script><script defer src="inventory.js"></script><script defer src="core.js"></script>
+  <script defer src="battle-player.js"></script>
+  <script defer src="audio.js"></script>
+  <script type="importmap">{"imports":{"three":"./vendor/three/three.module.js"}}</script>
+  <script defer src="summon-cinematic.js"></script>
+  <script defer src="app.js"></script>
+  <script defer src="portrait-motion.js"></script>
+  <script defer src="living-portraits.js"></script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <header class="header">
+    <a class="brand" href="#summon" aria-label="星蚀契约首页"><span class="brand-star">✧</span><span>星蚀契约<small>ECLIPSE COVENANT</small></span></a>
+    <div id="header-context" class="header-context"></div>
+    <nav aria-label="游戏导航">
+      <button data-tab="summon" class="nav-item active">星界召唤</button>
+      <button data-tab="collection" class="nav-item">契约图鉴</button>
+      <button data-tab="team" class="nav-item">旅团编队</button>
+      <button data-tab="equipment" class="nav-item">星铸装备</button>
+      <button data-tab="adventure" class="nav-item">星蚀远征</button>
+      <button data-tab="dungeon" class="nav-item">星铸秘境</button>
+    </nav>
+    <div class="wallet"><span title="用于招募角色"><i>✧</i> <b id="tickets">200</b><small>星契</small></span><span title="用于提升角色等级"><i>❖</i> <b id="dust">300</b><small>星尘</small></span><button id="sound" class="icon-button" aria-label="关闭音效" title="切换音效">♫</button><button id="audio-settings" class="icon-button" aria-label="声音设置" title="声音设置">☷</button><button id="help" class="icon-button" aria-label="玩法说明">?</button></div>
+  </header>
+  <main id="main"></main>
+  <footer class="footer"><span><span class="online-dot"></span>单机试玩 · 进度保存在当前浏览器</span><span>二十三位星契角色 · 3D 自动战斗 <span class="footer-divider">/</span> VOL. 09</span></footer>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <dialog id="dialog" aria-label="游戏详情"></dialog>
+  <noscript>此游戏需要启用 JavaScript 才能进行抽卡与战斗。</noscript>
+</body>
+</html>

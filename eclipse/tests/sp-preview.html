@@ -1,0 +1,22 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SP / SSP 召唤隔离验收</title><style>body{margin:0;background:#080d18;color:#d7cce7;font:12px system-ui}header{padding:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}button,a{border:1px solid #77718c;background:#211c32;padding:7px;color:inherit;cursor:pointer}iframe{display:block;width:100%;height:calc(100dvh - 95px);border:0}#report{margin:0;padding:0 10px 9px;font-size:11px;white-space:pre-wrap}</style></head><body><header><b>QA 独立存档</b><button data-case="ur">UR</button><button data-case="red1">红色 SP I</button><button data-case="red2">红色 SP II</button><button data-case="prism">炫光 SSP</button><button data-case="mixed">混合十连</button><button id="skip">跳过当前</button><button id="collection">查看解锁图鉴</button><label><input id="hold" type="checkbox">停留揭晓画面</label></header><pre id="report">载入测试页；不会修改正式存档。</pre><iframe id="game" src="/?qa=1#summon" title="测试游戏"></iframe><script>
+const frame=document.getElementById('game'),report=document.getElementById('report'),formal=localStorage.getItem('eclipse-covenant-v1');let last=null,maxPeak=0,sequence=null,events=[];
+frame.addEventListener('load',()=>{
+ const w=frame.contentWindow,C=w.EclipseCore;if(!C)return;
+ const original=C.draw;C.draw=(s,count)=>{const samples=last?.samples;if(!samples)return original(s,count);let index=0;const result=original(s,count,()=>samples[index++%samples.length]);last.expected=result.cards.map(x=>x.id);last.calls=index;return result;};
+ const Original=w.EclipseSummon.Sequence;w.EclipseSummon.Sequence=class extends Original{constructor(heroes,options){super(heroes,{...options,schedule:(fn,ms)=>w.setTimeout(fn,ms>2000&&document.getElementById('hold').checked?60000:ms)});sequence=this;events.push("created");}advance(){events.push("advance:"+this.active);super.advance();}dispose(){events.push("disposed");super.dispose();}finish(){events.push("finish:"+this.active);super.finish();}};
+ document.querySelectorAll('[data-case]').forEach(button=>button.onclick=()=>{
+  const scenarios={ur:[.999,0],red1:[.999795,0],red2:[.999895,0],prism:[.999995,0],mixed:[.1,0,.999,0,.999795,0,.8,0,.999995,0,.4,0,.999895,0,.95,0,.6,0,.98,0]},count=button.dataset.case==='mixed'?10:1;
+  if(w.document.querySelector('.summon-theater')){report.textContent='请先完成或跳过当前演出。';return;}
+  const s=C.restoreState(JSON.parse(localStorage.getItem('eclipse-covenant-v1-qa')));if(s.tickets<count){report.textContent='测试存档星契不足，请通过 QA 远征获取。';return;}
+  w.document.getElementById('dialog').close();w.document.querySelector('[data-tab="summon"]').click();last={samples:scenarios[button.dataset.case],before:s.pulls,tickets:s.tickets,count};w.document.querySelector(`[data-action="draw"][data-count="${count}"]`).click();
+ });
+ document.getElementById('skip').onclick=()=>w.document.querySelector('[data-action=skip-summon]')?.click();
+ document.getElementById('collection').onclick=()=>{w.document.getElementById('dialog').close();w.document.querySelector('[data-tab="collection"]').click();w.document.querySelector('[data-action="filter"][data-filter="SP"]').click();};
+ report.textContent='READY · 定点随机数仅注入此 QA iframe 的 draw 调用。';
+});
+setInterval(()=>{
+ if(!last?.expected)return;const w=frame.contentWindow,s=JSON.parse(localStorage.getItem('eclipse-covenant-v1-qa')),t=w.document.querySelector('.summon-theater'),formalSafe=localStorage.getItem('eclipse-covenant-v1')===formal;
+ const saved=last.expected.every(id=>s.owned[id])&&s.pulls===last.before+last.count&&s.tickets===last.tickets-last.count;
+ report.textContent=`${formalSafe&&saved?'PASS':'FAIL'} · 正式存档${formalSafe?'未变':'发生变化'} · 扣券/发奖一次 ${saved?'PASS':'FAIL'} · RNG ${last.calls} · ${last.expected.join(', ')} · ${t?t.className+'/'+t.dataset.phase:'结果/档案'} · active:${sequence?.active} · ${events.join(' / ')}`;
+},200);
+</script></body></html>
