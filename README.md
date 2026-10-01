@@ -23,7 +23,7 @@ npm run build # 生成 dist/ 静态网站
 
 详细玩法和素材记录见 [游戏说明](eclipse/README.md)。
 
-发布前验收：121 项游戏测试通过；在 `/eclipse-covenant/` 子路径下实际验证了 3D 自动战斗、1,000 轮 Worker 扫荡、装备奖励与 11/11 音效素材加载。此为本地发布包验收，线上部署状态以 GitHub Actions 为准。
+发布前验收：123 项游戏测试通过；在 `/eclipse-covenant/` 子路径下实际验证了 3D 自动战斗、1,000 轮 Worker 扫荡、装备奖励与 11/11 音效素材加载。此为本地发布包验收，线上部署状态以 GitHub Actions 为准。
 
 ## 使用 GitHub Pages 发布
 
@@ -35,7 +35,7 @@ npm run build # 生成 dist/ 静态网站
 
 仓库名为 `eclipse-covenant` 时，默认网址形式为 `https://你的GitHub用户名.github.io/eclipse-covenant/`。日后每次推送 `main` 都会自动更新。改用其他主分支时，同时修改工作流中的 `branches` 和部署 `if` 条件。
 
-发布包首页直接进入卡牌游戏，资源使用相对路径，支持仓库子路径和自定义域名。早期射击游戏、开发测试页、验收截图和生图脚本不会进入发布包。Three.js 的许可证与模型来源记录会保留。
+发布包首页直接进入卡牌游戏，资源使用相对路径，支持仓库子路径和自定义域名。仓库根目录的 `index.html` 也会自动进入 `eclipse/` 卡牌游戏，因此若使用 **Deploy from a branch → main → / (root)** 发布，同样会进入正确的游戏；旧射击游戏已归档到 `legacy/transport-ship.html`。早期射击游戏、开发测试页、验收截图和生图脚本不会进入发布包。Three.js 的许可证与模型来源记录会保留。
 
 部署方案参考 [GitHub 官方 Pages 自定义工作流文档](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)。
 
