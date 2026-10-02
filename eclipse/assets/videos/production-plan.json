@@ -37,8 +37,9 @@
       "status": "generated_trial",
       "video": "eclipse/assets/videos/astra.mp4",
       "provider": "Figma Weave / Kling 3 Pro",
-      "qualityReview": "needs_more_body_motion",
-      "revisionStatus": "generating"
+      "qualityReview": "body_motion_verified",
+      "revisionStatus": "completed",
+      "loopTransitionSeconds": 0.25
     },
     {
       "id": "aurelia",
@@ -113,8 +114,9 @@
       "status": "generated_trial",
       "video": "eclipse/assets/videos/elysium.mp4",
       "provider": "Figma Weave / Kling 3 Pro",
-      "qualityReview": "needs_more_body_motion",
-      "revisionStatus": "generating"
+      "qualityReview": "body_motion_verified",
+      "revisionStatus": "completed",
+      "loopTransitionSeconds": 0.25
     },
     {
       "id": "vega",
@@ -227,7 +229,9 @@
       "output": "eclipse/assets/videos/anamnesis.mp4",
       "motion": "目光明显移向卷轴再回望；卷轴保持主体形状，边缘微微拂动，银紫长发和薄纱延迟摆动，星文字微光自然流过。 人物主动转头并配合上身转动，空闲手臂或持物前臂完成一次清晰可见的抬起与收势，保持道具刚性。",
       "prompt": "以原画为角色身份参考，制作有明确肢体动作的高品质幻想角色短片。保留脸型、服饰、道具和绘画风格。单镜头，人物完整保留在画面内。人物主动表演，头部、肩部、手臂和上身有协调的真实三维动作；长发、披风和宽袖随动作明显摆动并自然滞后。动作连贯、有重量、有起势、展开和收势，前两秒就能看出姿态变化。保持手指和武器结构稳定。5 秒，无声音。角色动作优先于首尾严格相同，结尾自然收势。\n角色：万名见证·阿纳弥斯。\n动作设计：目光明显移向卷轴再回望；卷轴保持主体形状，边缘微微拂动，银紫长发和薄纱延迟摆动，星文字微光自然流过。 人物主动转头并配合上身转动，空闲手臂或持物前臂完成一次清晰可见的抬起与收势，保持道具刚性。",
-      "status": "awaiting_generation"
+      "status": "provided_by_user",
+      "video": "eclipse/assets/videos/hero7.mp4",
+      "provider": "user"
     },
     {
       "id": "causalia",

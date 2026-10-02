@@ -149,7 +149,7 @@ SP / SSP 装备原画及内置图像生成工具的完整提示词见 `assets/eq
 
 ## 批量接入 UR 以上的视频立绘
 
-目前西里乌斯、维蕾雅、莫薇恩、塔洛尔、零谕和卡乌莎使用用户提供的视频；阿斯忒拉与伊璃希娅使用 Kling 3 Pro 生成的 5 秒试片，其余 11 位仍使用原有动态图片。视频制作方案、逐人动作与完整提示词见 `qa/portrait-video-plan.html` 和 `assets/videos/production-plan.json`。该清单不是已生成的视频。
+目前西里乌斯、维蕾雅、莫薇恩、塔洛尔、零谕、卡乌莎和阿纳弥斯使用用户提供的视频；阿斯忒拉与伊璃希娅使用 Kling 3 Pro 生成的 5 秒试片，其余 10 位仍使用原有动态图片。视频制作方案、逐人动作与完整提示词见 `qa/portrait-video-plan.html` 和 `assets/videos/production-plan.json`。该清单不是已生成的视频。
 
 将审核通过的 MP4（推荐 H.264、yuv420p、faststart）或 WebM 放到 `assets/videos/<角色 id>.mp4` / `.webm`，同一角色只保留一种格式。运行 `npm run portraits:import` 后刷新页面。`npm run build` 也会自动生成映射；缺失的视频不会被注册。西里乌斯继续兼容 `hero1.mp4`，若有 `sirius.mp4` 则优先使用新命名文件。
 
@@ -157,4 +157,6 @@ SP / SSP 装备原画及内置图像生成工具的完整提示词见 `assets/eq
 
 两段 Weave 试片合计 164 积分，任务编号、原始视频链接、生成参数与文件校验记录保存在 `assets/videos/weave-trials.json`。游戏使用本地压缩版本，原始分辨率为 1176×1764。并排预览见 `qa/weave-video-trials.html`。
 
-新增视频映射：`hero3.mp4` → 莫薇恩、`hero4.mp4` → 塔洛尔、`hero5.mp4` → 零谕、`hero6.mp4` → 卡乌莎。命名为角色 id 的视频仍优先。Weave 两段试片被标记为动作不足，重制方案强调转头、抬臂、上身舒展，不再同时锁定相同首尾帧。
+新增视频映射：`hero3.mp4` → 莫薇恩、`hero4.mp4` → 塔洛尔、`hero5.mp4` → 零谕、`hero6.mp4` → 卡乌莎、`hero7.mp4` → 阿纳弥斯。命名为角色 id 的视频仍优先。Weave 两段试片已重制，动作强调转头、抬臂、上身舒展，不再同时锁定相同首尾帧。
+
+两段动作增强版已替换原试片：各 82 积分，本次共 164 积分；详细参数及原始输出见 `assets/videos/weave-motion-revisions.json`。为避免不同首尾姿态硬切，网页版本加入 0.25 秒溶解过渡，约 4.8 秒循环。

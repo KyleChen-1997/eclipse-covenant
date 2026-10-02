@@ -16,7 +16,13 @@
       },
       "predictionId": "ca273b24-763b-42e8-88de-1f895986630a",
       "cost": 82,
-      "status": "submitted"
+      "status": "completed",
+      "outputUrl": "https://media.weavy.ai/video/upload/v1790922503/uploads/GKtreSHDt0YuNXMdqWBo73um42p1/usdjsntbbkoxqzw2hpix.mp4",
+      "gameAsset": "eclipse/assets/videos/astra.mp4",
+      "gameBytes": 4850884,
+      "gameSha256": "58949e4d9567f2219a522e41dfebc6e94ba8003fff27384b7db7da848ca461b1",
+      "postprocess": "852x1280 H.264; 0.25 second end-to-start dissolve; approximately 4.8 second loop",
+      "review": "Middle frames show raised forearms and shoulder/head motion. Elysium turns and opens both arms. Loop uses a short dissolve because generated end pose differs from the beginning."
     },
     {
       "id": "elysium",
@@ -31,7 +37,13 @@
       },
       "predictionId": "d2c1eeae-6778-4adb-93aa-2b5d6d00a05e",
       "cost": 82,
-      "status": "submitted"
+      "status": "completed",
+      "outputUrl": "https://media.weavy.ai/video/upload/v1790922520/uploads/GKtreSHDt0YuNXMdqWBo73um42p1/ndooaq3xksh6yenl7ott.mp4",
+      "gameAsset": "eclipse/assets/videos/elysium.mp4",
+      "gameBytes": 4914166,
+      "gameSha256": "5ae3b9ecc2c173df16dc9ec5e1252e1ed651120b78472fb98e1c1bad8ea3b39c",
+      "postprocess": "852x1280 H.264; 0.25 second end-to-start dissolve; approximately 4.8 second loop",
+      "review": "Middle frames show raised forearms and shoulder/head motion. Elysium turns and opens both arms. Loop uses a short dissolve because generated end pose differs from the beginning."
     }
   ]
 }

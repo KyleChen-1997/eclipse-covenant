@@ -6,6 +6,7 @@
   "valeria": "assets/videos/valeria.mp4",
   "morwen": "assets/videos/hero3.mp4",
   "thalor": "assets/videos/hero4.mp4",
+  "anamnesis": "assets/videos/hero7.mp4",
   "causalia": "assets/videos/hero6.mp4",
   "nullion": "assets/videos/hero5.mp4"
 };if(typeof module!=="undefined"&&module.exports)module.exports=videos;else root.EclipsePortraitVideos=videos;})(typeof globalThis!=="undefined"?globalThis:this);
