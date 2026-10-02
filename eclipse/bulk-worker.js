@@ -1,5 +1,5 @@
 'use strict';
-importScripts('roster.js','progression.js','gear-system.js','inventory.js','story.js','core.js');
+importScripts('roster.js','progression.js','gear-system.js','inventory.js','story.js','portrait-videos.js','core.js');
 self.onmessage=({data})=>{
   try{
     const {state,type,args}=data;

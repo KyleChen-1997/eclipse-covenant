@@ -11,6 +11,8 @@
   const originalKinds = [['heal',110,'heal','#9bddae'],['mark',40,'arrow','#98ded2'],['burn',110,'fire','#ff987d'],['shieldAll',80,'shield','#a5cfff'],['astral',150,'astral','#d4acff']];
   HEROES.forEach((h,i)=>Object.assign(h,{kind:originalKinds[i][0],power:originalKinds[i][1],fx:originalKinds[i][2],color:originalKinds[i][3],sheet:'original',ultimate:i===4}));
   HEROES.push(...extras);
+  const portraitVideos=typeof module!=='undefined'&&module.exports?require('./portrait-videos.js'):root.EclipsePortraitVideos;
+  HEROES.forEach(h=>{if(portraitVideos?.[h.id]&&['UR','SP','SSP'].includes(h.rarity))h.video=portraitVideos[h.id];});
   const portraitV6 = new Set(['astra','aurelia','noctis','selene','vesper','orion']);
   HEROES.forEach(h => { if (portraitV6.has(h.id)) h.art = h.id + '-v6'; });
   const GEAR_RANKS = ['N', 'R', 'SR', 'SSR', 'UR', 'SP', 'SSP'];

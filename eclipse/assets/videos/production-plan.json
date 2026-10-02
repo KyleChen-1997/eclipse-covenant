@@ -1,0 +1,244 @@
+{
+  "status": "partially_available",
+  "reference": "sirius / assets/videos/hero1.mp4",
+  "requirements": {
+    "durationSeconds": [
+      5,
+      6
+    ],
+    "aspectRatio": "2:3",
+    "fps": [
+      24,
+      30
+    ],
+    "recommendedFormat": "MP4 H.264 yuv420p + faststart, no audio",
+    "camera": "locked",
+    "loop": "matching first and last pose",
+    "review": [
+      "面部与身份一致",
+      "无畸形手指、装备融化或背景被拉伸",
+      "明显但克制的头发、衣物与姿态运动",
+      "循环接缝无明显跳变",
+      "手机端正常播放"
+    ]
+  },
+  "heroes": [
+    {
+      "id": "astra",
+      "name": "阿斯忒拉",
+      "title": "终焉星神",
+      "rarity": "UR",
+      "source": "eclipse/assets/heroes/astra-v6.png",
+      "sourceUrl": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/astra-v6.png",
+      "output": "eclipse/assets/videos/astra.mp4",
+      "motion": "手中星核缓慢自转，目光轻轻落向星核后回到观众；长发和衣袖有不同延迟的漂动，远景星尘缓行。",
+      "prompt": "以输入立绘为唯一角色身份与构图参考，制作精美写实幻想角色的自然待机动画。保持原画的脸、年龄、服饰、道具、画风、背景和人物比例，不新增人物或肢体。固定镜头，无推拉、无平移、无切镜。真实连续运动，不使用整张图片缩放、平移或橡皮拉伸假装人物动作。面部、双手和刚性装备保持结构稳定；眨眼自然且不频繁；衣料与头发具有重量和运动延迟。5～6 秒，24～30 fps，竖版 2:3，建议 720×1080 或 1024×1536，无配音与音乐。结尾回到与开头接近的姿态、光照和构图，适合无缝循环。无新增文字、水印、镜头抖动、闪屏和突然变脸。\n角色：终焉星神·阿斯忒拉。\n动作设计：手中星核缓慢自转，目光轻轻落向星核后回到观众；长发和衣袖有不同延迟的漂动，远景星尘缓行。",
+      "status": "awaiting_generation"
+    },
+    {
+      "id": "aurelia",
+      "name": "奥蕾莉娅",
+      "title": "曜龙女帝",
+      "rarity": "UR",
+      "source": "eclipse/assets/heroes/aurelia-v6.png",
+      "sourceUrl": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/aurelia-v6.png",
+      "output": "eclipse/assets/videos/aurelia.mp4",
+      "motion": "保持女帝的沉稳姿态，轻微抬起下颌；发梢与披风迎风舒展，金色龙辉沿铠饰流动，权杖保持刚性。",
+      "prompt": "以输入立绘为唯一角色身份与构图参考，制作精美写实幻想角色的自然待机动画。保持原画的脸、年龄、服饰、道具、画风、背景和人物比例，不新增人物或肢体。固定镜头，无推拉、无平移、无切镜。真实连续运动，不使用整张图片缩放、平移或橡皮拉伸假装人物动作。面部、双手和刚性装备保持结构稳定；眨眼自然且不频繁；衣料与头发具有重量和运动延迟。5～6 秒，24～30 fps，竖版 2:3，建议 720×1080 或 1024×1536，无配音与音乐。结尾回到与开头接近的姿态、光照和构图，适合无缝循环。无新增文字、水印、镜头抖动、闪屏和突然变脸。\n角色：曜龙女帝·奥蕾莉娅。\n动作设计：保持女帝的沉稳姿态，轻微抬起下颌；发梢与披风迎风舒展，金色龙辉沿铠饰流动，权杖保持刚性。",
+      "status": "awaiting_generation"
+    },
+    {
+      "id": "noctis",
+      "name": "诺克提斯",
+      "title": "永夜时君",
+      "rarity": "UR",
+      "source": "eclipse/assets/heroes/noctis-v6.png",
+      "sourceUrl": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/noctis-v6.png",
+      "output": "eclipse/assets/videos/noctis.mp4",
+      "motion": "目光短暂移向时钟，随后回望；钟环分层缓慢转动，披风滞后摆动，人物动作平静克制。",
+      "prompt": "以输入立绘为唯一角色身份与构图参考，制作精美写实幻想角色的自然待机动画。保持原画的脸、年龄、服饰、道具、画风、背景和人物比例，不新增人物或肢体。固定镜头，无推拉、无平移、无切镜。真实连续运动，不使用整张图片缩放、平移或橡皮拉伸假装人物动作。面部、双手和刚性装备保持结构稳定；眨眼自然且不频繁；衣料与头发具有重量和运动延迟。5～6 秒，24～30 fps，竖版 2:3，建议 720×1080 或 1024×1536，无配音与音乐。结尾回到与开头接近的姿态、光照和构图，适合无缝循环。无新增文字、水印、镜头抖动、闪屏和突然变脸。\n角色：永夜时君·诺克提斯。\n动作设计：目光短暂移向时钟，随后回望；钟环分层缓慢转动，披风滞后摆动，人物动作平静克制。",
+      "status": "awaiting_generation"
+    },
+    {
+      "id": "caelum",
+      "name": "苍曜",
+      "title": "星龙天君",
+      "rarity": "UR",
+      "source": "eclipse/assets/heroes/caelum.png",
+      "sourceUrl": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/caelum.png",
+      "output": "eclipse/assets/videos/caelum.mp4",
+      "motion": "缓慢调整肩部重心，发丝与衣摆随高空风流动；远处星龙光翼舒展一次，保持面部与武器形状稳定。",
+      "prompt": "以输入立绘为唯一角色身份与构图参考，制作精美写实幻想角色的自然待机动画。保持原画的脸、年龄、服饰、道具、画风、背景和人物比例，不新增人物或肢体。固定镜头，无推拉、无平移、无切镜。真实连续运动，不使用整张图片缩放、平移或橡皮拉伸假装人物动作。面部、双手和刚性装备保持结构稳定；眨眼自然且不频繁；衣料与头发具有重量和运动延迟。5～6 秒，24～30 fps，竖版 2:3，建议 720×1080 或 1024×1536，无配音与音乐。结尾回到与开头接近的姿态、光照和构图，适合无缝循环。无新增文字、水印、镜头抖动、闪屏和突然变脸。\n角色：星龙天君·苍曜。\n动作设计：缓慢调整肩部重心，发丝与衣摆随高空风流动；远处星龙光翼舒展一次，保持面部与武器形状稳定。",
+      "status": "awaiting_generation"
+    },
+    {
+      "id": "seraphine",
+      "name": "瑟拉菲娜",
+      "title": "绯月女皇",
+      "rarity": "SP",
+      "source": "eclipse/assets/heroes/seraphine-sp.png",
+      "sourceUrl": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/seraphine-sp.png",
+      "output": "eclipse/assets/videos/seraphine.mp4",
+      "motion": "细微侧首后回正，保持冷静威严；长发与裙摆顺着同一阵风先后舒展，蔷薇花瓣缓慢经过，绯月柔和脉动。",
+      "prompt": "以输入立绘为唯一角色身份与构图参考，制作精美写实幻想角色的自然待机动画。保持原画的脸、年龄、服饰、道具、画风、背景和人物比例，不新增人物或肢体。固定镜头，无推拉、无平移、无切镜。真实连续运动，不使用整张图片缩放、平移或橡皮拉伸假装人物动作。面部、双手和刚性装备保持结构稳定；眨眼自然且不频繁；衣料与头发具有重量和运动延迟。5～6 秒，24～30 fps，竖版 2:3，建议 720×1080 或 1024×1536，无配音与音乐。结尾回到与开头接近的姿态、光照和构图，适合无缝循环。无新增文字、水印、镜头抖动、闪屏和突然变脸。\n角色：绯月女皇·瑟拉菲娜。\n动作设计：细微侧首后回正，保持冷静威严；长发与裙摆顺着同一阵风先后舒展，蔷薇花瓣缓慢经过，绯月柔和脉动。",
+      "status": "awaiting_generation"
+    },
+    {
+      "id": "ragnar",
+      "name": "拉格纳",
+      "title": "烬日君王",
+      "rarity": "SP",
+      "source": "eclipse/assets/heroes/ragnar-sp.png",
+      "sourceUrl": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/ragnar-sp.png",
+      "output": "eclipse/assets/videos/ragnar.mp4",
+      "motion": "沉稳调整肩部，目光坚定；重甲和巨剑保持刚性，披风在热流中翻动，剑身余烬和远景火星有方向地上升。",
+      "prompt": "以输入立绘为唯一角色身份与构图参考，制作精美写实幻想角色的自然待机动画。保持原画的脸、年龄、服饰、道具、画风、背景和人物比例，不新增人物或肢体。固定镜头，无推拉、无平移、无切镜。真实连续运动，不使用整张图片缩放、平移或橡皮拉伸假装人物动作。面部、双手和刚性装备保持结构稳定；眨眼自然且不频繁；衣料与头发具有重量和运动延迟。5～6 秒，24～30 fps，竖版 2:3，建议 720×1080 或 1024×1536，无配音与音乐。结尾回到与开头接近的姿态、光照和构图，适合无缝循环。无新增文字、水印、镜头抖动、闪屏和突然变脸。\n角色：烬日君王·拉格纳。\n动作设计：沉稳调整肩部，目光坚定；重甲和巨剑保持刚性，披风在热流中翻动，剑身余烬和远景火星有方向地上升。",
+      "status": "awaiting_generation"
+    },
+    {
+      "id": "elysium",
+      "name": "伊璃希娅",
+      "title": "万象初光",
+      "rarity": "SSP",
+      "source": "eclipse/assets/heroes/elysium-sp.png",
+      "sourceUrl": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/elysium-sp.png",
+      "output": "eclipse/assets/videos/elysium.mp4",
+      "motion": "自然眨眼，温柔目光随手边初光移动再回正；长发和轻纱柔顺飘动，光轮缓慢转动，炫光连续变化但不过曝。",
+      "prompt": "以输入立绘为唯一角色身份与构图参考，制作精美写实幻想角色的自然待机动画。保持原画的脸、年龄、服饰、道具、画风、背景和人物比例，不新增人物或肢体。固定镜头，无推拉、无平移、无切镜。真实连续运动，不使用整张图片缩放、平移或橡皮拉伸假装人物动作。面部、双手和刚性装备保持结构稳定；眨眼自然且不频繁；衣料与头发具有重量和运动延迟。5～6 秒，24～30 fps，竖版 2:3，建议 720×1080 或 1024×1536，无配音与音乐。结尾回到与开头接近的姿态、光照和构图，适合无缝循环。无新增文字、水印、镜头抖动、闪屏和突然变脸。\n角色：万象初光·伊璃希娅。\n动作设计：自然眨眼，温柔目光随手边初光移动再回正；长发和轻纱柔顺飘动，光轮缓慢转动，炫光连续变化但不过曝。",
+      "status": "awaiting_generation"
+    },
+    {
+      "id": "vega",
+      "name": "维加",
+      "title": "织女星君",
+      "rarity": "UR",
+      "source": "eclipse/assets/heroes/vega-v11.png",
+      "sourceUrl": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/vega-v11.png",
+      "output": "eclipse/assets/videos/vega.mp4",
+      "motion": "视线沿星线移动，手腕作一次极小幅度牵引后归位；发丝、袖口与星线依次响应，星光沿丝线流转。",
+      "prompt": "以输入立绘为唯一角色身份与构图参考，制作精美写实幻想角色的自然待机动画。保持原画的脸、年龄、服饰、道具、画风、背景和人物比例，不新增人物或肢体。固定镜头，无推拉、无平移、无切镜。真实连续运动，不使用整张图片缩放、平移或橡皮拉伸假装人物动作。面部、双手和刚性装备保持结构稳定；眨眼自然且不频繁；衣料与头发具有重量和运动延迟。5～6 秒，24～30 fps，竖版 2:3，建议 720×1080 或 1024×1536，无配音与音乐。结尾回到与开头接近的姿态、光照和构图，适合无缝循环。无新增文字、水印、镜头抖动、闪屏和突然变脸。\n角色：织女星君·维加。\n动作设计：视线沿星线移动，手腕作一次极小幅度牵引后归位；发丝、袖口与星线依次响应，星光沿丝线流转。",
+      "status": "awaiting_generation"
+    },
+    {
+      "id": "astreus",
+      "name": "阿斯特鲁",
+      "title": "雷枢星君",
+      "rarity": "UR",
+      "source": "eclipse/assets/heroes/astreus-v11.png",
+      "sourceUrl": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/astreus-v11.png",
+      "output": "eclipse/assets/videos/astreus.mp4",
+      "motion": "沉稳转动目光，握持姿态不变；发梢与披风被微风带起，远景雷光柔和明灭，避免照白整张脸。",
+      "prompt": "以输入立绘为唯一角色身份与构图参考，制作精美写实幻想角色的自然待机动画。保持原画的脸、年龄、服饰、道具、画风、背景和人物比例，不新增人物或肢体。固定镜头，无推拉、无平移、无切镜。真实连续运动，不使用整张图片缩放、平移或橡皮拉伸假装人物动作。面部、双手和刚性装备保持结构稳定；眨眼自然且不频繁；衣料与头发具有重量和运动延迟。5～6 秒，24～30 fps，竖版 2:3，建议 720×1080 或 1024×1536，无配音与音乐。结尾回到与开头接近的姿态、光照和构图，适合无缝循环。无新增文字、水印、镜头抖动、闪屏和突然变脸。\n角色：雷枢星君·阿斯特鲁。\n动作设计：沉稳转动目光，握持姿态不变；发梢与披风被微风带起，远景雷光柔和明灭，避免照白整张脸。",
+      "status": "awaiting_generation"
+    },
+    {
+      "id": "solara",
+      "name": "索拉拉",
+      "title": "曜辉星君",
+      "rarity": "UR",
+      "source": "eclipse/assets/heroes/solara-v11.png",
+      "sourceUrl": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/solara-v11.png",
+      "output": "eclipse/assets/videos/solara.mp4",
+      "motion": "轻轻抬眼，重心缓慢回正；金色长发和衣摆分别摆动，曜辉在身后扩散再收拢，保持柔和光照。",
+      "prompt": "以输入立绘为唯一角色身份与构图参考，制作精美写实幻想角色的自然待机动画。保持原画的脸、年龄、服饰、道具、画风、背景和人物比例，不新增人物或肢体。固定镜头，无推拉、无平移、无切镜。真实连续运动，不使用整张图片缩放、平移或橡皮拉伸假装人物动作。面部、双手和刚性装备保持结构稳定；眨眼自然且不频繁；衣料与头发具有重量和运动延迟。5～6 秒，24～30 fps，竖版 2:3，建议 720×1080 或 1024×1536，无配音与音乐。结尾回到与开头接近的姿态、光照和构图，适合无缝循环。无新增文字、水印、镜头抖动、闪屏和突然变脸。\n角色：曜辉星君·索拉拉。\n动作设计：轻轻抬眼，重心缓慢回正；金色长发和衣摆分别摆动，曜辉在身后扩散再收拢，保持柔和光照。",
+      "status": "awaiting_generation"
+    },
+    {
+      "id": "valeria",
+      "name": "维蕾雅",
+      "title": "赤契执衡",
+      "rarity": "SP",
+      "source": "eclipse/assets/heroes/valeria-v12.png",
+      "sourceUrl": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/valeria-v12.png",
+      "output": "eclipse/assets/videos/valeria.mp4",
+      "motion": "轻微低头看向契约后回望，肩部平稳；红色外套下摆与纸页边缘轻轻摆动，天平权杖保持刚性，封印微光有节奏流动。",
+      "prompt": "以输入立绘为唯一角色身份与构图参考，制作精美写实幻想角色的自然待机动画。保持原画的脸、年龄、服饰、道具、画风、背景和人物比例，不新增人物或肢体。固定镜头，无推拉、无平移、无切镜。真实连续运动，不使用整张图片缩放、平移或橡皮拉伸假装人物动作。面部、双手和刚性装备保持结构稳定；眨眼自然且不频繁；衣料与头发具有重量和运动延迟。5～6 秒，24～30 fps，竖版 2:3，建议 720×1080 或 1024×1536，无配音与音乐。结尾回到与开头接近的姿态、光照和构图，适合无缝循环。无新增文字、水印、镜头抖动、闪屏和突然变脸。\n角色：赤契执衡·维蕾雅。\n动作设计：轻微低头看向契约后回望，肩部平稳；红色外套下摆与纸页边缘轻轻摆动，天平权杖保持刚性，封印微光有节奏流动。",
+      "status": "provided_by_user",
+      "video": "eclipse/assets/videos/valeria.mp4"
+    },
+    {
+      "id": "severin",
+      "name": "塞维林",
+      "title": "烬金债主",
+      "rarity": "SP",
+      "source": "eclipse/assets/heroes/severin-v12.png",
+      "sourceUrl": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/severin-v12.png",
+      "output": "eclipse/assets/videos/severin.mp4",
+      "motion": "细微抬起下颌，露出克制的审视神情；银发发梢与长外套缓慢摆动，金色账册边缘掠过一道光，手杖与手指保持稳定。",
+      "prompt": "以输入立绘为唯一角色身份与构图参考，制作精美写实幻想角色的自然待机动画。保持原画的脸、年龄、服饰、道具、画风、背景和人物比例，不新增人物或肢体。固定镜头，无推拉、无平移、无切镜。真实连续运动，不使用整张图片缩放、平移或橡皮拉伸假装人物动作。面部、双手和刚性装备保持结构稳定；眨眼自然且不频繁；衣料与头发具有重量和运动延迟。5～6 秒，24～30 fps，竖版 2:3，建议 720×1080 或 1024×1536，无配音与音乐。结尾回到与开头接近的姿态、光照和构图，适合无缝循环。无新增文字、水印、镜头抖动、闪屏和突然变脸。\n角色：烬金债主·塞维林。\n动作设计：细微抬起下颌，露出克制的审视神情；银发发梢与长外套缓慢摆动，金色账册边缘掠过一道光，手杖与手指保持稳定。",
+      "status": "awaiting_generation"
+    },
+    {
+      "id": "morwen",
+      "name": "莫薇恩",
+      "title": "归名女爵",
+      "rarity": "SP",
+      "source": "eclipse/assets/heroes/morwen-v12.png",
+      "sourceUrl": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/morwen-v12.png",
+      "output": "eclipse/assets/videos/morwen.mp4",
+      "motion": "目光先掠向提灯再回到观众；黑色长发、纱袖与裙摆层次分明地流动，灯火轻轻摇曳，背景花瓣缓行。",
+      "prompt": "以输入立绘为唯一角色身份与构图参考，制作精美写实幻想角色的自然待机动画。保持原画的脸、年龄、服饰、道具、画风、背景和人物比例，不新增人物或肢体。固定镜头，无推拉、无平移、无切镜。真实连续运动，不使用整张图片缩放、平移或橡皮拉伸假装人物动作。面部、双手和刚性装备保持结构稳定；眨眼自然且不频繁；衣料与头发具有重量和运动延迟。5～6 秒，24～30 fps，竖版 2:3，建议 720×1080 或 1024×1536，无配音与音乐。结尾回到与开头接近的姿态、光照和构图，适合无缝循环。无新增文字、水印、镜头抖动、闪屏和突然变脸。\n角色：归名女爵·莫薇恩。\n动作设计：目光先掠向提灯再回到观众；黑色长发、纱袖与裙摆层次分明地流动，灯火轻轻摇曳，背景花瓣缓行。",
+      "status": "awaiting_generation"
+    },
+    {
+      "id": "thalor",
+      "name": "塔洛尔",
+      "title": "深潮王侯",
+      "rarity": "SP",
+      "source": "eclipse/assets/heroes/thalor-v12.png",
+      "sourceUrl": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/thalor-v12.png",
+      "output": "eclipse/assets/videos/thalor.mp4",
+      "motion": "稳稳握持三叉戟，轻微侧首后回正；海风推动头发和披风，珊瑚护甲保持刚性，红色潮光在远景起伏。",
+      "prompt": "以输入立绘为唯一角色身份与构图参考，制作精美写实幻想角色的自然待机动画。保持原画的脸、年龄、服饰、道具、画风、背景和人物比例，不新增人物或肢体。固定镜头，无推拉、无平移、无切镜。真实连续运动，不使用整张图片缩放、平移或橡皮拉伸假装人物动作。面部、双手和刚性装备保持结构稳定；眨眼自然且不频繁；衣料与头发具有重量和运动延迟。5～6 秒，24～30 fps，竖版 2:3，建议 720×1080 或 1024×1536，无配音与音乐。结尾回到与开头接近的姿态、光照和构图，适合无缝循环。无新增文字、水印、镜头抖动、闪屏和突然变脸。\n角色：深潮王侯·塔洛尔。\n动作设计：稳稳握持三叉戟，轻微侧首后回正；海风推动头发和披风，珊瑚护甲保持刚性，红色潮光在远景起伏。",
+      "status": "awaiting_generation"
+    },
+    {
+      "id": "aevor",
+      "name": "艾沃尔",
+      "title": "断钟行刑",
+      "rarity": "SP",
+      "source": "eclipse/assets/heroes/aevor-v12.png",
+      "sourceUrl": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/aevor-v12.png",
+      "output": "eclipse/assets/videos/aevor.mp4",
+      "motion": "目光缓慢扫过前方，白色发梢与红色衣摆随风摆动；钟盘指针渐进移动，剑刃与握剑手保持形状稳定。",
+      "prompt": "以输入立绘为唯一角色身份与构图参考，制作精美写实幻想角色的自然待机动画。保持原画的脸、年龄、服饰、道具、画风、背景和人物比例，不新增人物或肢体。固定镜头，无推拉、无平移、无切镜。真实连续运动，不使用整张图片缩放、平移或橡皮拉伸假装人物动作。面部、双手和刚性装备保持结构稳定；眨眼自然且不频繁；衣料与头发具有重量和运动延迟。5～6 秒，24～30 fps，竖版 2:3，建议 720×1080 或 1024×1536，无配音与音乐。结尾回到与开头接近的姿态、光照和构图，适合无缝循环。无新增文字、水印、镜头抖动、闪屏和突然变脸。\n角色：断钟行刑·艾沃尔。\n动作设计：目光缓慢扫过前方，白色发梢与红色衣摆随风摆动；钟盘指针渐进移动，剑刃与握剑手保持形状稳定。",
+      "status": "awaiting_generation"
+    },
+    {
+      "id": "anamnesis",
+      "name": "阿纳弥斯",
+      "title": "万名见证",
+      "rarity": "SSP",
+      "source": "eclipse/assets/heroes/anamnesis-v12.png",
+      "sourceUrl": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/anamnesis-v12.png",
+      "output": "eclipse/assets/videos/anamnesis.mp4",
+      "motion": "目光轻轻移向卷轴再回望；卷轴保持主体形状，边缘微微拂动，银紫长发和薄纱延迟摆动，星文字微光缓慢流过。",
+      "prompt": "以输入立绘为唯一角色身份与构图参考，制作精美写实幻想角色的自然待机动画。保持原画的脸、年龄、服饰、道具、画风、背景和人物比例，不新增人物或肢体。固定镜头，无推拉、无平移、无切镜。真实连续运动，不使用整张图片缩放、平移或橡皮拉伸假装人物动作。面部、双手和刚性装备保持结构稳定；眨眼自然且不频繁；衣料与头发具有重量和运动延迟。5～6 秒，24～30 fps，竖版 2:3，建议 720×1080 或 1024×1536，无配音与音乐。结尾回到与开头接近的姿态、光照和构图，适合无缝循环。无新增文字、水印、镜头抖动、闪屏和突然变脸。\n角色：万名见证·阿纳弥斯。\n动作设计：目光轻轻移向卷轴再回望；卷轴保持主体形状，边缘微微拂动，银紫长发和薄纱延迟摆动，星文字微光缓慢流过。",
+      "status": "awaiting_generation"
+    },
+    {
+      "id": "causalia",
+      "name": "卡乌莎",
+      "title": "因果织母",
+      "rarity": "SSP",
+      "source": "eclipse/assets/heroes/causalia-v12.png",
+      "sourceUrl": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/causalia-v12.png",
+      "output": "eclipse/assets/videos/causalia.mp4",
+      "motion": "手腕小幅牵引因果光线后回到原姿态；紫色长发和衣袖延迟跟随，棱彩沿丝线连续流动，背景星环缓慢旋转。",
+      "prompt": "以输入立绘为唯一角色身份与构图参考，制作精美写实幻想角色的自然待机动画。保持原画的脸、年龄、服饰、道具、画风、背景和人物比例，不新增人物或肢体。固定镜头，无推拉、无平移、无切镜。真实连续运动，不使用整张图片缩放、平移或橡皮拉伸假装人物动作。面部、双手和刚性装备保持结构稳定；眨眼自然且不频繁；衣料与头发具有重量和运动延迟。5～6 秒，24～30 fps，竖版 2:3，建议 720×1080 或 1024×1536，无配音与音乐。结尾回到与开头接近的姿态、光照和构图，适合无缝循环。无新增文字、水印、镜头抖动、闪屏和突然变脸。\n角色：因果织母·卡乌莎。\n动作设计：手腕小幅牵引因果光线后回到原姿态；紫色长发和衣袖延迟跟随，棱彩沿丝线连续流动，背景星环缓慢旋转。",
+      "status": "awaiting_generation"
+    },
+    {
+      "id": "nullion",
+      "name": "零谕",
+      "title": "无界初约",
+      "rarity": "SSP",
+      "source": "eclipse/assets/heroes/nullion-v12.png",
+      "sourceUrl": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/nullion-v12.png",
+      "output": "eclipse/assets/videos/nullion.mp4",
+      "motion": "平静回望，轻微调整肩部；象牙白长发和衣袍柔顺漂动，断开的锁链分段轻轻摆动，炫光缓慢流转，保持每节链条连贯。",
+      "prompt": "以输入立绘为唯一角色身份与构图参考，制作精美写实幻想角色的自然待机动画。保持原画的脸、年龄、服饰、道具、画风、背景和人物比例，不新增人物或肢体。固定镜头，无推拉、无平移、无切镜。真实连续运动，不使用整张图片缩放、平移或橡皮拉伸假装人物动作。面部、双手和刚性装备保持结构稳定；眨眼自然且不频繁；衣料与头发具有重量和运动延迟。5～6 秒，24～30 fps，竖版 2:3，建议 720×1080 或 1024×1536，无配音与音乐。结尾回到与开头接近的姿态、光照和构图，适合无缝循环。无新增文字、水印、镜头抖动、闪屏和突然变脸。\n角色：无界初约·零谕。\n动作设计：平静回望，轻微调整肩部；象牙白长发和衣袍柔顺漂动，断开的锁链分段轻轻摆动，炫光缓慢流转，保持每节链条连贯。",
+      "status": "awaiting_generation"
+    }
+  ]
+}

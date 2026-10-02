@@ -7,7 +7,9 @@
     "start": "node eclipse/serve.cjs",
     "dev": "node eclipse/serve.cjs",
     "test": "node --test eclipse/tests/*.test.cjs",
-    "build": "node scripts/build-pages.cjs"
+    "build": "node scripts/build-pages.cjs",
+    "portraits:import": "node scripts/import-portrait-videos.cjs",
+    "prebuild": "npm run portraits:import"
   },
   "keywords": [],
   "author": "",

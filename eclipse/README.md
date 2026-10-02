@@ -146,3 +146,11 @@ SP / SSP 装备原画及内置图像生成工具的完整提示词见 `assets/eq
 - `assets/videos/hero1.mp4` 为西里乌斯循环视频；图鉴、详情和召唤演出共用懒加载播放，离屏、弹窗遮挡和后台暂停，失败或减少动态偏好时显示静态备用图。
 - 8 张新增原始立绘与提示词见 `assets/portraits/manifest-v12.json`。SSR 及以上动态配置共 40 位。
 - 验证：130 项单元测试、Pages 构建、浏览器连续征战与视频播放。
+
+## 批量接入 UR 以上的视频立绘
+
+目前西里乌斯与维蕾雅拥有用户提供的实际视频；其余 17 位仍使用原有动态图片。视频制作方案、逐人动作与完整提示词见 `qa/portrait-video-plan.html` 和 `assets/videos/production-plan.json`。该清单不是已生成的视频。
+
+将审核通过的 MP4（推荐 H.264、yuv420p、faststart）或 WebM 放到 `assets/videos/<角色 id>.mp4` / `.webm`，同一角色只保留一种格式。运行 `npm run portraits:import` 后刷新页面。`npm run build` 也会自动生成映射；缺失的视频不会被注册。西里乌斯继续兼容 `hero1.mp4`，若有 `sirius.mp4` 则优先使用新命名文件。
+
+导入仅校验文件存在、体积和容器标头，仍需人工检查面部、手部、循环接缝与浏览器播放。每位角色需要独立参考立绘，建议先做 1 位 UR 和 1 位 SSP 试片再批量生成。
