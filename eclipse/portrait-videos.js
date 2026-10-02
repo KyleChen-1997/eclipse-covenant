@@ -4,8 +4,10 @@
   "elysium": "assets/videos/elysium.mp4",
   "sirius": "assets/videos/hero1.mp4",
   "valeria": "assets/videos/valeria.mp4",
+  "severin": "assets/videos/hero9.mp4",
   "morwen": "assets/videos/hero3.mp4",
   "thalor": "assets/videos/hero4.mp4",
+  "aevor": "assets/videos/hero8.mp4",
   "anamnesis": "assets/videos/hero7.mp4",
   "causalia": "assets/videos/hero6.mp4",
   "nullion": "assets/videos/hero5.mp4"

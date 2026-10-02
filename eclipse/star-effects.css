@@ -1,0 +1,29 @@
+/* Star progression stays independent from rarity and keeps faces unobstructed. */
+.star-fx{--star:#b6d5ee;position:absolute;inset:0;z-index:6;pointer-events:none;overflow:hidden;color:var(--star);isolation:isolate}
+.star-fx-2{--star:#8fe8ec}.star-fx-3{--star:#f6d394}.star-fx-4{--star:#dcafff}.star-fx-5{--star:#fff0bc}
+.star-fx-edge{position:absolute;inset:5px;border:1px solid var(--star);opacity:.65;box-shadow:inset 0 0 12px color-mix(in srgb,var(--star),transparent 75%);clip-path:polygon(0 0,31% 0,31% 1%,1% 1%,1% 99%,31% 99%,31% 100%,0 100%,0 0,69% 0,100% 0,100% 100%,69% 100%,69% 99%,99% 99%,99% 1%,69% 1%)}
+.star-fx-2 .star-fx-edge{box-shadow:inset 0 0 22px #89ebec80;animation:star-edge 4s ease-in-out infinite}
+.star-fx-3 .star-fx-edge,.star-fx-4 .star-fx-edge,.star-fx-5 .star-fx-edge{inset:5px;border-width:2px;box-shadow:inset 0 0 22px color-mix(in srgb,var(--star),transparent 45%);animation:star-edge 3.8s ease-in-out infinite}
+.star-fx-sparks i{position:absolute;left:var(--x);top:var(--y);width:3px;height:3px;background:var(--star);box-shadow:0 0 7px 2px var(--star);border-radius:50%;opacity:.6;animation:star-rise 4s var(--delay) ease-in-out infinite}
+.star-fx-orbit{position:absolute;width:84%;aspect-ratio:1;left:8%;top:49%;border:1px solid var(--star);border-radius:50%;opacity:.55;transform:rotateX(62deg);box-shadow:0 0 12px color-mix(in srgb,var(--star),transparent 50%);background:repeating-conic-gradient(from 0deg,transparent 0 28deg,var(--star) 29deg 30deg);mask:radial-gradient(transparent 64%,#000 65% 70%,transparent 71%);animation:star-orbit 16s linear infinite}
+.star-fx-wings{position:absolute;width:96%;left:2%;bottom:13%;stroke:var(--star);stroke-width:1.2;filter:drop-shadow(0 0 5px var(--star));opacity:.75;animation:star-wings 5s ease-in-out infinite;transform-origin:50% 80%}
+.star-fx-label{position:absolute;right:12px;top:47px;display:flex;align-items:flex-end;flex-direction:column;gap:3px;color:var(--star);font:10px Georgia,serif;letter-spacing:2px;text-shadow:0 1px 5px #000,0 0 8px #000;background:linear-gradient(90deg,transparent,#0c112977);padding:4px 0 4px 8px;border-right:2px solid var(--star)}
+.star-fx-label small{font:8px var(--sans,system-ui);letter-spacing:3px;padding-right:3px}
+.star-fx-5 .star-fx-edge{border-color:#fff4c4;box-shadow:inset 0 0 25px #ffcb8088;opacity:1}
+.star-fx-5 .star-fx-orbit{border-width:2px;opacity:.85;animation-duration:12s}
+.star-fx-aurora{position:absolute;inset:0;background:conic-gradient(from 30deg,#ffd99a,#acbaff,#abfff1,#e8abff,#fff0ac,#ffd99a);mask:linear-gradient(90deg,#000,transparent 12% 88%,#000);opacity:.5;animation:star-aurora 6s ease-in-out infinite}
+.star-fx-crown{position:absolute;bottom:20%;left:calc(50% - 18px);width:36px;text-align:center;font:32px Georgia,serif;color:#fff5cc;text-shadow:0 0 10px #ffc16a;animation:star-crown 5s ease-in-out infinite}
+.star-fx-runes{position:absolute;bottom:12%;width:100%;left:0;text-align:center;letter-spacing:9px;color:#fff1c7;font-size:12px;text-shadow:0 0 10px #ecb978}
+.star-fx-5 .star-fx-label{background:linear-gradient(90deg,transparent,#694d2d99);font-size:11px}
+.star-fx *{animation-play-state:paused!important}.star-fx-active *{animation-play-state:running!important}
+.candidate-visual>.star-fx .star-fx-label{top:28px;right:7px;font-size:7px;letter-spacing:0}.candidate-visual>.star-fx .star-fx-label small,.candidate-visual>.star-fx .star-fx-wings,.candidate-visual>.star-fx .star-fx-orbit,.candidate-visual>.star-fx .star-fx-crown,.candidate-visual>.star-fx .star-fx-runes{display:none}
+.hero-card:has(.star-fx-5),.reveal-card:has(.star-fx-5){box-shadow:0 0 0 1px #f9dea680,0 0 20px #d3a2ff30,0 12px 25px #0005}
+.hero-card:has(.star-fx-4){box-shadow:0 0 0 1px #d1a1f85c,0 0 16px #a15fec20}
+@keyframes star-edge{50%{opacity:1;filter:brightness(1.3)}}
+@keyframes star-rise{0%,100%{transform:translateY(8px) scale(.55);opacity:.2}50%{transform:translateY(-18px) scale(1.3);opacity:.95}}
+@keyframes star-orbit{to{transform:rotateX(62deg) rotate(360deg)}}
+@keyframes star-wings{50%{transform:scaleX(1.03) scaleY(1.1);opacity:1}}
+@keyframes star-aurora{50%{filter:hue-rotate(55deg);opacity:.75}}
+@keyframes star-crown{50%{transform:translateY(-4px);filter:brightness(1.3)}}
+@media(max-width:700px){.star-fx-label{font-size:8px;right:10px;top:44px}.star-fx-label small{font-size:7px}.star-fx-5 .star-fx-label{font-size:9px}.star-fx-crown{font-size:25px}.star-fx-sparks i{width:2px;height:2px}}
+@media(prefers-reduced-motion:reduce){.star-fx *{animation:none!important}.star-fx-aurora{opacity:.4}}

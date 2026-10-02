@@ -2,7 +2,7 @@
 const fs=require('node:fs'),path=require('node:path');
 const root=path.resolve(__dirname,'..');
 // Only register actual, recognizable video containers. Missing files retain existing artwork.
-const legacyFiles={sirius:'hero1.mp4',morwen:'hero3.mp4',thalor:'hero4.mp4',nullion:'hero5.mp4',causalia:'hero6.mp4',anamnesis:'hero7.mp4'};
+const legacyFiles={sirius:'hero1.mp4',morwen:'hero3.mp4',thalor:'hero4.mp4',nullion:'hero5.mp4',causalia:'hero6.mp4',anamnesis:'hero7.mp4',aevor:'hero8.mp4',severin:'hero9.mp4'};
 function collectVideos(directory,heroes){
   const result={};
   for(const hero of heroes.filter(h=>['UR','SP','SSP'].includes(h.rarity))){
