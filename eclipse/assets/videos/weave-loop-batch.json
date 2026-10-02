@@ -1,12 +1,12 @@
 {
   "provider": "Figma Weave",
   "modelId": "f3220409-436a-4585-b3d3-adca16f4db19",
-  "status": "awaiting_cost_approval",
+  "status": "completed",
   "runs": [
     {
       "id": "aurelia",
       "name": "奥蕾莉娅",
-      "status": "quoted_pending",
+      "status": "completed",
       "input": {
         "image": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/aurelia-v6.png",
         "end_image_url": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/aurelia-v6.png",
@@ -17,12 +17,29 @@
         "cfg_scale": 0.65,
         "generate_audio": false
       },
-      "quotedCredits": 82
+      "quotedCredits": 82,
+      "predictionId": "50f6fe37-f3a9-4220-a496-bfb1cca4d3f0",
+      "cost": 82,
+      "outputUrl": "https://media.weavy.ai/video/upload/v1790924234/uploads/GKtreSHDt0YuNXMdqWBo73um42p1/gjcjt2ogqpjxtflwerzr.mp4",
+      "gameAsset": "eclipse/assets/videos/aurelia.mp4",
+      "gameBytes": 4991690,
+      "gameSha256": "1d65b7bc4623a2dbdc231462ca4143fe19e8298dc4912db2f7260361fb00e23b",
+      "originalBytes": 14889692,
+      "originalSha256": "49dc62bfb90e441b2b3b745f0e61788aaabae5dd98233ec787a6f8f711de533d",
+      "gameResolution": [
+        852,
+        1280
+      ],
+      "durationSeconds": 5.041667,
+      "postprocess": "Resolution/bitrate optimization only. No dissolve, reverse playback or added motion.",
+      "reviewSummary": "抬手托起光球、转头，末尾恢复起始姿态。",
+      "motionReview": "body_motion_visible",
+      "loopReview": "First, middle and final frames inspected; beginning and ending character pose visually match."
     },
     {
       "id": "noctis",
       "name": "诺克提斯",
-      "status": "quoted_pending",
+      "status": "completed",
       "input": {
         "image": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/noctis-v6.png",
         "end_image_url": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/noctis-v6.png",
@@ -33,12 +50,29 @@
         "cfg_scale": 0.65,
         "generate_audio": false
       },
-      "quotedCredits": 82
+      "quotedCredits": 82,
+      "predictionId": "1331d549-de40-4708-a4ec-5259df43c47f",
+      "cost": 82,
+      "outputUrl": "https://media.weavy.ai/video/upload/v1790924269/uploads/GKtreSHDt0YuNXMdqWBo73um42p1/wku54xlzaoqfymsoaeh5.mp4",
+      "gameAsset": "eclipse/assets/videos/noctis.mp4",
+      "gameBytes": 4016934,
+      "gameSha256": "987c3352e8319445b1b7fbf934757bbfb8c2aa256f4bfec4355f13e051740d07",
+      "originalBytes": 13305515,
+      "originalSha256": "d6420841102a7ec3b59e6d88a614100a3a864313344b638071e6b18f809c2bc7",
+      "gameResolution": [
+        852,
+        1280
+      ],
+      "durationSeconds": 5.041667,
+      "postprocess": "Resolution/bitrate optimization only. No dissolve, reverse playback or added motion.",
+      "reviewSummary": "转头注视钟环、手部小幅抬起，动作较温和；首尾姿态一致。",
+      "motionReview": "body_motion_visible",
+      "loopReview": "First, middle and final frames inspected; beginning and ending character pose visually match."
     },
     {
       "id": "caelum",
       "name": "苍曜",
-      "status": "quoted_pending",
+      "status": "completed",
       "input": {
         "image": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/caelum.png",
         "end_image_url": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/caelum.png",
@@ -49,12 +83,29 @@
         "cfg_scale": 0.65,
         "generate_audio": false
       },
-      "quotedCredits": 82
+      "quotedCredits": 82,
+      "predictionId": "a21f9aff-93e7-4d56-a8cd-47d17fc7343a",
+      "cost": 82,
+      "outputUrl": "https://media.weavy.ai/video/upload/v1790924279/uploads/GKtreSHDt0YuNXMdqWBo73um42p1/m3d5fuepgtdu2ozwnkfx.mp4",
+      "gameAsset": "eclipse/assets/videos/caelum.mp4",
+      "gameBytes": 4545913,
+      "gameSha256": "8ca64d9f62e716dc7998f7d470ea8eb9f63ceaaa0bc58367869c32185ddb1e07",
+      "originalBytes": 13791022,
+      "originalSha256": "8fcfeece2a166b602e0a7bc62e9b2bd2ede1f0aa61ad84db243176b4ef5cc184",
+      "gameResolution": [
+        852,
+        1280
+      ],
+      "durationSeconds": 5.041667,
+      "postprocess": "Resolution/bitrate optimization only. No dissolve, reverse playback or added motion.",
+      "reviewSummary": "托举星核的前臂抬起，衣袖跟随；首尾姿态一致。",
+      "motionReview": "body_motion_visible",
+      "loopReview": "First, middle and final frames inspected; beginning and ending character pose visually match."
     },
     {
       "id": "seraphine",
       "name": "瑟拉菲娜",
-      "status": "quoted_pending",
+      "status": "completed",
       "input": {
         "image": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/seraphine-sp.png",
         "end_image_url": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/seraphine-sp.png",
@@ -65,12 +116,29 @@
         "cfg_scale": 0.65,
         "generate_audio": false
       },
-      "quotedCredits": 82
+      "quotedCredits": 82,
+      "predictionId": "06603269-4baa-4d51-9cb4-f223a9b9c083",
+      "cost": 82,
+      "outputUrl": "https://media.weavy.ai/video/upload/v1790924287/uploads/GKtreSHDt0YuNXMdqWBo73um42p1/uboxpxdik7pxn30zlo6v.mp4",
+      "gameAsset": "eclipse/assets/videos/seraphine.mp4",
+      "gameBytes": 4906831,
+      "gameSha256": "55d5bbff0b02cf214e95b0d7e93a3a657fbe9950811ceda7e3c2d55c8d6d2906",
+      "originalBytes": 15088831,
+      "originalSha256": "f9e3611abd65c4ef6a4214a73396e77b0a60f4c354daa22d88ab26f9303a3d1f",
+      "gameResolution": [
+        852,
+        1280
+      ],
+      "durationSeconds": 5.041667,
+      "postprocess": "Resolution/bitrate optimization only. No dissolve, reverse playback or added motion.",
+      "reviewSummary": "转身伸臂、披风展开，末尾恢复起始姿态。",
+      "motionReview": "body_motion_visible",
+      "loopReview": "First, middle and final frames inspected; beginning and ending character pose visually match."
     },
     {
       "id": "ragnar",
       "name": "拉格纳",
-      "status": "quoted_pending",
+      "status": "completed",
       "input": {
         "image": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/ragnar-sp.png",
         "end_image_url": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/ragnar-sp.png",
@@ -81,12 +149,29 @@
         "cfg_scale": 0.65,
         "generate_audio": false
       },
-      "quotedCredits": 82
+      "quotedCredits": 82,
+      "predictionId": "56c76a9b-fe56-4a3f-9057-1743d2165788",
+      "cost": 82,
+      "outputUrl": "https://media.weavy.ai/video/upload/v1790924297/uploads/GKtreSHDt0YuNXMdqWBo73um42p1/nao0bnrn8aq0usuukbzh.mp4",
+      "gameAsset": "eclipse/assets/videos/ragnar.mp4",
+      "gameBytes": 4890697,
+      "gameSha256": "46a26619838e3016d9d6798785125e049ded9f751b63cf7269c429be9c327e34",
+      "originalBytes": 15090535,
+      "originalSha256": "4717749219858331ae6898732c71006d9f72e258dac035a832f92800abb86426",
+      "gameResolution": [
+        852,
+        1280
+      ],
+      "durationSeconds": 5.041667,
+      "postprocess": "Resolution/bitrate optimization only. No dissolve, reverse playback or added motion.",
+      "reviewSummary": "抬剑转肩，披风跟随；首尾姿态一致。",
+      "motionReview": "body_motion_visible",
+      "loopReview": "First, middle and final frames inspected; beginning and ending character pose visually match."
     },
     {
       "id": "vega",
       "name": "维加",
-      "status": "quoted_pending",
+      "status": "completed",
       "input": {
         "image": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/vega-v11.png",
         "end_image_url": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/vega-v11.png",
@@ -97,12 +182,29 @@
         "cfg_scale": 0.65,
         "generate_audio": false
       },
-      "quotedCredits": 82
+      "quotedCredits": 82,
+      "predictionId": "07693b8b-1364-4ece-ade1-a0dd4283a526",
+      "cost": 82,
+      "outputUrl": "https://media.weavy.ai/video/upload/v1790924338/uploads/GKtreSHDt0YuNXMdqWBo73um42p1/qnpcrn4cvmbpihxhdjur.mp4",
+      "gameAsset": "eclipse/assets/videos/vega.mp4",
+      "gameBytes": 3315263,
+      "gameSha256": "1b9c09aa647747f8f4a26b277655fe0ef3825773058965673996fa85ebcc39ba",
+      "originalBytes": 12867560,
+      "originalSha256": "afd452861b2da19f1e58e37466beec7e6002f557778d146ffb5dc3b6c1e38cfd",
+      "gameResolution": [
+        852,
+        1280
+      ],
+      "durationSeconds": 5.041667,
+      "postprocess": "Resolution/bitrate optimization only. No dissolve, reverse playback or added motion.",
+      "reviewSummary": "首尾姿态一致，但肢体动作幅度不足，以细微表情、发丝与光效为主。",
+      "motionReview": "needs_more_body_motion",
+      "loopReview": "First, middle and final frames inspected; beginning and ending character pose visually match."
     },
     {
       "id": "astreus",
       "name": "阿斯特鲁",
-      "status": "quoted_pending",
+      "status": "completed",
       "input": {
         "image": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/astreus-v11.png",
         "end_image_url": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/astreus-v11.png",
@@ -113,12 +215,29 @@
         "cfg_scale": 0.65,
         "generate_audio": false
       },
-      "quotedCredits": 82
+      "quotedCredits": 82,
+      "predictionId": "c5209391-cce1-4965-90f5-a5444ca5b2d9",
+      "cost": 82,
+      "outputUrl": "https://media.weavy.ai/video/upload/v1790924320/uploads/GKtreSHDt0YuNXMdqWBo73um42p1/w7akfte30vm741ojvvh5.mp4",
+      "gameAsset": "eclipse/assets/videos/astreus.mp4",
+      "gameBytes": 3659626,
+      "gameSha256": "60e152a42cfd8955952e99ff172b078e61a21c6a8a5d91c895aaff17ba26b698",
+      "originalBytes": 12500150,
+      "originalSha256": "d9657c6c14278286801867b35640e7e8cb851392b51778386eca21551424f180",
+      "gameResolution": [
+        852,
+        1280
+      ],
+      "durationSeconds": 5.041667,
+      "postprocess": "Resolution/bitrate optimization only. No dissolve, reverse playback or added motion.",
+      "reviewSummary": "首尾姿态一致，星盘有转动；人物肢体动作幅度仍不足。",
+      "motionReview": "needs_more_body_motion",
+      "loopReview": "First, middle and final frames inspected; beginning and ending character pose visually match."
     },
     {
       "id": "solara",
       "name": "索拉拉",
-      "status": "quoted_pending",
+      "status": "completed",
       "input": {
         "image": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/solara-v11.png",
         "end_image_url": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/solara-v11.png",
@@ -129,8 +248,28 @@
         "cfg_scale": 0.65,
         "generate_audio": false
       },
-      "quotedCredits": 82
+      "quotedCredits": 82,
+      "predictionId": "fdf3f671-2f04-4135-ac3a-fb14e30b2c1d",
+      "cost": 82,
+      "outputUrl": "https://media.weavy.ai/video/upload/v1790924307/uploads/GKtreSHDt0YuNXMdqWBo73um42p1/qvzscvacbeqm5igqynku.mp4",
+      "gameAsset": "eclipse/assets/videos/solara.mp4",
+      "gameBytes": 4909740,
+      "gameSha256": "061b6931d4a9b02fba6975302761e2e8cd1bf22f709b26f21562f340dcb71948",
+      "originalBytes": 13930503,
+      "originalSha256": "2560a018d715fc47f3304e11949744c209c9734d1b6cbc4e9ae3a83da9140817",
+      "gameResolution": [
+        852,
+        1280
+      ],
+      "durationSeconds": 5.041667,
+      "postprocess": "Resolution/bitrate optimization only. No dissolve, reverse playback or added motion.",
+      "reviewSummary": "抬臂转肩、衣袖展开，末尾恢复起始姿态。",
+      "motionReview": "body_motion_visible",
+      "loopReview": "First, middle and final frames inspected; beginning and ending character pose visually match."
     }
   ],
-  "quotedTotalCredits": 656
+  "quotedTotalCredits": 656,
+  "approvedTotalCredits": 656,
+  "reviewStatus": "six_body_motion_two_subtle",
+  "spentCredits": 656
 }

@@ -1,5 +1,5 @@
 {
-  "status": "partially_available",
+  "status": "available",
   "reference": "causalia / assets/videos/hero6.mp4; sirius / assets/videos/hero1.mp4",
   "requirements": {
     "durationSeconds": [
@@ -51,8 +51,12 @@
       "output": "eclipse/assets/videos/aurelia.mp4",
       "motion": "抬起空闲手臂，向外展开手掌，头部转向金色龙辉，肩部随之转动；披风向外扬起。之后收回手臂与目光，回到原来的帝王站姿。",
       "prompt": "制作 5 秒、固定镜头的幻想角色完整循环动画。首帧与尾帧使用同一张参考原画，必须回到相同的手部位置、头部角度、身体姿态、衣摆轮廓和光照。首尾一致不意味着中间静止：0～0.5 秒起势，0.5～2.5 秒完成明显的抬臂、转肩和转头动作，2.5～4.5 秒自然收势回归，4.5～5 秒精确回到参考姿态。运动连贯而自然，动作在普通卡片尺寸也清晰可辨；头发、披风和宽袖明显跟随身体运动并自然回落。保持原画角色身份、脸型、服饰、道具、背景和画风。人物始终留在画面内，手指与刚性道具结构稳定；单镜头无运镜、无声音。\n角色：曜龙女帝·奥蕾莉娅。\n动作设计：抬起空闲手臂，向外展开手掌，头部转向金色龙辉，肩部随之转动；披风向外扬起。之后收回手臂与目光，回到原来的帝王站姿。",
-      "status": "awaiting_generation",
-      "revisionStatus": "awaiting_cost_approval"
+      "status": "generated_loop",
+      "revisionStatus": "completed",
+      "video": "eclipse/assets/videos/aurelia.mp4",
+      "provider": "Figma Weave / Kling 3 Pro",
+      "qualityReview": "body_motion_visible",
+      "reviewSummary": "抬手托起光球、转头，末尾恢复起始姿态。"
     },
     {
       "id": "noctis",
@@ -64,8 +68,12 @@
       "output": "eclipse/assets/videos/noctis.mp4",
       "motion": "手臂引导时钟向胸前抬起，转头注视转动的钟环，上身轻转；长发与披风跟随。之后将手臂和时钟送回原位，回望镜头。",
       "prompt": "制作 5 秒、固定镜头的幻想角色完整循环动画。首帧与尾帧使用同一张参考原画，必须回到相同的手部位置、头部角度、身体姿态、衣摆轮廓和光照。首尾一致不意味着中间静止：0～0.5 秒起势，0.5～2.5 秒完成明显的抬臂、转肩和转头动作，2.5～4.5 秒自然收势回归，4.5～5 秒精确回到参考姿态。运动连贯而自然，动作在普通卡片尺寸也清晰可辨；头发、披风和宽袖明显跟随身体运动并自然回落。保持原画角色身份、脸型、服饰、道具、背景和画风。人物始终留在画面内，手指与刚性道具结构稳定；单镜头无运镜、无声音。\n角色：永夜时君·诺克提斯。\n动作设计：手臂引导时钟向胸前抬起，转头注视转动的钟环，上身轻转；长发与披风跟随。之后将手臂和时钟送回原位，回望镜头。",
-      "status": "awaiting_generation",
-      "revisionStatus": "awaiting_cost_approval"
+      "status": "generated_loop",
+      "revisionStatus": "completed",
+      "video": "eclipse/assets/videos/noctis.mp4",
+      "provider": "Figma Weave / Kling 3 Pro",
+      "qualityReview": "body_motion_visible",
+      "reviewSummary": "转头注视钟环、手部小幅抬起，动作较温和；首尾姿态一致。"
     },
     {
       "id": "caelum",
@@ -77,8 +85,12 @@
       "output": "eclipse/assets/videos/caelum.mp4",
       "motion": "双手握持原画长剑，沿身体前方抬高剑锋一小段，清晰转肩抬头；龙纹衣袖展开。随后沉稳落剑、放松肩部，恢复起始持剑角度。",
       "prompt": "制作 5 秒、固定镜头的幻想角色完整循环动画。首帧与尾帧使用同一张参考原画，必须回到相同的手部位置、头部角度、身体姿态、衣摆轮廓和光照。首尾一致不意味着中间静止：0～0.5 秒起势，0.5～2.5 秒完成明显的抬臂、转肩和转头动作，2.5～4.5 秒自然收势回归，4.5～5 秒精确回到参考姿态。运动连贯而自然，动作在普通卡片尺寸也清晰可辨；头发、披风和宽袖明显跟随身体运动并自然回落。保持原画角色身份、脸型、服饰、道具、背景和画风。人物始终留在画面内，手指与刚性道具结构稳定；单镜头无运镜、无声音。\n角色：星龙天君·苍曜。\n动作设计：双手握持原画长剑，沿身体前方抬高剑锋一小段，清晰转肩抬头；龙纹衣袖展开。随后沉稳落剑、放松肩部，恢复起始持剑角度。",
-      "status": "awaiting_generation",
-      "revisionStatus": "awaiting_cost_approval"
+      "status": "generated_loop",
+      "revisionStatus": "completed",
+      "video": "eclipse/assets/videos/caelum.mp4",
+      "provider": "Figma Weave / Kling 3 Pro",
+      "qualityReview": "body_motion_visible",
+      "reviewSummary": "托举星核的前臂抬起，衣袖跟随；首尾姿态一致。"
     },
     {
       "id": "seraphine",
@@ -90,8 +102,12 @@
       "output": "eclipse/assets/videos/seraphine.mp4",
       "motion": "将持剑前臂向侧面舒展开，另一只手随身体转动轻抬，抬头回望，红色披风展开；随后收回手臂，剑与头部回到初始位置。",
       "prompt": "制作 5 秒、固定镜头的幻想角色完整循环动画。首帧与尾帧使用同一张参考原画，必须回到相同的手部位置、头部角度、身体姿态、衣摆轮廓和光照。首尾一致不意味着中间静止：0～0.5 秒起势，0.5～2.5 秒完成明显的抬臂、转肩和转头动作，2.5～4.5 秒自然收势回归，4.5～5 秒精确回到参考姿态。运动连贯而自然，动作在普通卡片尺寸也清晰可辨；头发、披风和宽袖明显跟随身体运动并自然回落。保持原画角色身份、脸型、服饰、道具、背景和画风。人物始终留在画面内，手指与刚性道具结构稳定；单镜头无运镜、无声音。\n角色：绯月女皇·瑟拉菲娜。\n动作设计：将持剑前臂向侧面舒展开，另一只手随身体转动轻抬，抬头回望，红色披风展开；随后收回手臂，剑与头部回到初始位置。",
-      "status": "awaiting_generation",
-      "revisionStatus": "awaiting_cost_approval"
+      "status": "generated_loop",
+      "revisionStatus": "completed",
+      "video": "eclipse/assets/videos/seraphine.mp4",
+      "provider": "Figma Weave / Kling 3 Pro",
+      "qualityReview": "body_motion_visible",
+      "reviewSummary": "转身伸臂、披风展开，末尾恢复起始姿态。"
     },
     {
       "id": "ragnar",
@@ -103,8 +119,12 @@
       "output": "eclipse/assets/videos/ragnar.mp4",
       "motion": "握紧剑柄，前臂抬起带动剑身，肩胸明显转向观众，披风掠起；随后将剑放回原来的持握位置，恢复站姿。",
       "prompt": "制作 5 秒、固定镜头的幻想角色完整循环动画。首帧与尾帧使用同一张参考原画，必须回到相同的手部位置、头部角度、身体姿态、衣摆轮廓和光照。首尾一致不意味着中间静止：0～0.5 秒起势，0.5～2.5 秒完成明显的抬臂、转肩和转头动作，2.5～4.5 秒自然收势回归，4.5～5 秒精确回到参考姿态。运动连贯而自然，动作在普通卡片尺寸也清晰可辨；头发、披风和宽袖明显跟随身体运动并自然回落。保持原画角色身份、脸型、服饰、道具、背景和画风。人物始终留在画面内，手指与刚性道具结构稳定；单镜头无运镜、无声音。\n角色：烬日君王·拉格纳。\n动作设计：握紧剑柄，前臂抬起带动剑身，肩胸明显转向观众，披风掠起；随后将剑放回原来的持握位置，恢复站姿。",
-      "status": "awaiting_generation",
-      "revisionStatus": "awaiting_cost_approval"
+      "status": "generated_loop",
+      "revisionStatus": "completed",
+      "video": "eclipse/assets/videos/ragnar.mp4",
+      "provider": "Figma Weave / Kling 3 Pro",
+      "qualityReview": "body_motion_visible",
+      "reviewSummary": "抬剑转肩，披风跟随；首尾姿态一致。"
     },
     {
       "id": "elysium",
@@ -133,8 +153,12 @@
       "output": "eclipse/assets/videos/vega.mp4",
       "motion": "双手托着的星球向胸前抬起，转头注视星球后望向观众，肩部与长发自然跟随；再将双手与星球缓缓放回原位，恢复起始视线。",
       "prompt": "制作 5 秒、固定镜头的幻想角色完整循环动画。首帧与尾帧使用同一张参考原画，必须回到相同的手部位置、头部角度、身体姿态、衣摆轮廓和光照。首尾一致不意味着中间静止：0～0.5 秒起势，0.5～2.5 秒完成明显的抬臂、转肩和转头动作，2.5～4.5 秒自然收势回归，4.5～5 秒精确回到参考姿态。运动连贯而自然，动作在普通卡片尺寸也清晰可辨；头发、披风和宽袖明显跟随身体运动并自然回落。保持原画角色身份、脸型、服饰、道具、背景和画风。人物始终留在画面内，手指与刚性道具结构稳定；单镜头无运镜、无声音。\n角色：织女星君·维加。\n动作设计：双手托着的星球向胸前抬起，转头注视星球后望向观众，肩部与长发自然跟随；再将双手与星球缓缓放回原位，恢复起始视线。",
-      "status": "awaiting_generation",
-      "revisionStatus": "awaiting_cost_approval"
+      "status": "generated_loop",
+      "revisionStatus": "completed",
+      "video": "eclipse/assets/videos/vega.mp4",
+      "provider": "Figma Weave / Kling 3 Pro",
+      "qualityReview": "needs_more_body_motion",
+      "reviewSummary": "首尾姿态一致，但肢体动作幅度不足，以细微表情、发丝与光效为主。"
     },
     {
       "id": "astreus",
@@ -146,8 +170,12 @@
       "output": "eclipse/assets/videos/astreus.mp4",
       "motion": "双手引导星盘向前托出，肩部打开并转头，长袖随手臂舒展；随后将星盘收回原位，手臂、肩部与头部回到开头姿态。",
       "prompt": "制作 5 秒、固定镜头的幻想角色完整循环动画。首帧与尾帧使用同一张参考原画，必须回到相同的手部位置、头部角度、身体姿态、衣摆轮廓和光照。首尾一致不意味着中间静止：0～0.5 秒起势，0.5～2.5 秒完成明显的抬臂、转肩和转头动作，2.5～4.5 秒自然收势回归，4.5～5 秒精确回到参考姿态。运动连贯而自然，动作在普通卡片尺寸也清晰可辨；头发、披风和宽袖明显跟随身体运动并自然回落。保持原画角色身份、脸型、服饰、道具、背景和画风。人物始终留在画面内，手指与刚性道具结构稳定；单镜头无运镜、无声音。\n角色：雷枢星君·阿斯特鲁。\n动作设计：双手引导星盘向前托出，肩部打开并转头，长袖随手臂舒展；随后将星盘收回原位，手臂、肩部与头部回到开头姿态。",
-      "status": "awaiting_generation",
-      "revisionStatus": "awaiting_cost_approval"
+      "status": "generated_loop",
+      "revisionStatus": "completed",
+      "video": "eclipse/assets/videos/astreus.mp4",
+      "provider": "Figma Weave / Kling 3 Pro",
+      "qualityReview": "needs_more_body_motion",
+      "reviewSummary": "首尾姿态一致，星盘有转动；人物肢体动作幅度仍不足。"
     },
     {
       "id": "solara",
@@ -159,8 +187,12 @@
       "output": "eclipse/assets/videos/solara.mp4",
       "motion": "空闲手臂向外展开，持杖手稳住权杖，头部轻转后抬起下颌，金色长发与披风飘扬；随后收回空闲手并恢复初始头部角度。",
       "prompt": "制作 5 秒、固定镜头的幻想角色完整循环动画。首帧与尾帧使用同一张参考原画，必须回到相同的手部位置、头部角度、身体姿态、衣摆轮廓和光照。首尾一致不意味着中间静止：0～0.5 秒起势，0.5～2.5 秒完成明显的抬臂、转肩和转头动作，2.5～4.5 秒自然收势回归，4.5～5 秒精确回到参考姿态。运动连贯而自然，动作在普通卡片尺寸也清晰可辨；头发、披风和宽袖明显跟随身体运动并自然回落。保持原画角色身份、脸型、服饰、道具、背景和画风。人物始终留在画面内，手指与刚性道具结构稳定；单镜头无运镜、无声音。\n角色：曜辉星君·索拉拉。\n动作设计：空闲手臂向外展开，持杖手稳住权杖，头部轻转后抬起下颌，金色长发与披风飘扬；随后收回空闲手并恢复初始头部角度。",
-      "status": "awaiting_generation",
-      "revisionStatus": "awaiting_cost_approval"
+      "status": "generated_loop",
+      "revisionStatus": "completed",
+      "video": "eclipse/assets/videos/solara.mp4",
+      "provider": "Figma Weave / Kling 3 Pro",
+      "qualityReview": "body_motion_visible",
+      "reviewSummary": "抬臂转肩、衣袖展开，末尾恢复起始姿态。"
     },
     {
       "id": "valeria",
