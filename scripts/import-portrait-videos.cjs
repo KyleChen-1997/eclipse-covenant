@@ -2,12 +2,13 @@
 const fs=require('node:fs'),path=require('node:path');
 const root=path.resolve(__dirname,'..');
 // Only register actual, recognizable video containers. Missing files retain existing artwork.
+const legacyFiles={sirius:'hero1.mp4',morwen:'hero3.mp4',thalor:'hero4.mp4',nullion:'hero5.mp4',causalia:'hero6.mp4'};
 function collectVideos(directory,heroes){
   const result={};
   for(const hero of heroes.filter(h=>['UR','SP','SSP'].includes(h.rarity))){
     const choices=['mp4','webm'].map(ext=>hero.id+'.'+ext).filter(file=>fs.existsSync(path.join(directory,file)));
     if(choices.length>1)throw new Error(`${hero.id}: keep only one of .mp4 or .webm to avoid ambiguous selection`);
-    const file=choices[0]||(hero.id==='sirius'&&fs.existsSync(path.join(directory,'hero1.mp4'))?'hero1.mp4':null);
+    const file=choices[0]||(legacyFiles[hero.id]&&fs.existsSync(path.join(directory,legacyFiles[hero.id]))?legacyFiles[hero.id]:null);
     if(!file)continue;
     const target=path.join(directory,file),stat=fs.statSync(target);
     if(!stat.isFile()||stat.size<16||stat.size>=95*1024*1024)throw new Error(`${file}: expected a nonempty video smaller than 95 MiB`);
