@@ -199,7 +199,12 @@
       "postprocess": "Resolution/bitrate optimization only. No dissolve, reverse playback or added motion.",
       "reviewSummary": "首尾姿态一致，但肢体动作幅度不足，以细微表情、发丝与光效为主。",
       "motionReview": "needs_more_body_motion",
-      "loopReview": "First, middle and final frames inspected; beginning and ending character pose visually match."
+      "loopReview": "First, middle and final frames inspected; beginning and ending character pose visually match.",
+      "latestRevision": {
+        "outputUrl": "https://media.weavy.ai/video/upload/v1790929118/uploads/GKtreSHDt0YuNXMdqWBo73um42p1/kefnxmcdposrvhmgt8o9.mp4",
+        "reviewSummary": "新版双手和星球有可见上抬，头部轻俯，首尾姿态接近；转肩幅度仍未达到设计要求。",
+        "metadata": "weave-vega-revision.json"
+      }
     },
     {
       "id": "astreus",

@@ -1,0 +1,22 @@
+{
+  "hero": "vega",
+  "input": {
+    "image": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/vega-v11.png",
+    "end_image_url": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/vega-v11.png",
+    "prompt": "A clearly animated full-body fantasy character performance, one locked shot, 5 seconds. Use the supplied first and last images as the exact starting and ending poses. The woman deliberately lifts BOTH forearms and the celestial orb from waist height to upper-chest height during seconds 0.3–2.0. Her elbows visibly bend; the orb travels upward by roughly one head height. She turns her shoulders about 20 degrees and her head to look at the raised orb. At 2.0–2.5 seconds the lifted pose is unmistakably different from the reference. Her long lavender hair and wide sleeves follow this substantial body movement. During seconds 2.5–4.7 she smoothly lowers both hands and the orb, turns her shoulders and head back, and returns to the exact reference pose. End at the same pose and framing as the first image. This must be a visible arm-and-torso gesture, with physical weight and natural easing, NOT a still illustration with blinking or moving sparkles. Preserve the original face, costume, fingers, orb structure and painted fantasy style. Keep the whole character and hands inside the frame, fixed background, no camera movement, no cuts, no audio.",
+    "negative_prompt": "static arms, frozen torso, only blinking, only particles moving, stationary orb, zoom, camera pan, cuts, extra fingers, extra arms, morphing face, distorted hands, text, watermark",
+    "model": "3.0 Pro",
+    "duration": 5,
+    "cfg_scale": 0.8,
+    "generate_audio": false
+  },
+  "outcome": "completed",
+  "predictionId": "c8ad4d2f-c757-4c64-8a4c-b6f14603e35c",
+  "cost": 82,
+  "outputUrl": "https://media.weavy.ai/video/upload/v1790929118/uploads/GKtreSHDt0YuNXMdqWBo73um42p1/kefnxmcdposrvhmgt8o9.mp4",
+  "gameAsset": "eclipse/assets/videos/vega.mp4",
+  "durationSeconds": 5.041667,
+  "sha256": "80500f768e83d66ab26600e795cde7df12b75b7a29837137e24d779eb1be5eb8",
+  "bytes": 3950849,
+  "reviewSummary": "新版双手和星球有可见上抬，头部轻俯，首尾姿态接近；转肩幅度仍未达到设计要求。"
+}

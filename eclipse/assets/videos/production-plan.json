@@ -157,8 +157,9 @@
       "revisionStatus": "completed",
       "video": "eclipse/assets/videos/vega.mp4",
       "provider": "Figma Weave / Kling 3 Pro",
-      "qualityReview": "needs_more_body_motion",
-      "reviewSummary": "首尾姿态一致，但肢体动作幅度不足，以细微表情、发丝与光效为主。"
+      "qualityReview": "improved_motion_limited_shoulder_turn",
+      "reviewSummary": "新版双手和星球有可见上抬，头部轻俯，首尾姿态接近；转肩幅度仍未达到设计要求。",
+      "latestRevision": "weave-vega-revision.json"
     },
     {
       "id": "astreus",
