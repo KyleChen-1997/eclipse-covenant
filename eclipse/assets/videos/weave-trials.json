@@ -1,0 +1,73 @@
+{
+  "provider": "Figma Weave",
+  "model": "Kling 3 / 3.0 Pro",
+  "approvedCredits": 164,
+  "runs": [
+    {
+      "hero": "astra",
+      "predictionId": "6231c92c-ee3b-493d-907d-9613a53b7191",
+      "cost": 82,
+      "status": "completed",
+      "input": {
+        "image": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/astra-v6.png",
+        "end_image_url": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/astra-v6.png",
+        "prompt": "以输入立绘为唯一角色身份与构图参考，制作精美写实幻想角色的自然待机动画。保持原画的脸、年龄、服饰、道具、画风、背景和人物比例，不新增人物或肢体。固定镜头，无推拉、无平移、无切镜。真实连续运动，不使用整张图片缩放、平移或橡皮拉伸假装人物动作。面部、双手和刚性装备保持结构稳定；眨眼自然且不频繁；衣料与头发具有重量和运动延迟。5 秒，24～30 fps，竖版 2:3，建议 720×1080 或 1024×1536，无配音与音乐。结尾回到与开头接近的姿态、光照和构图，适合无缝循环。无新增文字、水印、镜头抖动、闪屏和突然变脸。\n角色：终焉星神·阿斯忒拉。\n动作设计：手中星核缓慢自转，目光轻轻落向星核后回到观众；长发和衣袖有不同延迟的漂动，远景星尘缓行。",
+        "negative_prompt": "camera movement, cuts, face distortion, extra fingers, morphing, flicker, text, watermark",
+        "model": "3.0 Pro",
+        "duration": 5,
+        "cfg_scale": 0.5,
+        "generate_audio": false
+      },
+      "outputUrl": "https://media.weavy.ai/video/upload/v1790920965/uploads/GKtreSHDt0YuNXMdqWBo73um42p1/ruhge8dogorfybmansg3.mp4",
+      "originalResolution": [
+        1176,
+        1764
+      ],
+      "originalSha256": "dd32a32d88875f87ad2cc1729e3cc1e21dc9c5e8d5dc223d8b55a9ffd4e81ad2",
+      "originalBytes": 13345532,
+      "gameAsset": "eclipse/assets/videos/astra.mp4",
+      "gameSha256": "0edf97f9bf8f0bdc04b235de200b16a4431c22db0ddecc82fd379b6d65bcc403",
+      "gameBytes": 3894395,
+      "optimization": "AVFoundation 1280x720 preset, optimized for network playback",
+      "gameResolution": [
+        852,
+        1280
+      ],
+      "durationSeconds": 5.041667,
+      "review": "Browser playback verified; middle and final frames inspected against original artwork."
+    },
+    {
+      "hero": "elysium",
+      "predictionId": "f443a5ab-dba0-45ec-aefb-a1f551a4821d",
+      "cost": 82,
+      "status": "completed",
+      "input": {
+        "image": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/elysium-sp.png",
+        "end_image_url": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/elysium-sp.png",
+        "prompt": "以输入立绘为唯一角色身份与构图参考，制作精美写实幻想角色的自然待机动画。保持原画的脸、年龄、服饰、道具、画风、背景和人物比例，不新增人物或肢体。固定镜头，无推拉、无平移、无切镜。真实连续运动，不使用整张图片缩放、平移或橡皮拉伸假装人物动作。面部、双手和刚性装备保持结构稳定；眨眼自然且不频繁；衣料与头发具有重量和运动延迟。5 秒，24～30 fps，竖版 2:3，建议 720×1080 或 1024×1536，无配音与音乐。结尾回到与开头接近的姿态、光照和构图，适合无缝循环。无新增文字、水印、镜头抖动、闪屏和突然变脸。\n角色：万象初光·伊璃希娅。\n动作设计：自然眨眼，温柔目光随手边初光移动再回正；长发和轻纱柔顺飘动，光轮缓慢转动，炫光连续变化但不过曝。",
+        "negative_prompt": "camera movement, cuts, face distortion, extra fingers, morphing, flicker, text, watermark",
+        "model": "3.0 Pro",
+        "duration": 5,
+        "cfg_scale": 0.5,
+        "generate_audio": false
+      },
+      "outputUrl": "https://media.weavy.ai/video/upload/v1790920970/uploads/GKtreSHDt0YuNXMdqWBo73um42p1/jdccbckbqychp1ad5zkc.mp4",
+      "originalResolution": [
+        1176,
+        1764
+      ],
+      "originalSha256": "046b492fbe7869e0f542b43e05983e0170c5e20de197d319a526c4640a81bb1a",
+      "originalBytes": 13508498,
+      "gameAsset": "eclipse/assets/videos/elysium.mp4",
+      "gameSha256": "3e1bfc843b5595d90fff733ffc87a1074b7a72c802e6b7003deaf6b730c2d468",
+      "gameBytes": 3877125,
+      "optimization": "AVFoundation 1280x720 preset, optimized for network playback",
+      "gameResolution": [
+        852,
+        1280
+      ],
+      "durationSeconds": 5.041667,
+      "review": "Browser playback verified; middle and final frames inspected against original artwork."
+    }
+  ]
+}

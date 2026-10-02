@@ -55,7 +55,7 @@ test('SSP is a separate highest rarity with its own exact rate and prismatic rev
  assert.equal(C.SP_IDS.length,7);assert.equal(C.SSP_IDS.length,4);
  assert.equal(C.RATES[C.RANKS.indexOf('SP')],.0007);assert.equal(C.RATES[C.RANKS.indexOf('SSP')],.00004);
  const h=C.hero('elysium');assert.equal(h.rarity,'SSP');assert.ok(C.rankOf(h)>C.rankOf(C.hero('ragnar')));
- const html=markup(h,0,1);assert.match(html,/IRIDESCENT ORIGIN · SSP/);assert.match(html,/cinema-rarity">SSP</);assert.match(html,/data-living="SSP"/);assert.equal(styleOf(h),'prism');
+ const html=markup(h,0,1);assert.match(html,/IRIDESCENT ORIGIN · SSP/);assert.match(html,/cinema-rarity">SSP</);assert.match(html,/<video[^>]*muted loop playsinline[^>]*data-video-src="assets\/videos\/elysium.mp4"/);assert.doesNotMatch(html,/data-living="SSP"/);assert.equal(styleOf(h),'prism');
 });
 test('an existing prismatic character keeps inventory, growth, gear and history after the SSP correction',()=>{
  const old=C.freshState();old.owned.elysium=3;old.levels.elysium=37;old.stars.elysium=2;old.experience.elysium=345;old.team=['elysium'];old.history=[{id:'elysium',pull:17,guarantee:''}];old.pulls=17;
