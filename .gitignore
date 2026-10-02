@@ -3,3 +3,8 @@ node_modules/
 dist/
 *.log
 
+
+# Local API credentials; never publish
+/.local-secrets/
+
+/output/caelum-3d/

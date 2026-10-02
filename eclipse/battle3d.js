@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import {GLTFLoader} from './vendor/three/addons/loaders/GLTFLoader.js';
 import {clone as cloneRig} from './vendor/three/addons/utils/SkeletonUtils.js';
 import {SanctumArt} from './battle-art.js';
+import {rigCaelum} from './caelum-rig.js';
 import {HeroAvatar} from './hero-models.js';
 import {RoomEnvironment} from './vendor/three/addons/environments/RoomEnvironment.js';
 
@@ -20,7 +21,7 @@ nullion:['cleric','#bceef2','staff'],
  flora:['cleric','#8bd5a3','flower'],nix:['ranger','#81c4ef','frost'],vesper:['warrior','#cc718d','rose'],
  aurelia:['cleric','#ffda8b','sun'],finch:['monk','#dfbd75','gear'],quill:['ranger','#c7c891','feather'],
  lyra:['cleric','#7ddfda','tide'],orion:['warrior','#aea9ff','storm'],noctis:['wizard','#bf9dff','clock'],
- tessa:['cleric','#91d6bb','flower'],rune:['wizard','#93cafa','frost'],ignis:['warrior','#ff9269','flame'],eirene:['cleric','#d0eec1','sun'],caelum:['warrior','#9fcaff','stars'],
+ tessa:['cleric','#91d6bb','flower'],rune:['wizard','#93cafa','frost'],ignis:['warrior','#ff9269','flame'],eirene:['cleric','#d0eec1','sun'],caelum:['caelum-battle','#9fcaff','stars'],
  pero:['warrior','#c9b28a','shield'],wren:['ranger','#9fd8c9','feather'],keres:['monk','#ffb27a','flame'],vireo:['cleric','#a8e6c0','flower'],sirius:['cleric','#ffd98f','sun'],
  moss:['cleric','#9ed6a0','flower'],mistral:['wizard','#a9d9f2','frost'],cinder:['ranger','#ff9d76','feather'],nyx:['wizard','#e08bb0','rose'],vega:['cleric','#cfa8ff','stars'],
  tam:['monk','#e6c37f','gear'],sela:['ranger','#d8c6ff','gear'],bront:['warrior','#b7a8ff','storm'],fula:['ranger','#cdd6ff','storm'],astreus:['wizard','#c4b4ff','clock'],
@@ -70,23 +71,23 @@ export class BattleScene {
   const names=[...new Set(descriptors.map(d=>d.profile[0]))];let loaded=0;
   await Promise.all(names.map(async n=>{await model(n);this.onProgress(++loaded,names.length);}));
   if(this.disposed)return;
-  for(const d of descriptors)this.addUnit(d,await model(d.profile[0]));
+  for(const d of descriptors){const asset=await model(d.profile[0]);this.addUnit(d,d.data.id==='caelum'&&d.side==='ally'?rigCaelum(asset):asset);}
   this.laidOut=false;this.resize();this.update(this.battle);this.render();
  }
  addUnit({side,data,profile},gltf){
   const root=new THREE.Group(),visual=new THREE.Group(),rig=cloneRig(gltf.scene);visual.add(rig);root.add(visual);this.scene.add(root);
   const height=side==='enemy'?(this.stage.boss?3.7:2.55):2.65;
   rig.traverse(o=>{if(!o.isMesh)return;o.castShadow=true;o.receiveShadow=true;o.frustumCulled=false;
-   const convert=original=>{const isMetal=/sword|staff|weapon|armor/i.test(o.name+' '+original.name),m=new THREE.MeshStandardMaterial({map:original.map||null,color:original.color?.clone()||new THREE.Color('white'),transparent:original.transparent,opacity:original.opacity,alphaTest:original.alphaTest||0,side:original.side,metalness:isMetal?.68:profile[0]==='warrior'?.38:.08,roughness:isMetal?.3:.65,envMapIntensity:.75});m.name=original.name+'-lit';if(side==='ally')m.color.lerp(new THREE.Color(profile[1]),.1);else m.color.lerp(new THREE.Color(this.palette[1]),.46);return m;};o.material=Array.isArray(o.material)?o.material.map(convert):convert(o.material);
+   const convert=original=>{if(data.id==='caelum'&&side==='ally')return original.clone();const isMetal=/sword|staff|weapon|armor/i.test(o.name+' '+original.name),m=new THREE.MeshStandardMaterial({map:original.map||null,color:original.color?.clone()||new THREE.Color('white'),transparent:original.transparent,opacity:original.opacity,alphaTest:original.alphaTest||0,side:original.side,metalness:isMetal?.68:profile[0]==='warrior'?.38:.08,roughness:isMetal?.3:.65,envMapIntensity:.75});m.name=original.name+'-lit';if(side==='ally')m.color.lerp(new THREE.Color(profile[1]),.1);else m.color.lerp(new THREE.Color(this.palette[1]),.46);return m;};o.material=Array.isArray(o.material)?o.material.map(convert):convert(o.material);
   });
   const mixer=new THREE.AnimationMixer(rig),clips=new Map(gltf.animations.map(a=>[a.name.toLowerCase(),a]));
   const key=side+'-'+data.id,color=profile[1],unit={key,side,data,root,rig,mixer,clips,height,color,profile,headBone:null,home:v(),facing:0,action:null,returnAt:0,dead:false,deathAt:Infinity,flash:0};
   this.units.set(key,unit);
   const label=document.createElement('article');label.className='world-unit '+(side==='enemy'?'hostile':'friendly');label.dataset.unit=key;this.labels.append(label);unit.label=label;
-  this.play(unit,['idle_weapon','idle'],true);mixer.update(Math.abs(Math.sin(this.units.size))*1.5);if(side==='ally'){rig.traverse(o=>{if(o.isBone&&o.name.toLowerCase().startsWith('head'))unit.headBone=o;});unit.headBone?.scale.setScalar(.8);}
+  this.play(unit,['idle_weapon','idle'],true);mixer.update(Math.abs(Math.sin(this.units.size))*1.5);if(side==='ally'&&data.id!=='caelum'){rig.traverse(o=>{if(o.isBone&&o.name.toLowerCase().startsWith('head'))unit.headBone=o;});unit.headBone?.scale.setScalar(.8);}
   rig.updateWorldMatrix(true,true);rig.traverse(o=>{if(o.isSkinnedMesh)o.skeleton.update();});
   const posed=new THREE.Box3().setFromObject(rig,true),size=posed.getSize(v()),center=posed.getCenter(v()),scale=height/size.y;
-  visual.scale.set(scale*(side==='ally'?.9:1),scale,scale*(side==='ally'?.92:1));visual.position.set(-center.x*scale,-posed.min.y*scale+.12,-center.z*scale);this.cosmetics(unit);if(side==='ally')unit.avatar=new HeroAvatar(unit,this.core);else this.world.adorn(unit,2);
+  visual.scale.set(scale*(side==='ally'?.9:1),scale,scale*(side==='ally'?.92:1));visual.position.set(-center.x*scale,-posed.min.y*scale+.12,-center.z*scale);this.cosmetics(unit);if(side==='ally'&&data.id!=='caelum')unit.avatar=new HeroAvatar(unit,this.core);else if(side==='enemy')this.world.adorn(unit,2);
  }
  cosmetics(u){
   const h=u.side==='ally'?this.core.hero(u.data.id):null,rank=h?this.core.RANKS.indexOf(h.rarity):2,color=u.color;
