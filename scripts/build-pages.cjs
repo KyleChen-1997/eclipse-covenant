@@ -16,7 +16,7 @@ for (const entry of fs.readdirSync(source, { withFileTypes: true })) {
     fs.copyFileSync(path.join(source, entry.name), path.join(gameOutput, entry.name));
   }
 }
-const media = new Set(['.png', '.jpg', '.jpeg', '.webp', '.svg', '.wav', '.mp3', '.ogg', '.glb', '.gltf', '.bin', '.woff', '.woff2']);
+const media = new Set(['.mp4', '.webm', '.png', '.jpg', '.jpeg', '.webp', '.svg', '.wav', '.mp3', '.ogg', '.glb', '.gltf', '.bin', '.woff', '.woff2']);
 fs.cpSync(path.join(source, 'assets'), path.join(gameOutput, 'assets'), {
   recursive: true,
   filter(file) {

@@ -8,9 +8,9 @@ function prepared(ids,level=1){const s=C.freshState();ids.forEach(id=>{s.owned[i
 function simulate(s,stage=0){const b=C.battle(s,stage);let steps=0;while(!['win','lose'].includes(b.phase)&&steps++<2000){const r=C.autoStep(b);assert.ok(!r.error);b.allies.forEach(a=>{assert.ok(a.hp>=0&&a.hp<=a.maxHp);assert.ok(a.shield>=0);});assert.ok(b.ap>=0&&b.ap<=7);}assert.ok(steps<2000);return b;}
 function clockHarness(){let now=0,id=0;const timers=new Map();return {clock:()=>now,setTimer:(fn,delay)=>{timers.set(++id,{at:now+delay,fn});return id;},clearTimer:i=>timers.delete(i),advance(ms){const end=now+ms;for(let n=0;n<10000;n++){const next=[...timers].sort((a,b)=>a[1].at-b[1].at)[0];if(!next||next[1].at>end)break;now=next[1].at;timers.delete(next[0]);next[1].fn();}now=end;},pending:()=>timers.size};}
 
-test('100 distinct heroes with the expanded rarity spread; every hero has illustration and skill',()=>{
-  assert.equal(C.HEROES.length,100);assert.equal(new Set(C.HEROES.map(h=>h.id)).size,100);
-  assert.deepEqual(C.RANKS.map(r=>C.HEROES.filter(h=>h.rarity===r).length),[23,23,22,21,8,2,1]);
+test('108 distinct heroes with the expanded rarity spread; every hero has illustration and skill',()=>{
+  assert.equal(C.HEROES.length,108);assert.equal(new Set(C.HEROES.map(h=>h.id)).size,108);
+  assert.deepEqual(C.RANKS.map(r=>C.HEROES.filter(h=>h.rarity===r).length),[23,23,22,21,8,7,4]);
   C.HEROES.forEach(h=>assert.ok((h.sheet||h.art)&&h.kind&&h.skill&&h.power>0&&h.name&&h.title&&h.story&&h.quote));
 });
 test('each rarity selects every hero of that rarity using an independent uniform choice',()=>{

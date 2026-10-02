@@ -15,11 +15,11 @@
   HEROES.forEach(h => { if (portraitV6.has(h.id)) h.art = h.id + '-v6'; });
   const GEAR_RANKS = ['N', 'R', 'SR', 'SSR', 'UR', 'SP', 'SSP'];
   const RANKS = [...GEAR_RANKS];
-  const RATES = [0.47979, 0.32, 0.16, 0.035, 0.005, 0.0002, 0.00001];
+  const RATES = [0.47926, 0.32, 0.16, 0.035, 0.005, 0.0007, 0.00004];
   // One integer ticket per 1/100,000 keeps both SP and SSP odds exact.
-  const SUMMON_WEIGHTS = [47979,32000,16000,3500,500,10,10,1];
-  const SP_IDS = ['seraphine','ragnar'];
-  const SSP_IDS = ['elysium'];
+  const SUMMON_WEIGHTS = [47926,32000,16000,3500,500,10,10,10,10,10,10,10,1,1,1,1];
+  const SP_IDS = HEROES.filter(h=>h.rarity==='SP').map(h=>h.id);
+  const SSP_IDS = HEROES.filter(h=>h.rarity==='SSP').map(h=>h.id);
   const SECRET_IDS = [...SP_IDS, ...SSP_IDS];
   const rankOf = h => RANKS.indexOf(h.rarity);
   const sealed = (s,h) => rankOf(h)>=5&&!s.owned[h.id];
@@ -33,6 +33,8 @@
   }
   const P=typeof module!=='undefined'&&module.exports?require('./progression.js'):root.EclipseProgression;
   const {STAGES,REGIONS,EQUIPMENT,SLOT_NAMES,DROP_RATES,DUNGEONS}=P;
+  const Story=typeof module!=='undefined'&&module.exports?require('./story.js'):root.EclipseStory;
+  if(Story){STAGES.forEach((s,i)=>{s.desc=Story.scenes[i].before;s.subtitle=Story.scenes[i].title;});REGIONS.forEach((r,i)=>r.desc=Story.chapters[i][2]);STAGES[47].enemies[STAGES[47].enemies.length-1].name='旧契执行体';}
   const G=typeof module!=='undefined'&&module.exports?require('./gear-system.js'):root.EclipseGear;
   const Inventory=typeof module!=='undefined'&&module.exports?require('./inventory.js'):root.EclipseInventory;
   const MAX_SUMMON_COUNT=10000;
@@ -42,7 +44,7 @@
   const hero = id => HEROES.find(h => h.id === id);
   const clone = x => JSON.parse(JSON.stringify(x));
   function freshState() {
-    return { version: 1, tickets: 200, dust: 300, owned: { milo: 1, lark: 1, scarlet: 1 }, levels: {milo:1,lark:1,scarlet:1}, team: ['milo','scarlet','lark'], pity: { sr:0, ssr:0, ur:0 }, pulls:0, clears:[], dungeonClears:[], history:[], gifts:[], stars:{}, gear:[], gearBatches:[], loadouts:{}, nextGearId:1, experience:{}, muted:false, audio:{volume:65,music:25,musicEnabled:true} };
+    return { version: 1, tickets: 200, dust: 300, owned: { milo: 1, lark: 1, scarlet: 1 }, levels: {milo:1,lark:1,scarlet:1}, team: ['milo','scarlet','lark'], pity: { sr:0, ssr:0, ur:0 }, pulls:0, clears:[], dungeonClears:[], history:[], gifts:[], stars:{}, gear:[], gearBatches:[], loadouts:{}, nextGearId:1, experience:{}, muted:false, battleSettings:{autoSkip:false}, storyChoices:{}, audio:{volume:65,music:25,musicEnabled:true} };
   }
   function restoreState(raw) {
     const s = freshState();
@@ -68,6 +70,7 @@
     const assigned=new Set();for(const h of HEROES){if(!s.owned[h.id])continue;for(const slot of Object.keys(SLOT_NAMES)){const uid=raw.loadouts?.[h.id]?.[slot],g=Inventory.get(s,uid);if(g&&equipment(g.template).slot===slot&&!assigned.has(uid)){Inventory.materialize(s,uid);(s.loadouts[h.id] ||= {})[slot]=uid;assigned.add(uid);}}}
     s.audio={volume:num(raw.audio?.volume,65,100),music:num(raw.audio?.music,25,100),musicEnabled:raw.audio?.musicEnabled!==false};
     s.muted=raw.muted===true;
+    s.battleSettings={autoSkip:raw.battleSettings?.autoSkip===true};s.storyChoices=Story?.restored(raw.storyChoices)||{};
     return s;
   }
   function drawPreview(s,count){
@@ -407,6 +410,7 @@
     }
     s.tickets+=result.tickets;s.dust+=result.dust;onProgress(count,count);return result;
   }
-  const api={availableHeroes,dungeonReadiness,Inventory,MAX_SUMMON_COUNT,drawPreview,Gear:G,DUNGEONS,battleStage,finalReadiness,gearEnhancement,enhanceGear,GEAR_RANKS,SUMMON_WEIGHTS,SP_IDS,SSP_IDS,SECRET_IDS,rollSummon,rankOf,sealed,gearStats,gearAscension,ascendGear,claimDawn,REGIONS,EQUIPMENT,SLOT_NAMES,DROP_RATES,MAX_STARS,MAX_SWEEP_ROUNDS,sweepPreview,sweep,equipment,levelCap,ascension,ascend,addGear,gearOwner,equip,unequip,equipped,claimArmory,HEROES,RANKS,RATES,STAGES,hero,freshState,restoreState,draw,upgrade,setTeam,stats,battle,action,enemyTurn,enemyStep,autoChoice,autoStep,recommendTeam,claimExpansion,claim,experienceNeeded,experienceProgress,gainExperience,clone};
+  function nextExpedition(s,b){if(b.phase!=='win')return null;const stage=b.stage+1,def=(b.mode==='dungeon'?DUNGEONS:STAGES)[stage];if(!def)return null;const check=battle(s,stage,b.mode);return {stage,mode:b.mode,name:def.name,ready:!check.error,error:check.error};}
+  const api={Story,nextExpedition,availableHeroes,dungeonReadiness,Inventory,MAX_SUMMON_COUNT,drawPreview,Gear:G,DUNGEONS,battleStage,finalReadiness,gearEnhancement,enhanceGear,GEAR_RANKS,SUMMON_WEIGHTS,SP_IDS,SSP_IDS,SECRET_IDS,rollSummon,rankOf,sealed,gearStats,gearAscension,ascendGear,claimDawn,REGIONS,EQUIPMENT,SLOT_NAMES,DROP_RATES,MAX_STARS,MAX_SWEEP_ROUNDS,sweepPreview,sweep,equipment,levelCap,ascension,ascend,addGear,gearOwner,equip,unequip,equipped,claimArmory,HEROES,RANKS,RATES,STAGES,hero,freshState,restoreState,draw,upgrade,setTeam,stats,battle,action,enemyTurn,enemyStep,autoChoice,autoStep,recommendTeam,claimExpansion,claim,experienceNeeded,experienceProgress,gainExperience,clone};
   if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.EclipseCore=api;
 })(typeof globalThis!=='undefined'?globalThis:this);

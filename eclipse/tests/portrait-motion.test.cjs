@@ -3,7 +3,7 @@ const C=require('../core.js'),M=require('../portrait-motion.js');
 
 test('every SSR, UR, SP and SSP portrait has calibrated eyes inside its head region',()=>{
  const heroes=C.HEROES.filter(h=>h.art&&['SSR','UR','SP','SSP'].includes(h.rarity));
- assert.equal(heroes.length,32);
+ assert.equal(heroes.length,40);
  for(const h of heroes){
   const p=M.profiles[h.id];assert.ok(p,h.id);
   assert.equal(p.eyes.length,2);assert.equal(p.hair.length,2);

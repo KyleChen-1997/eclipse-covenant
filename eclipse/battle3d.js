@@ -6,6 +6,14 @@ import {HeroAvatar} from './hero-models.js';
 import {RoomEnvironment} from './vendor/three/addons/environments/RoomEnvironment.js';
 
 const profiles={
+valeria:['wizard','#eb5475','staff'],
+severin:['wizard','#f28c61','staff'],
+morwen:['wizard','#ed6d97','staff'],
+thalor:['warrior','#ed5774','staff'],
+aevor:['warrior','#fb7778','sword'],
+anamnesis:['cleric','#d3efff','staff'],
+causalia:['cleric','#edceff','staff'],
+nullion:['cleric','#bceef2','staff'],
  seraphine:['wizard','#ff4569','orb'],ragnar:['warrior','#ff604d','sword'],elysium:['cleric','#b8f8ff','staff'],
  milo:['wizard','#8ebfb0','lantern'],lark:['ranger','#78d9c4','feather'],scarlet:['monk','#ed6f65','flame'],
  selene:['warrior','#adceff','moon'],astra:['cleric','#d7b1ff','stars'],bran:['warrior','#b9976b','shield'],

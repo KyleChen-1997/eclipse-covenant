@@ -1,0 +1,69 @@
+{
+  "tool": "image_gen.imagegen (built-in)",
+  "assets": [
+    {
+      "id": "valeria",
+      "name": "维蕾雅",
+      "rarity": "SP",
+      "path": "eclipse/assets/heroes/valeria-v12.png",
+      "prompt": "Create one original premium fantasy collectible game character illustration, vertical 2:3, 1024x1536. an adult woman with short dark burgundy hair, crimson judicial coat, gold balance-shaped scepter and sealed red contracts. Character 维蕾雅, 赤契执衡. Story: 她起草过保护边境的契约，也亲自批准过它们的豁免。她愿意交出自己的权位，前提是接任者能回答明天由谁供光。. Semi-realistic painterly anime, refined adult facial anatomy, exquisitely crafted layered clothing, individually recognizable silhouette, believable hands, portrait from head to below knees, head centered near x50% y18%, unobscured eyes. Transcendent crimson rarity: dramatic blood-red magical aura, intricate regal metalwork, crimson celestial phenomenon. Flowing hair and loose fabric for subtle animated portrait. Atmospheric ruined star civilization, rich detailed environment subordinated to character. No text, no letters, no UI, no card border, no watermark. Fully clothed.",
+      "sha256": "c04b29bb0f35abe0d199ca0a5c8fa0a46632167168ac33424d0afa6634677023"
+    },
+    {
+      "id": "severin",
+      "name": "塞维林",
+      "rarity": "SP",
+      "path": "eclipse/assets/heroes/severin-v12.png",
+      "prompt": "Create one original premium fantasy collectible game character illustration, vertical 2:3, 1024x1536. a mature male financier with swept-back silver hair, trimmed beard, black crimson brocade overcoat, molten gold ledger and ruby cane. Character 塞维林, 烬金债主. Story: 他以粮食和供暖借款托住边境，债契却让这些城邦失去矿权。他暗中资助归名派，准备在旧秩序崩溃后接管星核运输。. Semi-realistic painterly anime, refined adult facial anatomy, exquisitely crafted layered clothing, individually recognizable silhouette, believable hands, portrait from head to below knees, head centered near x50% y18%, unobscured eyes. Transcendent crimson rarity: dramatic blood-red magical aura, intricate regal metalwork, crimson celestial phenomenon. Flowing hair and loose fabric for subtle animated portrait. Atmospheric ruined star civilization, rich detailed environment subordinated to character. No text, no letters, no UI, no card border, no watermark. Fully clothed.",
+      "sha256": "1a882fc42f8428ba5356098f943151df295411d7d287ef7740517e2921cd8e74"
+    },
+    {
+      "id": "morwen",
+      "name": "莫薇恩",
+      "rarity": "SP",
+      "path": "eclipse/assets/heroes/morwen-v12.png",
+      "prompt": "Create one original premium fantasy collectible game character illustration, vertical 2:3, 1024x1536. an adult woman with long black hair, deep red velvet traveling gown, silver mourning crown, floating crimson name ribbons and a luminous archive lantern. Character 莫薇恩, 归名女爵. Story: 她替失名者保存身份证据，也用这些档案交换议会的庇护。公开真相可以归还许多人的故乡，却会暴露仍在潜逃的人。. Semi-realistic painterly anime, refined adult facial anatomy, exquisitely crafted layered clothing, individually recognizable silhouette, believable hands, portrait from head to below knees, head centered near x50% y18%, unobscured eyes. Transcendent crimson rarity: dramatic blood-red magical aura, intricate regal metalwork, crimson celestial phenomenon. Flowing hair and loose fabric for subtle animated portrait. Atmospheric ruined star civilization, rich detailed environment subordinated to character. No text, no letters, no UI, no card border, no watermark. Fully clothed.",
+      "sha256": "54d97dc30d70b08b0038d5fb1db3f129bfe6a38949c5105e5c3bd1b350ae271f"
+    },
+    {
+      "id": "thalor",
+      "name": "塔洛尔",
+      "rarity": "SP",
+      "path": "eclipse/assets/heroes/thalor-v12.png",
+      "prompt": "Create one original premium fantasy collectible game character illustration, vertical 2:3, 1024x1536. an adult male ocean sovereign with long dark teal hair, black and crimson coral armor, trident, flowing red cape and blood-red tidal rings. Character 塔洛尔, 深潮王侯. Story: 他以红潮封住海底裂隙，要求沿岸各城以水权偿还守护。德卢格曾是他的盟友，如今拒绝再让下游为上游支付永远的贡税。. Semi-realistic painterly anime, refined adult facial anatomy, exquisitely crafted layered clothing, individually recognizable silhouette, believable hands, portrait from head to below knees, head centered near x50% y18%, unobscured eyes. Transcendent crimson rarity: dramatic blood-red magical aura, intricate regal metalwork, crimson celestial phenomenon. Flowing hair and loose fabric for subtle animated portrait. Atmospheric ruined star civilization, rich detailed environment subordinated to character. No text, no letters, no UI, no card border, no watermark. Fully clothed.",
+      "sha256": "c0c4bd8acf4f7406c45b7e9fd09926304fc6c6b753b1e74716641b7ac6a91ff2"
+    },
+    {
+      "id": "aevor",
+      "name": "艾沃尔",
+      "rarity": "SP",
+      "path": "eclipse/assets/heroes/aevor-v12.png",
+      "prompt": "Create one original premium fantasy collectible game character illustration, vertical 2:3, 1024x1536. an adult male executioner with short ash-white hair, black crimson military coat, broken clock crown and an immense red-glowing clockwork sword. Character 艾沃尔, 断钟行刑. Story: 他曾为星律院剪除危险的时间分支，某次命令中却看见自己的家人。他带走证据加入无名议会，又因拒绝袭击医院而遭同伴追杀。. Semi-realistic painterly anime, refined adult facial anatomy, exquisitely crafted layered clothing, individually recognizable silhouette, believable hands, portrait from head to below knees, head centered near x50% y18%, unobscured eyes. Transcendent crimson rarity: dramatic blood-red magical aura, intricate regal metalwork, crimson celestial phenomenon. Flowing hair and loose fabric for subtle animated portrait. Atmospheric ruined star civilization, rich detailed environment subordinated to character. No text, no letters, no UI, no card border, no watermark. Fully clothed.",
+      "sha256": "b53c7afd42bc7356ec8fce79103caa5b820d4d65b92f1491061687edde7dd334"
+    },
+    {
+      "id": "anamnesis",
+      "name": "阿纳弥斯",
+      "rarity": "SSP",
+      "path": "eclipse/assets/heroes/anamnesis-v12.png",
+      "prompt": "Create one original premium fantasy collectible game character illustration, vertical 2:3, 1024x1536. an adult woman with long pearlescent lavender hair, opalescent white layered robes, rainbow crystal halo and translucent scrolls bearing abstract light marks. Character 阿纳弥斯, 万名见证. Story: 她记得每一个曾被世界忘记的名字，却不能替任何人证明自己应该被优先拯救。她拒绝成为统治者的名册，愿将完整档案交给失名者共同保管。. Semi-realistic painterly anime, refined adult facial anatomy, exquisitely crafted layered clothing, individually recognizable silhouette, believable hands, portrait from head to below knees, head centered near x50% y18%, unobscured eyes. Highest celestial rarity: breathtaking iridescent spectral radiance, rainbow refraction, pearl and dark contrasts, awe-inspiring cosmic architecture. Flowing hair and loose fabric for subtle animated portrait. Atmospheric ruined star civilization, rich detailed environment subordinated to character. No text, no letters, no UI, no card border, no watermark. Fully clothed.",
+      "sha256": "4c14794c73f685fdf4a593ca14b8005a5cd57cb0343cf9afd4d30ea9ca076a95"
+    },
+    {
+      "id": "causalia",
+      "name": "卡乌莎",
+      "rarity": "SSP",
+      "path": "eclipse/assets/heroes/causalia-v12.png",
+      "prompt": "Create one original premium fantasy collectible game character illustration, vertical 2:3, 1024x1536. an adult woman with dark violet hair fading to opal, black pearl and iridescent silk gown, prismatic woven rings and luminous threads stretching between open hands. Character 卡乌莎, 因果织母. Story: 她能看见每个选择转移给他人的代价。千年前她协助织成初代星契，至今仍背负其中的债；她提供改写的方法，却无法替任何城邦签署同意。. Semi-realistic painterly anime, refined adult facial anatomy, exquisitely crafted layered clothing, individually recognizable silhouette, believable hands, portrait from head to below knees, head centered near x50% y18%, unobscured eyes. Highest celestial rarity: breathtaking iridescent spectral radiance, rainbow refraction, pearl and dark contrasts, awe-inspiring cosmic architecture. Flowing hair and loose fabric for subtle animated portrait. Atmospheric ruined star civilization, rich detailed environment subordinated to character. No text, no letters, no UI, no card border, no watermark. Fully clothed.",
+      "sha256": "d5dd4128eaa970bbfc3c9451725f6b922ca7d1c747835883ba19e0466c081709"
+    },
+    {
+      "id": "nullion",
+      "name": "零谕",
+      "rarity": "SSP",
+      "path": "eclipse/assets/heroes/nullion-v12.png",
+      "prompt": "Create one original premium fantasy collectible game character illustration, vertical 2:3, 1024x1536. an androgynous adult male with long ivory hair, black and white ceremonial armor with rainbow edges, floating broken prismatic chains and a split crystal crown. Character 零谕, 无界初约. Story: 祂诞生于第一份被双方自愿解除的誓约。祂能够松开世界的束缚，也会一并解除保护；议长奉祂为解放的证明，祂却拒绝替议长决定谁该承担黑暗。. Semi-realistic painterly anime, refined adult facial anatomy, exquisitely crafted layered clothing, individually recognizable silhouette, believable hands, portrait from head to below knees, head centered near x50% y18%, unobscured eyes. Highest celestial rarity: breathtaking iridescent spectral radiance, rainbow refraction, pearl and dark contrasts, awe-inspiring cosmic architecture. Flowing hair and loose fabric for subtle animated portrait. Atmospheric ruined star civilization, rich detailed environment subordinated to character. No text, no letters, no UI, no card border, no watermark. Fully clothed.",
+      "sha256": "66b173e14742917769eb03b635db9c34b0c1ab4c8807c7d0607503e75a79cbdb"
+    }
+  ]
+}

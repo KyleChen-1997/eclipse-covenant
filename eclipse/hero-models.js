@@ -4,6 +4,14 @@ const V=(x=0,y=0,z=0)=>new THREE.Vector3(x,y,z);
 const faceTexture=new THREE.TextureLoader().load('assets/characters/face-albedo-v8.png');faceTexture.colorSpace=THREE.SRGBColorSpace;
 // Art direction follows each card's hair, silhouette, metalwork and signature prop.
 export const HERO_LOOKS={
+valeria:{"hair": "#44212e", "cloth": "#eb5475", "dark": "#251b30", "metal": "#c6b28c", "gem": "#eb5475", "long": false, "male": false, "robe": true, "crown": "star", "prop": "scepter"},
+severin:{"hair": "#dfd3b8", "cloth": "#f28c61", "dark": "#251b30", "metal": "#c6b28c", "gem": "#f28c61", "long": false, "male": true, "robe": true, "crown": "star", "prop": "orb"},
+morwen:{"hair": "#20182c", "cloth": "#ed6d97", "dark": "#251b30", "metal": "#c6b28c", "gem": "#ed6d97", "long": true, "male": false, "robe": true, "crown": "star", "prop": "lantern"},
+thalor:{"hair": "#235857", "cloth": "#ed5774", "dark": "#251b30", "metal": "#c6b28c", "gem": "#ed5774", "long": true, "male": true, "robe": true, "crown": "star", "prop": "spear"},
+aevor:{"hair": "#dddce8", "cloth": "#fb7778", "dark": "#251b30", "metal": "#c6b28c", "gem": "#fb7778", "long": false, "male": true, "robe": true, "crown": "star", "prop": "greatsword"},
+anamnesis:{"hair": "#eff0f5", "cloth": "#d9d1e4", "dark": "#251b30", "metal": "#c6b28c", "gem": "#d3efff", "long": true, "male": false, "robe": true, "crown": "star", "prop": "orb", "wings": "prism"},
+causalia:{"hair": "#756090", "cloth": "#d9d1e4", "dark": "#251b30", "metal": "#c6b28c", "gem": "#edceff", "long": true, "male": false, "robe": true, "crown": "star", "prop": "scepter", "wings": "prism"},
+nullion:{"hair": "#eee5dd", "cloth": "#d9d1e4", "dark": "#251b30", "metal": "#c6b28c", "gem": "#bceef2", "long": true, "male": true, "robe": true, "crown": "star", "prop": "orb", "wings": "prism"},
  astra:{hair:'#d2c7e4',cloth:'#242031',dark:'#16131e',metal:'#c8af79',gem:'#bc9cfa',robe:true,long:true,crown:'star',prop:'orb',wings:'dark'},
  aurelia:{hair:'#f0d79e',cloth:'#d0ba83',dark:'#423223',metal:'#deb866',gem:'#ffd68a',robe:true,long:true,crown:'sun',prop:'scepter',wings:'gold'},
  noctis:{hair:'#262333',cloth:'#241c38',dark:'#111722',metal:'#b5aec9',gem:'#b897ed',male:true,long:true,crown:'moon',prop:'clock',robe:true},
