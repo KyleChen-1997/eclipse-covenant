@@ -1,0 +1,14 @@
+<!doctype html><meta charset="utf-8"><title>百人立绘校验</title><style>body{margin:16px;background:#101322;color:#eedcba;font:14px system-ui}nav{display:flex;gap:20px;margin-bottom:16px}main{display:grid;grid-template-columns:repeat(3,320px);gap:16px}article{position:relative}h2{font-size:16px;height:25px;margin:0}figure{position:relative;margin:0;width:320px;height:480px;overflow:hidden}img{width:320px;height:480px;display:block}.face figure{height:180px}.landmark{position:absolute;width:5px;height:5px;border:1px solid red;border-radius:50%;transform:translate(-50%,-50%)}output{display:block}a{color:#adbdff}</style><nav></nav><main></main><script src="../roster.js"></script><script src="../portrait-motion.js"></script><script>
+const params=new URLSearchParams(location.search),tier=params.get('tier'),page=Number(params.get('page')||0),faces=params.has('faces');
+const heroes=EclipseRoster.filter(h=>h.art?.endsWith('-v11')&&(!tier||h.rarity===tier));
+const size=faces?12:12;document.body.classList.toggle('face',faces);
+document.querySelector('nav').innerHTML=Array.from({length:Math.ceil(heroes.length/size)},(_,i)=>`<a href="?page=${i}${tier?'&tier='+tier:''}${faces?'&faces':''}">第 ${i+1} 页</a>`).join('');
+document.querySelector('main').innerHTML=heroes.slice(page*size,(page+1)*size).map(h=>`<article><h2>${h.rarity} ${h.name} / ${h.id}</h2><figure><img src="../assets/heroes/${h.art}.png" alt="${h.name}" onload="this.closest('article').querySelector('output').textContent='PASS · '+this.naturalWidth+' × '+this.naturalHeight" onerror="this.closest('article').querySelector('output').textContent='MISSING'"></figure><output>加载中</output></article>`).join('');
+</script>
+<script>
+if(!faces){const style=document.createElement('style');style.textContent='main{grid-template-columns:repeat(6,196px);gap:12px}figure,img{width:196px;height:294px}h2{font-size:12px;height:20px}output{font-size:10px}';document.head.append(style);}
+if(faces&&params.has('marks'))for(const [i,node]of [...document.querySelectorAll('figure')].entries()){
+ const h=heroes[page*size+i],rig=EclipsePortraitMotion.profiles[h.id];if(!rig)continue;
+ for(const e of rig.eyes){const dot=document.createElement('i');dot.className='landmark';dot.style.left=e[0]*320+'px';dot.style.top=e[1]*480+'px';node.append(dot);}
+}
+</script>

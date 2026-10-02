@@ -15,8 +15,8 @@
 
 <p>
 <a href="https://kylechen-1997.github.io/eclipse-covenant/"><img src="https://img.shields.io/badge/%E2%96%B6%20%E7%AB%8B%E5%8D%B3%E6%B8%B8%E7%8E%A9-%E5%9C%A8%E7%BA%BF%E8%AF%95%E7%8E%A9-8b5cf6?style=for-the-badge" alt="立即游玩"></a>
-<img src="https://img.shields.io/badge/%E8%AF%95%E7%8E%A9%E7%89%88%E6%9C%AC-V9-eab308?style=for-the-badge" alt="试玩版本 V9">
-<img src="https://img.shields.io/badge/124%20%E9%A1%B9%E6%B5%8B%E8%AF%95-%E5%85%A8%E9%83%A8%E9%80%9A%E8%BF%87-22c55e?style=for-the-badge" alt="124 项测试全部通过">
+<img src="https://img.shields.io/badge/%E8%AF%95%E7%8E%A9%E7%89%88%E6%9C%AC-V11-eab308?style=for-the-badge" alt="试玩版本 V11">
+<img src="https://img.shields.io/badge/126%20%E9%A1%B9%E6%B5%8B%E8%AF%95-%E5%85%A8%E9%83%A8%E9%80%9A%E8%BF%87-22c55e?style=for-the-badge" alt="126 项测试全部通过">
 <img src="https://img.shields.io/badge/%E8%BF%90%E8%A1%8C%E6%97%B6%E4%BE%9D%E8%B5%96-%E9%9B%B6-0ea5e9?style=for-the-badge" alt="运行时依赖为零">
 </p>
 
@@ -49,6 +49,7 @@
 <img src="eclipse/qa/visual-v6-cards.png" width="100%" alt="契约图鉴">
 
 - **七档稀有度**：N / R / SR / SSR / UR / SP / SSP，每一位都有独立技能、实时三维形象与卡面设计。
+- **完整百人名录**：新增 77 张 1024 × 1536 独立角色立绘，32 位 SSR 及以上角色拥有动态展示，图鉴采用按需加载。
 - **会呼吸的立绘**：高稀有度角色发丝轻摆、自然眨眼、衣摆随手势摇曳，背景纹丝不动——仿佛真的「活着」。
 - **五人编队**：前排承伤、后排输出；领域、时停、回生、神佑、群攻、群体灼烧……自由搭配。
 - **重复也有价值**：重复角色保留为升星材料，并额外奉上星尘；参战全员共享经验，退场成员也不例外。
@@ -140,7 +141,7 @@ npm run build   # 生成 dist/ 静态网站
 
 - **零运行时依赖**：原生 JavaScript + 内置 Three.js 0.160.1（MIT），无 CDN、无后端、无框架。
 - **全本地素材**：11 种音效为本项目离线合成（本地 PCM 素材叠加 Web Audio），立绘、装备原画与三维模型均随仓库分发。
-- **可验证**：124 项测试覆盖抽卡概率与保底、自动战斗、经验与升星、批量结算一致性、存档迁移与装备词条。
+- **可验证**：126 项测试覆盖抽卡概率与保底、自动战斗、经验与升星、批量结算一致性、存档迁移与装备词条。
 - **素材来源**：原画见 `eclipse/assets/visual/`，CC0 骨骼与怪物记录于 `eclipse/assets/models/manifest.json`，音频见 `eclipse/assets/audio/README.md`。
 
 </details>
