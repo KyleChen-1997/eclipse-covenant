@@ -1,23 +1,30 @@
 const test=require('node:test');
 const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
 const C=require('../core.js');
 const BattlePlayer=require('../battle-player.js');
 function prepared(ids,level=1){const s=C.freshState();ids.forEach(id=>{s.owned[id]=1;s.levels[id]=level;});s.team=ids;s.clears=[0,1];return s;}
 function simulate(s,stage=0){const b=C.battle(s,stage);let steps=0;while(!['win','lose'].includes(b.phase)&&steps++<2000){const r=C.autoStep(b);assert.ok(!r.error);b.allies.forEach(a=>{assert.ok(a.hp>=0&&a.hp<=a.maxHp);assert.ok(a.shield>=0);});assert.ok(b.ap>=0&&b.ap<=7);}assert.ok(steps<2000);return b;}
 function clockHarness(){let now=0,id=0;const timers=new Map();return {clock:()=>now,setTimer:(fn,delay)=>{timers.set(++id,{at:now+delay,fn});return id;},clearTimer:i=>timers.delete(i),advance(ms){const end=now+ms;for(let n=0;n<10000;n++){const next=[...timers].sort((a,b)=>a[1].at-b[1].at)[0];if(!next||next[1].at>end)break;now=next[1].at;timers.delete(next[0]);next[1].fn();}now=end;},pending:()=>timers.size};}
 
-test('23 distinct heroes, four per standard rarity, two SP and one SSP; every hero has illustration and skill',()=>{
-  assert.equal(C.HEROES.length,23);assert.equal(new Set(C.HEROES.map(h=>h.id )).size,23);
-  for(const rank of C.RANKS.slice(0,5))assert.equal(C.HEROES.filter(h=>h.rarity===rank).length,4);
-  assert.equal(C.HEROES.filter(h=>h.rarity==='SP').length,2);assert.equal(C.HEROES.filter(h=>h.rarity==='SSP').length,1);
-  C.HEROES.forEach(h=>assert.ok((h.sheet||h.art)&&h.kind&&h.skill&&h.power>0));
+test('100 distinct heroes with the expanded rarity spread; every hero has illustration and skill',()=>{
+  assert.equal(C.HEROES.length,100);assert.equal(new Set(C.HEROES.map(h=>h.id)).size,100);
+  assert.deepEqual(C.RANKS.map(r=>C.HEROES.filter(h=>h.rarity===r).length),[23,23,22,21,8,2,1]);
+  C.HEROES.forEach(h=>assert.ok((h.sheet||h.art)&&h.kind&&h.skill&&h.power>0&&h.name&&h.title&&h.story&&h.quote));
 });
-test('each rarity selects all four heroes using an independent uniform choice',()=>{
-  for(const [i,r] of C.RANKS.slice(0,5).entries())for(let n=0;n<4;n++){
+test('each rarity selects every hero of that rarity using an independent uniform choice',()=>{
+  for(const [i,r] of C.RANKS.slice(0,5).entries()){const pool=C.HEROES.filter(h=>h.rarity===r);for(let n=0;n<pool.length;n++){
     const first=C.RATES.slice(0,i).reduce((a,b)=>a+b,0)+C.RATES[i]/2;let call=0;
-    const s=C.freshState(),card=C.draw(s,1,()=>call++===0?first:(n+.1)/4).cards[0];
-    assert.equal(card.id,C.HEROES.filter(h=>h.rarity===r)[n].id);
-  }
+    const s=C.freshState(),card=C.draw(s,1,()=>call++===0?first:(n+.1)/pool.length).cards[0];
+    assert.equal(card.id,pool[n].id);
+  }}
+});
+test('every hero has a 3D battle profile and model look configuration',()=>{
+  const b3=fs.readFileSync(path.join(__dirname,'../battle3d.js'),'utf8'),hm=fs.readFileSync(path.join(__dirname,'../hero-models.js'),'utf8');
+  const prof=b3.slice(b3.indexOf('const profiles={'),b3.indexOf('};',b3.indexOf('const profiles={')));
+  const looks=hm.slice(hm.indexOf('HERO_LOOKS'),hm.indexOf('};',hm.indexOf('HERO_LOOKS')));
+  for(const h of C.HEROES){assert.ok(new RegExp(`\\b${h.id}:\\[`).test(prof),h.id);assert.ok(new RegExp(`\\b${h.id}:\\{`).test(looks),h.id);}
 });
 test('old saves preserve progress and the new expansion gift is claimable only once',()=>{
   const old={...C.freshState(),tickets:7,dust:1234,pulls:57,clears:[0],pity:{sr:7,ssr:57,ur:57},levels:{milo:8,lark:3,scarlet:4}};delete old.gifts;
@@ -46,8 +53,9 @@ test('auto AI heals urgent allies and never spends more AP than it owns',()=>{
 test('default team automatically wins first chapter without user actions',()=>{
   assert.equal(simulate(C.freshState()).phase,'win');
 });
-test('every rarity has a viable automatic team and mixed upgraded teams finish all stages',()=>{
-  for(const rarity of C.RANKS){const ids=C.HEROES.filter(h=>h.rarity===rarity).map(h=>h.id);const b=simulate(prepared(ids,3));assert.equal(b.phase,'win',rarity);}
+test('every rarity has viable automatic teams and mixed upgraded teams finish all stages',()=>{
+  const chunks=ids=>{const n=Math.max(1,Math.ceil(ids.length/5)),size=Math.ceil(ids.length/n),out=[];for(let i=0;i<ids.length;i+=size)out.push(ids.slice(i,i+size));return out;};
+  for(const rarity of C.RANKS)for(const team of chunks(C.HEROES.filter(h=>h.rarity===rarity).map(h=>h.id))){const b=simulate(prepared(team,3));assert.equal(b.phase,'win',rarity+' '+team.join(','));}
   for(let stage=0;stage<3;stage++){const b=simulate(prepared(['orion','vesper','flora','nix','noctis'],5),stage);assert.equal(b.phase,'win','stage '+stage);}
 });
 test('automatic battle always terminates including low damage solo healers',()=>{

@@ -6,6 +6,7 @@ function ready(stage=6,ids=['astra','aurelia','noctis','caelum','elysium']){
  return s;
 }
 function finish(b){assert.ok(!b.error,b.error);let n=0;while(!['win','lose'].includes(b.phase)&&n++<2000)C.autoStep(b);assert.ok(n<2000);return b;}
+function combos(list,k){const out=[];const pick=(start,cur)=>{if(cur.length===k){out.push([...cur]);return;}for(let i=start;i<=list.length-k+cur.length;i++){cur.push(list[i]);pick(i+1,cur);cur.pop();}};pick(0,[]);return out;}
 test('formation defaults to rarity descending, with level tie-breaks; level mode prioritizes level',()=>{
  const s=C.freshState();for(const id of ['elysium','seraphine','astra','aurelia','selene']){s.owned[id]=1;s.levels[id]=1;}s.levels.milo=20;s.levels.scarlet=19;s.levels.aurelia=15;
  const before=C.clone(s),byRank=C.availableHeroes(s),byLevel=C.availableHeroes(s,'level');
@@ -41,9 +42,9 @@ test('SP 1% and SSP 0.1% intervals work at boundaries and reach all three equipm
   for(let i=0;i<3;i++){let n=0;const r=C.sweep(s,stage,1,()=>n++===0?.999999:n===2?(i+.5)/3:.4,'dungeon');assert.equal(r.gear[0].template,pool[i].id);}
  }
 });
-test('both high-tier bosses are winnable at their entry requirements across all 21 UR+ formations',()=>{
+test('both high-tier bosses are winnable at their entry requirements across all 462 UR+ formations',()=>{
  const ids=C.HEROES.filter(h=>C.rankOf(h)>=4).map(h=>h.id);
- for(const stage of [6,7])for(let a=0;a<ids.length;a++)for(let b=a+1;b<ids.length;b++){const s=ready(stage,ids.filter((_,i)=>i!==a&&i!==b));assert.equal(finish(C.battle(s,stage,'dungeon')).phase,'win',`${stage}: ${s.team}`);}
+ for(const stage of [6,7])for(const five of combos(ids,5)){const s=ready(stage,five);assert.equal(finish(C.battle(s,stage,'dungeon')).phase,'win',`${stage}: ${s.team}`);}
 });
 test('SP and SSP enhancements, same-template ascension costs, ownership and affixes survive reload',()=>{
  for(const rank of ['SP','SSP']){let s=C.freshState();s.dust=10000000;const g=C.addGear(s,'weapon-'+rank.toLowerCase(),G.seeded(91));C.equip(s,'milo',g.uid);const original=C.stats(s,'milo');

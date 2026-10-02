@@ -40,3 +40,30 @@
 - [完整提示词、最终路径与 SHA-256](visual/manifest-v6.json)。
 
 以新文件名接入，保留旧资源，未进行二次图像编辑。卡牌原画用于首页、图鉴、档案、召唤和战斗立绘演出，不作为三维人物模型。
+
+## 百人扩展预留卡位（V10）
+
+新增 77 位角色使用 16 张系列条图，文件名与面板顺序约定如下。文件就位前，卡面、图鉴与编队头像显示按角色主色生成的纹章占位（`app.js` 的 `--ph` 背景层）；条图放入约定文件名后自动覆盖占位层，无需修改代码。
+
+- 规格：每张图为等宽竖向面板，`binary` 为 2 联、其余为 5 联；面板自左向右按下表顺序对应角色索引 0…4（`binary` 为 0…1）。画风以 `card-concepts.png` 为参考，无文本、水印或卡框。
+- 尺寸：建议与现有条图一致，5 联保存为 1983×793、2 联保存为 794×793；前端按面板等宽裁切，纵向展示区约为图高 22% 起的卡面带，人物头部请留在面板上三分之一。
+- 放置位置：本目录（`eclipse/assets/`），文件名严格使用下表左列。
+
+| 文件 | 面板顺序（左 → 右） |
+| --- | --- |
+| `heroes-comet.png` | 佩罗 N · 蕾恩 R · 克蕾丝 SR · 维里奥 SSR · 西里乌斯 UR |
+| `heroes-nebula.png` | 莫斯 N · 米斯特拉 R · 辛德 SR · 妮克丝 SSR · 维加 UR |
+| `heroes-pulsar.png` | 塔姆 N · 瑟拉 R · 布朗特 SR · 芙拉 SSR · 阿斯特鲁 UR |
+| `heroes-quasar.png` | 露米特 N · 盖尔 R · 萨布尔 SR · 厄俄斯 SSR · 索拉拉 UR |
+| `heroes-zenith.png` | 布拉姆 N · 伊丽丝 R · 费罗 SR · 米拉 SSR · 苏祖 N |
+| `heroes-horizon.png` | 杜恩 N · 科拉尔 R · 佩特拉 SR · 马里斯 SSR · 芬 N |
+| `heroes-solstice.png` | 哈娜 N · 玻瑞尔 R · 索利斯 SR · 赫莉亚 SSR · 基普 N |
+| `heroes-equinox.png` | 维拉 N · 林克斯 R · 埃俄洛斯 SR · 忒弥斯 SSR · 奥多 N |
+| `heroes-meridian.png` | 卡西亚 N · 罗妲 R · 西勒斯 SR · 维斯娜 SSR · 塔恩 R |
+| `heroes-zodiac.png` | 阿里奥 N · 利布尔 R · 斯科 SR · 皮西亚 SSR · 卡普里 R |
+| `heroes-umbra.png` | 维莱 N · 科沃斯 R · 莫罗 SR · 塞尔基斯 SSR · 威斯普 R |
+| `heroes-lumina.png` | 弗林特 N · 奥拉 R · 卢切 SR · 奥萝拉 SSR · 卢门 R |
+| `heroes-aegis.png` | 加德 N · 维莉 R · 埃吉德 SR · 瓦卢姆 SSR · 里卡 SR |
+| `heroes-cascade.png` | 布鲁克 N · 法拉 R · 温蒂妮 SR · 德卢格 SSR · 瓦珀 SR |
+| `heroes-reverie.png` | 尤梅 N · 拉尔 R · 奥涅拉 SR · 索姆努斯 SSR · 索姆妮亚 SR |
+| `heroes-binary.png` | 卡斯托 SSR · 波吕克斯 SSR |

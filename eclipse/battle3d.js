@@ -12,7 +12,23 @@ const profiles={
  flora:['cleric','#8bd5a3','flower'],nix:['ranger','#81c4ef','frost'],vesper:['warrior','#cc718d','rose'],
  aurelia:['cleric','#ffda8b','sun'],finch:['monk','#dfbd75','gear'],quill:['ranger','#c7c891','feather'],
  lyra:['cleric','#7ddfda','tide'],orion:['warrior','#aea9ff','storm'],noctis:['wizard','#bf9dff','clock'],
- tessa:['cleric','#91d6bb','flower'],rune:['wizard','#93cafa','frost'],ignis:['warrior','#ff9269','flame'],eirene:['cleric','#d0eec1','sun'],caelum:['warrior','#9fcaff','stars']
+ tessa:['cleric','#91d6bb','flower'],rune:['wizard','#93cafa','frost'],ignis:['warrior','#ff9269','flame'],eirene:['cleric','#d0eec1','sun'],caelum:['warrior','#9fcaff','stars'],
+ pero:['warrior','#c9b28a','shield'],wren:['ranger','#9fd8c9','feather'],keres:['monk','#ffb27a','flame'],vireo:['cleric','#a8e6c0','flower'],sirius:['cleric','#ffd98f','sun'],
+ moss:['cleric','#9ed6a0','flower'],mistral:['wizard','#a9d9f2','frost'],cinder:['ranger','#ff9d76','feather'],nyx:['wizard','#e08bb0','rose'],vega:['cleric','#cfa8ff','stars'],
+ tam:['monk','#e6c37f','gear'],sela:['ranger','#d8c6ff','gear'],bront:['warrior','#b7a8ff','storm'],fula:['ranger','#cdd6ff','storm'],astreus:['wizard','#c4b4ff','clock'],
+ lumit:['cleric','#f2d9a0','flower'],gale:['monk','#bfe3d0','gear'],sable:['warrior','#b48fd6','rose'],eos:['cleric','#ffe2b0','sun'],solara:['warrior','#ffe08a','sun'],
+ bram:['warrior','#cbb490','shield'],iris:['cleric','#9fe8e0','tide'],ferro:['warrior','#b9c4d6','shield'],mira:['warrior','#a9b8ff','storm'],suzu:['monk','#e8cf9a','gear'],
+ dune:['ranger','#d8c090','feather'],coral:['cleric','#9fe0cf','flower'],petra:['warrior','#d0b8a0','shield'],maris:['wizard','#8fd4f2','frost'],fen:['monk','#ffb08a','flame'],
+ hana:['cleric','#cfe8a8','flower'],boreal:['ranger','#a8e4f0','frost'],solis:['monk','#ffc07a','flame'],helia:['cleric','#ffe8b8','sun'],kipp:['monk','#e2c58e','gear'],
+ vera:['warrior','#c8c0a8','shield'],lynx:['ranger','#c9d8a8','feather'],aeolus:['wizard','#b0d8e8','storm'],themis:['warrior','#d8a8c0','rose'],odo:['cleric','#b8d8c0','flower'],
+ cassia:['cleric','#b8e0b0','flower'],rhoda:['ranger','#d0e0a0','feather'],cirus:['ranger','#b8c8e8','feather'],vesna:['cleric','#cfe8c0','flower'],tarn:['wizard','#9fd0e8','frost'],
+ ario:['warrior','#d0bc98','shield'],libre:['ranger','#e0d0a8','feather'],skor:['monk','#ff9a80','flame'],piscia:['cleric','#a0e8e8','tide'],capri:['monk','#d8c8a0','gear'],
+ vele:['cleric','#b0c8b8','flower'],corvus:['ranger','#a8b0c8','feather'],moro:['warrior','#b890c8','rose'],selkis:['warrior','#98a8d0','shield'],wisp:['monk','#d8a0f0','flame'],
+ flint:['monk','#ffb890','flame'],aura:['cleric','#f0e0b8','flower'],luce:['wizard','#c8e8f8','frost'],aurora:['wizard','#b8e0f8','storm'],lumen:['cleric','#f8e8c0','flower'],
+ garde:['warrior','#c0b8a8','shield'],velli:['warrior','#c8d0d8','shield'],egide:['warrior','#b0c0e0','shield'],vallum:['warrior','#c0c8e0','storm'],rikka:['ranger','#d0d8b0','feather'],
+ brook:['cleric','#a8d8d0','flower'],falla:['cleric','#98e0d8','flower'],undine:['ranger','#90d8e8','tide'],deluge:['wizard','#88c8f0','frost'],vapor:['warrior','#b0d0e0','rose'],
+ yume:['cleric','#c8b8e0','flower'],lull:['wizard','#b8c0e8','frost'],oneira:['wizard','#c0a8e8','storm'],somnus:['wizard','#a8b0e8','frost'],somnia:['cleric','#c8b8f0','tide'],
+ castor:['monk','#e8d0a0','gear'],pollux:['ranger','#d8c0f0','gear']
 };
 const cache=new Map();
 function model(name){if(!cache.has(name)){const p=new GLTFLoader().loadAsync(`assets/models/${name}.glb`).catch(e=>{cache.delete(name);throw e;});cache.set(name,p);}return cache.get(name);}
