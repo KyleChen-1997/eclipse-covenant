@@ -37,7 +37,12 @@
     const owned=!!state.owned[h.id],level=state.levels[h.id]||1;
     return `<button class="hero-card rarity-${h.rarity} ${variantClass(h)} ${owned?'':'locked'}" style="${artStyle(h)}" data-action="detail" data-id="${h.id}" aria-label="查看${h.rarity} ${h.name}${owned?'，已拥有':'，未收集'}">
       <div class="card-visual">${portrait(h,true,false)}<span class="card-aura" aria-hidden="true"></span>${rarity(h)}<span class="card-rank">${owned?'LV. '+String(level).padStart(2,'0'):'未缔结'}</span></div>
-      <div class="card-caption"><span class="card-tier">${h.variant==='prism'?'初光 · ORIGIN':tierNames[h.rarity]}</span><small>${h.title}</small><h3>${h.name}</h3><div class="meta"><span>${h.role}</span><span>${owned?'已缔结':'等待邂逅'}</span></div>${owned?starsMarkup(h.id)+experienceBar(h.id):''}</div>${cardOrnament(h)}${window.EclipseStarFx.markup(heroStars(h))}</button>`;
+      <div class="card-caption"><span class="card-tier">${h.variant==='prism'?'初光 · ORIGIN':tierNames[h.rarity]}</span><small>${h.title}</small><h3>${h.name}</h3><div class="card-role">${h.role.split(/\s*·\s*/).map(role=>`<span>${role}</span>`).join('')}</div>${owned?cardProgress(h.id):'<div class="card-unbound">尚未缔结 <span>等待邂逅</span></div>'}</div>${cardOrnament(h)}${window.EclipseStarFx.markup(heroStars(h))}</button>`;
+  }
+  function cardProgress(id){
+    const p=C.experienceProgress(state,id),stars=heroStars(C.hero(id));
+    const capped=!p.needed;
+    return `<div class="card-growth${capped?' is-capped':''}"><div class="card-growth-heading">${starsMarkup(id)}<span class="card-growth-status">${capped?(stars===5?'成长圆满':'待觉醒'):'成长中'}</span></div>${capped?`<div class="card-cap-note"><span>LV.${p.level} <small>/ ${C.levelCap(state,id)}</small></span><span>${stars===5?'最高境界':'升星解锁等级'}</span></div>`:`<div class="card-xp" role="progressbar" aria-label="${C.hero(id).name}成长经验" aria-valuemin="0" aria-valuemax="${p.needed}" aria-valuenow="${p.xp}"><i style="width:${100*p.xp/p.needed}%"></i></div><div class="card-xp-label"><span>EXP</span><span>${p.xp.toLocaleString()} / ${p.needed.toLocaleString()}</span></div>`}</div>`;
   }
   function render() {
     document.body.dataset.page=page;document.body.classList.toggle('in-combat',['adventure','dungeon'].includes(page)&&!!currentBattle);const context=document.getElementById('header-context');if(context)context.innerHTML=`<small>THE CELESTIAL ARCHIVE / 0${['summon','collection','team','equipment','adventure','dungeon'].indexOf(page)+1}</small><span>${{summon:'星界召唤',collection:'契约图鉴',team:'旅团编队',equipment:'星铸装备',adventure:'星蚀远征',dungeon:'星铸秘境'}[page]}</span>`;

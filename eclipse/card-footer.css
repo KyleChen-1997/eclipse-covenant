@@ -1,0 +1,22 @@
+/* A quiet information panel below the illustration. */
+.hero-card:not(.sealed-card) .card-caption{width:100%;box-sizing:border-box;text-align:left;padding-bottom:22px}
+.hero-card:not(.sealed-card) .card-caption h3{margin-bottom:10px}
+.card-role{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 15px}
+.card-role>span{font-size:9px;line-height:1.5;letter-spacing:1px;color:#c6c6d1;padding:3px 7px;border:1px solid #d9d5e318;border-radius:3px;background:#d5d2ef05}
+.card-growth{border-top:1px solid #dad5e31a;padding-top:12px}
+.card-growth-heading{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.card-growth-heading .hero-stars{margin:0;font-size:12px;letter-spacing:2px;white-space:nowrap;line-height:1.4}
+.card-growth-heading .hero-stars>span{color:#b9b2a641}
+.card-growth-status{font-size:9px;color:#aaa5b4;letter-spacing:1px;white-space:nowrap}
+.is-capped .card-growth-status{color:var(--rarity,#d9c190)}
+.card-cap-note,.card-xp-label{display:flex;justify-content:space-between;align-items:center;gap:5px;margin-top:9px;font-size:8px;color:#9393a4;line-height:1.6;letter-spacing:.3px}
+.card-cap-note>span:first-child{color:#d9d4df;font:11px Georgia,serif;white-space:nowrap}
+.card-cap-note small{font:9px Georgia,serif;color:#8c8798}
+.card-xp{height:2px;background:#dad5e314;margin-top:12px;border-radius:2px;overflow:hidden}
+.card-xp i{display:block;height:100%;background:var(--rarity,#d9c190);opacity:.75}
+.card-xp-label{margin-top:5px;font-variant-numeric:tabular-nums}
+.card-unbound{border-top:1px solid #dad5e31a;padding-top:12px;display:flex;justify-content:space-between;font-size:9px;color:#bcb5c7}
+.card-unbound span{color:#838292}
+@media(max-width:500px){.card-role{gap:4px;margin-bottom:11px}.card-role>span{font-size:8px;padding:2px 5px;letter-spacing:0}.card-growth{padding-top:10px}.card-growth-heading .hero-stars{font-size:10px;letter-spacing:1px}.card-growth-status{font-size:8px;letter-spacing:0}.card-cap-note{font-size:7px}}
+.card-cap-note small{display:inline;letter-spacing:0}
+.card-growth{min-height:51px}
