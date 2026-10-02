@@ -1,0 +1,36 @@
+<!doctype html><html lang="zh-CN"><head><base href="../">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="星蚀契约：群星回响。收集 N 至 SSP 契约者，组建五人旅团，探索 48 个关卡与 8 座装备秘境，体验 3D 自动战斗。免费网页即玩。">
+  <meta property="og:title" content="星蚀契约：群星回响 · Eclipse Covenant">
+  <meta property="og:description" content="在群星黯淡之际，与你的契约者并肩而行。幻想卡牌收集与 3D 自动战斗，打开网页即可游玩。">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <title>星蚀契约：群星回响 · Eclipse Covenant</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b1020'/%3E%3Cpath d='M32 7L39 25L57 32L39 39L32 57L25 39L7 32L25 25Z' fill='%23dac599'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="visual-v6.css">
+  <link rel="stylesheet" href="living-portraits.css">
+  <link rel="stylesheet" href="sp-covenant.css">
+  <link rel="stylesheet" href="expansion-v8.css">
+  <link rel="stylesheet" href="bulk.css">
+  <link rel="stylesheet" href="sovereign.css">
+  <script defer src="roster.js"></script>
+  <script defer src="progression.js"></script>
+  <script defer src="gear-system.js"></script><script defer src="inventory.js"></script><script defer src="story.js"></script>
+  <script defer src="portrait-videos.js"></script>
+  <script defer src="core.js"></script>
+  <script defer src="battle-player.js"></script>
+  <script defer src="audio.js"></script>
+  <script type="importmap">{"imports":{"three":"./vendor/three/three.module.js"}}</script>
+  <script defer src="summon-cinematic.js"></script>
+  <link rel="stylesheet" href="star-effects.css">
+  <script defer src="star-effects.js"></script>
+  
+  <script defer src="portrait-motion.js"></script>
+  <script defer src="living-portraits.js"></script>
+  <link rel="stylesheet" href="story-v12.css">
+  <link rel="stylesheet" href="card-footer.css">
+  <script defer src="video-portraits.js"></script>
+<style>body:before{display:none}main{margin:0!important}h1{font-size:24px}</style></head><body><main style="padding:20px"><h1>伊璃希娅 · 实战模型演示</h1><p>独立演示，不修改游戏存档。新模型参与自动战斗。</p><button onclick="location.reload()">重新演示</button><div id="battle" class="battle-viewport" style="height:650px;position:relative"></div><p id="result">正在加载…</p></main><script type="module">import{BattleScene}from "./battle3d.js";const C=window.EclipseCore,s=C.freshState();s.owned.elysium=1;s.levels.elysium=15;s.team=["elysium"];const b=C.battle(s,0),scene=new BattleScene(document.querySelector("#battle"),b,C);await scene.ready;document.querySelector("#result").textContent="模型加载完成，自动战斗中";scene.setPlayback({running:true});const player=new BattlePlayer({battle:b,step:C.autoStep,onStep:ev=>{scene.update(b);scene.playEvent(ev)},onFinish:()=>document.querySelector("#result").textContent=b.phase==="win"?"胜利":"战斗结束"});player.start();</script></body></html>

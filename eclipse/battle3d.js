@@ -3,6 +3,8 @@ import {GLTFLoader} from './vendor/three/addons/loaders/GLTFLoader.js';
 import {clone as cloneRig} from './vendor/three/addons/utils/SkeletonUtils.js';
 import {SanctumArt} from './battle-art.js';
 import {rigCaelum} from './caelum-rig.js';
+import {rigElysium} from './elysium-rig.js';
+const customRigs={caelum:rigCaelum,elysium:rigElysium};
 import {HeroAvatar} from './hero-models.js';
 import {RoomEnvironment} from './vendor/three/addons/environments/RoomEnvironment.js';
 
@@ -15,7 +17,7 @@ aevor:['warrior','#fb7778','sword'],
 anamnesis:['cleric','#d3efff','staff'],
 causalia:['cleric','#edceff','staff'],
 nullion:['cleric','#bceef2','staff'],
- seraphine:['wizard','#ff4569','orb'],ragnar:['warrior','#ff604d','sword'],elysium:['cleric','#b8f8ff','staff'],
+ seraphine:['wizard','#ff4569','orb'],ragnar:['warrior','#ff604d','sword'],elysium:['elysium-battle','#b8f8ff','staff'],
  milo:['wizard','#8ebfb0','lantern'],lark:['ranger','#78d9c4','feather'],scarlet:['monk','#ed6f65','flame'],
  selene:['warrior','#adceff','moon'],astra:['cleric','#d7b1ff','stars'],bran:['warrior','#b9976b','shield'],
  flora:['cleric','#8bd5a3','flower'],nix:['ranger','#81c4ef','frost'],vesper:['warrior','#cc718d','rose'],
@@ -71,23 +73,23 @@ export class BattleScene {
   const names=[...new Set(descriptors.map(d=>d.profile[0]))];let loaded=0;
   await Promise.all(names.map(async n=>{await model(n);this.onProgress(++loaded,names.length);}));
   if(this.disposed)return;
-  for(const d of descriptors){const asset=await model(d.profile[0]);this.addUnit(d,d.data.id==='caelum'&&d.side==='ally'?rigCaelum(asset):asset);}
+  for(const d of descriptors){const asset=await model(d.profile[0]);this.addUnit(d,d.side==='ally'&&customRigs[d.data.id]?customRigs[d.data.id](asset):asset);}
   this.laidOut=false;this.resize();this.update(this.battle);this.render();
  }
  addUnit({side,data,profile},gltf){
   const root=new THREE.Group(),visual=new THREE.Group(),rig=cloneRig(gltf.scene);visual.add(rig);root.add(visual);this.scene.add(root);
   const height=side==='enemy'?(this.stage.boss?3.7:2.55):2.65;
   rig.traverse(o=>{if(!o.isMesh)return;o.castShadow=true;o.receiveShadow=true;o.frustumCulled=false;
-   const convert=original=>{if(data.id==='caelum'&&side==='ally')return original.clone();const isMetal=/sword|staff|weapon|armor/i.test(o.name+' '+original.name),m=new THREE.MeshStandardMaterial({map:original.map||null,color:original.color?.clone()||new THREE.Color('white'),transparent:original.transparent,opacity:original.opacity,alphaTest:original.alphaTest||0,side:original.side,metalness:isMetal?.68:profile[0]==='warrior'?.38:.08,roughness:isMetal?.3:.65,envMapIntensity:.75});m.name=original.name+'-lit';if(side==='ally')m.color.lerp(new THREE.Color(profile[1]),.1);else m.color.lerp(new THREE.Color(this.palette[1]),.46);return m;};o.material=Array.isArray(o.material)?o.material.map(convert):convert(o.material);
+   const convert=original=>{if(customRigs[data.id]&&side==='ally')return original.clone();const isMetal=/sword|staff|weapon|armor/i.test(o.name+' '+original.name),m=new THREE.MeshStandardMaterial({map:original.map||null,color:original.color?.clone()||new THREE.Color('white'),transparent:original.transparent,opacity:original.opacity,alphaTest:original.alphaTest||0,side:original.side,metalness:isMetal?.68:profile[0]==='warrior'?.38:.08,roughness:isMetal?.3:.65,envMapIntensity:.75});m.name=original.name+'-lit';if(side==='ally')m.color.lerp(new THREE.Color(profile[1]),.1);else m.color.lerp(new THREE.Color(this.palette[1]),.46);return m;};o.material=Array.isArray(o.material)?o.material.map(convert):convert(o.material);
   });
   const mixer=new THREE.AnimationMixer(rig),clips=new Map(gltf.animations.map(a=>[a.name.toLowerCase(),a]));
   const key=side+'-'+data.id,color=profile[1],unit={key,side,data,root,rig,mixer,clips,height,color,profile,headBone:null,home:v(),facing:0,action:null,returnAt:0,dead:false,deathAt:Infinity,flash:0};
   this.units.set(key,unit);
   const label=document.createElement('article');label.className='world-unit '+(side==='enemy'?'hostile':'friendly');label.dataset.unit=key;this.labels.append(label);unit.label=label;
-  this.play(unit,['idle_weapon','idle'],true);mixer.update(Math.abs(Math.sin(this.units.size))*1.5);if(side==='ally'&&data.id!=='caelum'){rig.traverse(o=>{if(o.isBone&&o.name.toLowerCase().startsWith('head'))unit.headBone=o;});unit.headBone?.scale.setScalar(.8);}
+  this.play(unit,['idle_weapon','idle'],true);mixer.update(Math.abs(Math.sin(this.units.size))*1.5);if(side==='ally'&&!customRigs[data.id]){rig.traverse(o=>{if(o.isBone&&o.name.toLowerCase().startsWith('head'))unit.headBone=o;});unit.headBone?.scale.setScalar(.8);}
   rig.updateWorldMatrix(true,true);rig.traverse(o=>{if(o.isSkinnedMesh)o.skeleton.update();});
   const posed=new THREE.Box3().setFromObject(rig,true),size=posed.getSize(v()),center=posed.getCenter(v()),scale=height/size.y;
-  visual.scale.set(scale*(side==='ally'?.9:1),scale,scale*(side==='ally'?.92:1));visual.position.set(-center.x*scale,-posed.min.y*scale+.12,-center.z*scale);this.cosmetics(unit);if(side==='ally'&&data.id!=='caelum')unit.avatar=new HeroAvatar(unit,this.core);else if(side==='enemy')this.world.adorn(unit,2);
+  visual.scale.set(scale*(side==='ally'?.9:1),scale,scale*(side==='ally'?.92:1));visual.position.set(-center.x*scale,-posed.min.y*scale+.12,-center.z*scale);this.cosmetics(unit);if(side==='ally'&&!customRigs[data.id])unit.avatar=new HeroAvatar(unit,this.core);else if(side==='enemy')this.world.adorn(unit,2);
  }
  cosmetics(u){
   const h=u.side==='ally'?this.core.hero(u.data.id):null,rank=h?this.core.RANKS.indexOf(h.rarity):2,color=u.color;
@@ -147,7 +149,7 @@ export class BattleScene {
   const source=ev.actor?this.units.get(ev.actor.side+'-'+ev.actor.id):null;
   const hits=ev.impacts.filter(h=>h.type==='damage'&&h.value>0),target=hits.length?this.units.get(hits[0].side+'-'+hits[0].id):null;
   if(source){
-   const ranged=['wizard','cleric','ranger'].includes(source.profile[0]);
+   const ranged=['wizard','cleric','ranger','elysium-battle'].includes(source.profile[0]);
    const motions=ev.kind==='guard'?['idle_weapon','idle']:source.profile[0]==='ranger'?['bow_shoot','bow_draw']:ranged?['spell1','staff_attack','spell2']:['sword_attack','attack','punch','weapon'];
    this.play(source,motions,false,ev.ultimate?1.6:.9);
    if(target&&!ranged&&!this.reduced){const to=target.home.clone().lerp(source.home,.27);source.motion={start:this.time,duration:.98,from:source.home.clone(),to};source.root.rotation.y=Math.atan2(target.home.x-source.home.x,target.home.z-source.home.z);}
@@ -217,7 +219,7 @@ export class BattleScene {
    }
    this.world.tick(this.time);
    if(this.activeEvent){const {ev,start}=this.activeEvent,t=this.time-start,impactAt=ev.ultimate?.86:.32;
-    if(t<impactAt&&!this.reduced){const source=ev.actor?this.units.get(ev.actor.side+'-'+ev.actor.id):null;if(source&&(ev.ultimate||['wizard','cleric','ranger'].includes(source.profile[0])))this.projectile(ev,Math.min(1,t/impactAt));}
+    if(t<impactAt&&!this.reduced){const source=ev.actor?this.units.get(ev.actor.side+'-'+ev.actor.id):null;if(source&&(ev.ultimate||['wizard','cleric','ranger','elysium-battle'].includes(source.profile[0])))this.projectile(ev,Math.min(1,t/impactAt));}
     if(t>=impactAt&&!this.activeEvent.hit){this.activeEvent.hit=true;this.impactEvent(ev);this.activeEvent.projectiles?.forEach(p=>this.removeMesh(p.mesh));this.activeEvent.projectiles=[];}
     if(t>(ev.ultimate?1.95:1.1))this.clearEvent();
    }
