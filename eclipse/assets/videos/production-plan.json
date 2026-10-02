@@ -90,7 +90,8 @@
       "video": "eclipse/assets/videos/caelum.mp4",
       "provider": "Figma Weave / Kling 3 Pro",
       "qualityReview": "body_motion_visible",
-      "reviewSummary": "托举星核的前臂抬起，衣袖跟随；首尾姿态一致。"
+      "reviewSummary": "新版抬臂后横向施法，再收势回归；握剑手稳定，首尾姿态接近。肩背转动仍较克制，星核中段随法术消散再显现。",
+      "latestRevision": "weave-caelum-revision.json"
     },
     {
       "id": "seraphine",

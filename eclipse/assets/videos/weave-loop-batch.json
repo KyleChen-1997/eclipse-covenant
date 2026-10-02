@@ -100,7 +100,12 @@
       "postprocess": "Resolution/bitrate optimization only. No dissolve, reverse playback or added motion.",
       "reviewSummary": "托举星核的前臂抬起，衣袖跟随；首尾姿态一致。",
       "motionReview": "body_motion_visible",
-      "loopReview": "First, middle and final frames inspected; beginning and ending character pose visually match."
+      "loopReview": "First, middle and final frames inspected; beginning and ending character pose visually match.",
+      "latestRevision": {
+        "outputUrl": "https://media.weavy.ai/video/upload/v1790932916/uploads/GKtreSHDt0YuNXMdqWBo73um42p1/nofsmdc1qqdwnpx6hmjd.mp4",
+        "reviewSummary": "新版抬臂后横向施法，再收势回归；握剑手稳定，首尾姿态接近。肩背转动仍较克制，星核中段随法术消散再显现。",
+        "metadata": "weave-caelum-revision.json"
+      }
     },
     {
       "id": "seraphine",

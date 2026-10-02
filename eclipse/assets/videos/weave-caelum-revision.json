@@ -1,0 +1,22 @@
+{
+  "hero": "caelum",
+  "input": {
+    "image": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/caelum.png",
+    "end_image_url": "https://kylechen-1997.github.io/eclipse-covenant/eclipse/assets/heroes/caelum.png",
+    "prompt": "Animate the exact male celestial dragon sovereign in the reference as a formidable battle commander. A 5 second single locked shot, same reference as first and last frames. Preserve his face, masculine identity, armor, sword and orb. The sword hand on the LEFT of the image keeps a firm grip on the sword; do not swap hands or add weapons. 0–0.8 seconds: brace his torso, square his shoulders and fix a stern gaze directly forward. 0.8–2.3 seconds: visibly bend the orb-bearing elbow on the RIGHT of the image, raise the forearm and orb about one head height toward the chest, then drive the forearm a short distance forward in a firm commanding gesture. His shoulders and upper torso turn together with physical weight, chest open and chin level. Fingers hold a strong controlled shape, wrist straight. Sword arm remains grounded, sword solid and stable. Wide sleeves and long hair react with strong delayed motion; dragon silhouettes subtly spread their wings. 2.3–3 seconds: briefly hold the imposing command pose. 3–5 seconds: deliberately retract and lower the orb arm, settle shoulders and clothing, return exactly to the starting composition, hand positions and expression for a seamless loop. Clear visible arm and torso action, deliberate acceleration and controlled stops. Fixed camera, full original framing, no cuts, no audio.",
+    "negative_prompt": "delicate dance gestures, coy head tilt, hip swaying, fluttering wrists, limp wrists, exaggerated finger flourishes, smiling, static arms, only blinking, only particles, camera movement, extra fingers, extra arms, sword bending, swapping hands, face morphing, text, watermark",
+    "model": "3.0 Pro",
+    "duration": 5,
+    "cfg_scale": 0.8,
+    "generate_audio": false
+  },
+  "predictionId": "82e3a2b6-439c-43e6-89c9-126acfdb7ef3",
+  "cost": 82,
+  "outcome": "completed",
+  "outputUrl": "https://media.weavy.ai/video/upload/v1790932916/uploads/GKtreSHDt0YuNXMdqWBo73um42p1/nofsmdc1qqdwnpx6hmjd.mp4",
+  "gameAsset": "eclipse/assets/videos/caelum.mp4",
+  "durationSeconds": 5.041667,
+  "sha256": "4c9bec04ea6cc6ed92df31937334977cc15fc22842f55f00158873da977b3ce0",
+  "bytes": 4686432,
+  "reviewSummary": "新版抬臂后横向施法，再收势回归；握剑手稳定，首尾姿态接近。肩背转动仍较克制，星核中段随法术消散再显现。"
+}
