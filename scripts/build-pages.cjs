@@ -31,7 +31,7 @@ for (const dir of [output, gameOutput]) {
   const html = fs.readFileSync(path.join(dir, 'index.html'), 'utf8');
   for (const [, ref] of html.matchAll(/(?:src|href)="([^"]+)"/g)) {
     if (/^(?:#|data:|https?:)/.test(ref)) continue;
-    if (ref.startsWith('/') || !fs.existsSync(path.join(dir, ref))) throw new Error(`Invalid Pages entry reference: ${ref}`);
+    if (ref.startsWith('/') || !fs.existsSync(path.join(dir, ref.split(/[?#]/)[0]))) throw new Error(`Invalid Pages entry reference: ${ref}`);
   }
 }
 let size = 0, count = 0;

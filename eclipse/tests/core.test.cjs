@@ -45,26 +45,28 @@ test('actor, AP and target validation never consume a turn on error',()=>{
   const b=C.battle(state(),0),before=C.clone(b);assert.ok(C.action(b,'lark','attack',99).error);assert.deepEqual(b,before);
   C.action(b,'lark','skill',0);assert.equal(b.ap,4);const after=C.clone(b);assert.ok(C.action(b,'lark','attack',0).error);assert.deepEqual(b,after);
 });
-test('mark buffs exactly one attack, burn ticks exactly twice',()=>{
-  const b=C.battle(state(),0);b.enemies[0].hp=b.enemies[0].maxHp=1000;
-  C.action(b,'lark','skill',0);assert.equal(b.enemies[0].hp,960);assert.equal(b.enemies[0].marked,true);
-  C.action(b,'scarlet','skill',0);assert.equal(b.enemies[0].hp,822);assert.equal(b.enemies[0].marked,false);assert.equal(b.enemies[0].burn,2);
-  C.enemyTurn(b);assert.equal(b.enemies[0].hp,787);C.enemyTurn(b);assert.equal(b.enemies[0].hp,752);C.enemyTurn(b);assert.equal(b.enemies[0].hp,752);
+test('unlike star marks react once and are consumed without the old universal mark bonus',()=>{
+ const b=C.battle(state(),0);b.enemies.forEach(e=>e.hp=e.maxHp=2000);
+ C.action(b,'lark','skill',0);assert.equal(b.enemies[0].marks[0].phase,'岚');
+ const r=C.action(b,'scarlet','skill',0);assert.equal(b.report.combos,1);assert.ok(r.event.combos.includes('燎原'));assert.equal(b.enemies[0].marks.length,0);
 });
+
 test('healing targets the lowest percentage living ally and cannot exceed max',()=>{
-  const b=C.battle(state(),0);b.allies[1].hp=30;b.allies[2].hp=0;C.action(b,'milo','skill',0);assert.equal(b.allies[1].hp,140);assert.equal(b.allies[2].hp,0);
+ const b=C.battle(state(),0);b.allies[1].hp=30;b.allies[2].hp=0;const target=b.allies[1],caster=b.allies.find(a=>a.id==='milo');C.action(b,'milo','skill',0);assert.equal(target.hp,Math.min(target.maxHp,30+Math.round(caster.atk)));assert.equal(b.allies[2].hp,0);
 });
+
 test('unused AP caps at two extra next round; guard halves incoming damage',()=>{
   const s=state();s.team=['milo'];const a=C.battle(s,0),b=C.clone(a);C.action(a,'milo','guard',0);C.enemyTurn(a);C.enemyTurn(b);
   assert.equal(a.ap,7);assert.equal(b.ap,7);assert.ok(a.allies[0].hp>b.allies[0].hp);assert.equal(a.allies[0].acted,false);
 });
-test('shields expire after two enemy turns and limit counters to once per round',()=>{
-  const b=C.battle(allHeroes(),0);C.action(b,'selene','skill',0);assert.equal(b.allies[0].shield,80);C.enemyTurn(b);assert.equal(b.allies[0].shieldTurns,1);C.enemyTurn(b);assert.ok(b.allies.every(a=>a.shield===0));
+test('owned shields expire after two rounds and never exceed 35 percent maximum health',()=>{
+ const b=C.battle(allHeroes(),0);b.enemies.forEach(e=>e.atk=0);C.action(b,'selene','skill',0);const a=b.allies.find(a=>a.shield>0);assert.ok(a);assert.ok(a.shield<=a.maxHp*.35+.5);assert.equal(a.wards[0].source,'selene');C.enemyTurn(b);assert.ok(a.shield>0);C.enemyTurn(b);assert.equal(a.shield,0);
 });
-test('UR burst is once per battle and the field lasts two rounds',()=>{
-  const b=C.battle(allHeroes(),0);b.enemies.forEach(e=>{e.hp=1000;e.maxHp=1000;});C.action(b,'astra','skill',0);assert.equal(b.ap,1);assert.equal(b.field,2);
-  C.enemyTurn(b);assert.equal(b.field,1);const before=C.clone(b);assert.ok(C.action(b,'astra','skill',0).error);assert.deepEqual(b,before);C.enemyTurn(b);assert.equal(b.field,0);
+
+test('charged ultimate consumes personal energy and its domain lasts two rounds',()=>{
+ const b=C.battle(allHeroes(),0);b.enemies.forEach(e=>e.hp=e.maxHp=3000);const a=b.allies.find(a=>a.id==='astra');assert.ok(C.action(b,'astra','ultimate',0).error);a.energy=3;assert.ok(C.action(b,'astra','ultimate',0).ok);assert.equal(a.energy,0);assert.equal(b.field,2);C.enemyTurn(b);assert.equal(b.field,1);C.enemyTurn(b);assert.equal(b.field,0);
 });
+
 test('battle loss awards consolation experience without currency',()=>{
   const s=state();s.team=['milo'];const b=C.battle(s,0);for(let i=0;i<20&&b.phase==='player';i++)C.enemyTurn(b);
   assert.equal(b.phase,'lose');const reward=C.claim(s,b);assert.equal(reward.tickets,0);assert.equal(reward.experience[0].earned,36);assert.equal(s.tickets,200);
@@ -80,19 +82,8 @@ test('initial three-character team can win chapter one with a simple strategy',(
   }
   assert.equal(b.phase,'win');const reward=C.claim(s,b);assert.equal(reward.tickets,10);assert.equal(s.tickets,210);assert.ok(s.clears.includes(0));assert.equal(C.claim(s,b),null);assert.equal(s.tickets,210);assert.ok(!C.battle(s,1).error);
 });
-test('an upgraded collected team can complete all chapters and earn repeat rewards',()=>{
-  const s=allHeroes();for(const h of C.HEROES)s.levels[h.id]=5;
-  for(let stage=0;stage<3;stage++){
-    const b=C.battle(s,stage);for(let round=0;round<35&&b.phase==='player';round++){
-      for(const id of ['astra','lark','scarlet','milo','selene']){
-        if(b.phase!=='player')break;const a=b.allies.find(x=>x.id===id);if(a.hp<=0)continue;
-        const target=b.enemies.find(e=>e.hp>0),hurt=b.allies.some(x=>x.hp>0&&x.hp<x.maxHp-100);
-        let type='attack';if(id==='astra'&&!b.astralUsed&&b.ap>=4)type='skill';else if(id==='milo'&&hurt||id==='scarlet'||id==='selene'&&b.round%2===0)type='skill';
-        const cost=type==='skill'?C.hero(id).cost:1;if(b.ap<cost)type=b.ap>=1?'attack':'guard';C.action(b,id,type,target.id);
-      }
-      if(b.phase==='player')C.enemyTurn(b);
-    }
-    assert.equal(b.phase,'win',`chapter ${stage+1} should be beatable`);assert.ok(C.claim(s,b).first);
-  }
-  const repeat=C.battle(s,0);repeat.enemies.forEach(e=>e.hp=1);C.action(repeat,'astra','skill');const reward=C.claim(s,repeat);assert.equal(reward.tickets,3);assert.equal(reward.first,false);
+test('an upgraded collected team completes the first region and repeat rewards remain one-time',()=>{
+ const s=allHeroes();s.team.forEach(id=>s.levels[id]=5);const finish=b=>{for(let i=0;i<2000&&!['win','lose'].includes(b.phase);i++)assert.ok(C.autoStep(b).ok);assert.equal(b.phase,'win');return b;};
+ for(let stage=0;stage<3;stage++)assert.ok(C.claim(s,finish(C.battle(s,stage))).first);
+ const b=finish(C.battle(s,0)),r=C.claim(s,b);assert.equal(r.tickets,3);assert.equal(r.first,false);assert.equal(C.claim(s,b),null);
 });

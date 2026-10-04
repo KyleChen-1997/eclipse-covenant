@@ -10,7 +10,7 @@ test('old saves keep levels and add empty experience with sensible audio default
 test('a victory upgrades all deployed members and carries experience to the next level',()=>{
  const s=C.freshState(),b=win(s),r=C.claim(s,b);
  assert.equal(r.experience.length,3);for(const x of r.experience){assert.equal(x.earned,90);assert.equal(x.level,2);assert.equal(x.xp,10);assert.equal(s.levels[x.id],2);}
- assert.equal(C.stats(s,'milo').hp,297);assert.deepEqual(C.restoreState(JSON.parse(JSON.stringify(s))),s);
+ assert.equal(C.stats(s,'milo').hp,Math.round(C.hero('milo').hp*1.06));assert.deepEqual(C.restoreState(JSON.parse(JSON.stringify(s))),s);
  const before=C.clone(s);assert.equal(C.claim(s,b),null);assert.deepEqual(s,before);
 });
 test('battle roster receives XP including defeated members, regardless of later party edits',()=>{

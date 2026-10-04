@@ -177,8 +177,8 @@
     return {hp:Math.round((h.hp*baseScale+bonus.hp)*(1+bonus.hpPercent)),atk:Math.round((h.atk*baseScale+bonus.atk)*(1+bonus.atkPercent)),scale:baseScale*(1+bonus.power),mitigation:Math.min(.35,bonus.mitigation),baseScale,bonus,level,stars};
   }
   function finalReadiness(s){
-    const rows=(s.team||[]).map(id=>{const h=hero(id),items=equipped(s,id);return {id,rarity:!!h&&rankOf(h)>=4,level:(s.levels[id]||1)>=60,equipment:Object.keys(SLOT_NAMES).every(slot=>items.some(g=>g.slot===slot&&GEAR_RANKS.indexOf(g.rarity)>=3))};});
-    return {ready:rows.length===5&&new Set(s.team).size===5&&rows.every(r=>s.owned[r.id]&&r.rarity&&r.level&&r.equipment),rows};
+    const rows=(s.team||[]).map(id=>{const h=hero(id),items=equipped(s,id);return {id,rarity:!!h,level:(s.levels[id]||1)>=60,equipment:Object.keys(SLOT_NAMES).every(slot=>items.some(g=>g.slot===slot&&GEAR_RANKS.indexOf(g.rarity)>=3))};});
+    return {ready:rows.length>0&&rows.every(r=>s.owned[r.id]),recommended:rows.length===5&&rows.every(r=>r.level&&r.equipment),rows};
   }
   function availableHeroes(s,sort='rarity'){
     const byRarity=(a,b)=>rankOf(b)-rankOf(a),byLevel=(a,b)=>(s.levels[b.id]||1)-(s.levels[a.id]||1);
@@ -192,7 +192,7 @@
     if(d.gate){
       const g=d.gate,team=s.team||[],complete=team.length===5&&new Set(team).size===5&&team.every(id=>s.owned[id]&&hero(id));
       checks.push({label:'五名不同的契约者满编',met:complete});
-      checks.push({label:`全员 ${RANKS[g.heroRank]} 以上 · LV.${g.level} 以上`,met:complete&&team.every(id=>rankOf(hero(id))>=g.heroRank&&(s.levels[id]||1)>=g.level)});
+      checks.push({label:`全员 LV.${g.level} 以上 · 不限角色稀有度`,met:complete&&team.every(id=>(s.levels[id]||1)>=g.level)});
       checks.push({label:`每人三个部位均为 ${GEAR_RANKS[g.gearRank]} 以上 · ${g.stars} 星以上 · 强化 +${g.enhance} 以上`,met:complete&&team.every(id=>{const items=equipped(s,id);return Object.keys(SLOT_NAMES).every(slot=>items.some(item=>item.slot===slot&&GEAR_RANKS.indexOf(item.rarity)>=g.gearRank&&item.stars>=g.stars&&item.enhance>=g.enhance));})});
     }
     const unmet=checks.filter(c=>!c.met);return {unlocked,ready:!unmet.length,checks,error:unmet.length?'尚未满足秘境条件：'+unmet.map(c=>c.label).join('；')+'。':null};
@@ -202,7 +202,7 @@
     if(!['story','dungeon'].includes(mode)||!Number.isInteger(stage)||!def||!Array.isArray(s.team)||!s.team.length||s.team.length>5||new Set(s.team).size!==s.team.length||s.team.some(id=>!hero(id)||!s.owned[id]))return {error:'请先选择至少一名已拥有的角色。'};
     if(mode==='story'&&stage>0&&!s.clears.includes(stage-1))return {error:'请先通关上一关卡。'};
     if(mode==='dungeon'){const access=dungeonReadiness(s,stage);if(!access.ready)return {error:access.error};}
-    if(def.final&&!finalReadiness(s).ready)return {error:'终关要求五名至少 60 级的 UR 或以上角色，每人三个部位全部装备 SSR 或以上。'};
+
     const allies=s.team.map(id=>{const a=stats(s,id);return {id,hp:a.hp,maxHp:a.hp,atk:a.atk,scale:a.scale,level:a.level,stars:a.stars,mitigation:a.mitigation,shield:0,shieldTurns:0,acted:false,guard:false,fieldHit:false};});
     return {stage,mode,round:1,ap:5,allies,enemies:def.enemies.map((e,i)=>({...e,id:i,art:def.boss?2:i%3,maxHp:e.hp,burn:0,marked:false,frozen:0})),phase:'player',field:0,astralUsed:false,usedUltimates:[],enemyCursor:-1,countered:false,rewardClaimed:false,log:['自动战斗开始。旅团将自主选择目标、治疗并释放技能。']};
   }
@@ -381,7 +381,7 @@
     if(!Number.isSafeInteger(count)||count<1||count>MAX_SWEEP_ROUNDS)return {error:`请输入 1～${MAX_SWEEP_ROUNDS.toLocaleString()} 之间的整数轮数。`};
     if(!Array.isArray(s.team)||!s.team.length||s.team.length>5||new Set(s.team).size!==s.team.length||s.team.some(id=>!hero(id)||!s.owned[id]))return {error:'请先编入 1～5 名已拥有的不同角色。'};
     if(mode==='dungeon'&&def.gate){const access=dungeonReadiness(s,stage);if(!access.ready)return {error:access.error};}
-    if(def.final&&!finalReadiness(s).ready)return {error:'终关扫荡仍需五名 60 级 UR 以上角色，且全员三个部位均为 SSR 以上装备。'};
+
     const tickets=mode==='dungeon'?0:3*count,dust=def.repeatDust*count,gearCount=mode==='dungeon'?count:0;
     if(!Number.isSafeInteger(s.tickets+tickets)||!Number.isSafeInteger(s.dust+dust)||gearCount&&!Number.isSafeInteger(s.nextGearId+gearCount))return {error:'资源或装备库存已达存档容量上限。'};
     return {stage,mode,count,team:[...s.team],tickets,dust,xpPerHero:def.xp*count,gearCount};
@@ -421,5 +421,6 @@
   }
   function nextExpedition(s,b){if(b.phase!=='win')return null;const stage=b.stage+1,def=(b.mode==='dungeon'?DUNGEONS:STAGES)[stage];if(!def)return null;const check=battle(s,stage,b.mode);return {stage,mode:b.mode,name:def.name,ready:!check.error,error:check.error};}
   const api={Story,nextExpedition,availableHeroes,dungeonReadiness,Inventory,MAX_SUMMON_COUNT,drawPreview,Gear:G,DUNGEONS,battleStage,finalReadiness,gearEnhancement,enhanceGear,GEAR_RANKS,SUMMON_WEIGHTS,SP_IDS,SSP_IDS,SECRET_IDS,rollSummon,rankOf,sealed,gearStats,gearAscension,ascendGear,claimDawn,REGIONS,EQUIPMENT,SLOT_NAMES,DROP_RATES,MAX_STARS,MAX_SWEEP_ROUNDS,sweepPreview,sweep,equipment,levelCap,ascension,ascend,addGear,gearOwner,equip,unequip,equipped,claimArmory,HEROES,RANKS,RATES,STAGES,hero,freshState,restoreState,draw,upgrade,setTeam,stats,battle,action,enemyTurn,enemyStep,autoChoice,autoStep,recommendTeam,claimExpansion,claim,experienceNeeded,experienceProgress,gainExperience,clone};
-  if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.EclipseCore=api;
+  const V=typeof module!=='undefined'&&module.exports?require('./covenant-engine.js'):root.EclipseCovenant;
+  const current=V.install(api);if(typeof module!=='undefined'&&module.exports)module.exports=current;else root.EclipseCore=current;
 })(typeof globalThis!=='undefined'?globalThis:this);

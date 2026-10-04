@@ -33,7 +33,7 @@ test('old saves preserve progress and the new expansion gift is claimable only o
   assert.equal(C.claimExpansion(s),null);assert.equal(s.tickets,57);assert.equal(C.claimExpansion(C.restoreState(s)),null);
 });
 test('all new skills resolve valid combat events',()=>{
-  for(const h of C.HEROES){const s=prepared([h.id,'milo'].filter((v,i,a)=>a.indexOf(v)===i)),b=C.battle(s,0);b.allies.forEach(a=>a.hp-=100);b.enemies.forEach(e=>e.hp=e.maxHp=2000);const r=C.action(b,h.id,'skill',0);assert.ok(r.ok,h.id);assert.ok(r.event.impacts.length,h.id);assert.equal(r.event.label,h.skill);}
+  for(const h of C.HEROES){const s=prepared([h.id,'milo'].filter((v,i,a)=>a.indexOf(v)===i)),b=C.battle(s,0);b.allies.forEach(a=>a.hp-=100);b.enemies.forEach(e=>e.hp=e.maxHp=2000);const r=C.action(b,h.id,'skill',0);assert.ok(r.ok,h.id);assert.equal(b.allies.find(a=>a.id===h.id).readyRound,3,h.id);assert.ok(b.enemies.some(e=>e.marks.length)||r.event.impacts.length||h.id==='pero',h.id);assert.equal(r.event.label,h.skill);}
 });
 test('freeze skips an enemy action and expires without dealing phantom damage',()=>{
   const b=C.battle(prepared(['nix']),0);C.action(b,'nix','skill',0);const before=b.allies[0].hp;
@@ -43,12 +43,13 @@ test('freeze skips an enemy action and expires without dealing phantom damage',(
 test('life drain heals from actual inflicted damage, not overkill',()=>{
   const b=C.battle(prepared(['vesper']),0);b.allies[0].hp=100;b.enemies[0].hp=20;C.action(b,'vesper','skill',0);assert.equal(b.allies[0].hp,110);
 });
-test('new UR abilities are once per hero per battle, not mutually exclusive',()=>{
-  const b=C.battle(prepared(['aurelia','noctis']),0);b.enemies.forEach(e=>e.hp=e.maxHp=3000);C.action(b,'aurelia','skill',0);C.enemyTurn(b);assert.ok(C.action(b,'aurelia','skill').error);assert.ok(C.action(b,'noctis','skill').ok);assert.ok(b.enemies.every(e=>e.frozen===1));
+test('UR active cooldowns are personal and do not prevent another hero acting',()=>{
+ const b=C.battle(prepared(['aurelia','noctis']),0);b.enemies.forEach(e=>e.hp=e.maxHp=3000);assert.ok(C.action(b,'aurelia','skill',0).ok);C.enemyTurn(b);assert.ok(C.action(b,'aurelia','skill',0).error);assert.ok(C.action(b,'noctis','skill',0).ok);C.enemyTurn(b);assert.ok(C.action(b,'aurelia','skill',0).ok);
 });
+
 test('auto AI heals urgent allies and never spends more AP than it owns',()=>{
   const b=C.battle(prepared(['milo','scarlet','lark']),0);b.allies[1].hp=50;const choice=C.autoChoice(b);assert.equal(choice.actorId,'milo');assert.equal(choice.type,'skill');
-  b.ap=0;assert.equal(C.autoChoice(b).type,'guard');
+  b.ap=0;assert.equal(C.autoChoice(b).type,'attack');
 });
 test('default team automatically wins first chapter without user actions',()=>{
   assert.equal(simulate(C.freshState()).phase,'win');

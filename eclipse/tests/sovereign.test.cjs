@@ -27,7 +27,7 @@ test('six illustrated sovereign items cover every slot, keep tier stats increasi
 test('all new gate conditions are enforced atomically for battle and previously cleared sweeps',()=>{
  for(const stage of [6,7]){
   const base=ready(stage),g=C.DUNGEONS[stage].gate;assert.ok(C.dungeonReadiness(base,stage).ready);
-  const mutations=[s=>s.clears=s.clears.filter(n=>n!==C.DUNGEONS[stage].unlock),s=>s.dungeonClears=s.dungeonClears.filter(n=>n!==C.DUNGEONS[stage].requiresDungeon),s=>s.team.pop(),s=>s.team[4]=s.team[0],s=>s.levels.astra=g.level-1,s=>{s.team[0]='selene';s.owned.selene=1;s.levels.selene=70;s.loadouts.selene=s.loadouts.astra;},s=>delete s.loadouts.astra.armor,s=>I.get(s,s.loadouts.astra.weapon).template='weapon-ssr',s=>I.get(s,s.loadouts.astra.armor).stars=g.stars-1,s=>I.get(s,s.loadouts.astra.relic).enhance=g.enhance-1];
+  const mutations=[s=>s.clears=s.clears.filter(n=>n!==C.DUNGEONS[stage].unlock),s=>s.dungeonClears=s.dungeonClears.filter(n=>n!==C.DUNGEONS[stage].requiresDungeon),s=>s.team.pop(),s=>s.team[4]=s.team[0],s=>s.levels.astra=g.level-1,s=>delete s.loadouts.astra.armor,s=>I.get(s,s.loadouts.astra.weapon).template='weapon-ssr',s=>I.get(s,s.loadouts.astra.armor).stars=g.stars-1,s=>I.get(s,s.loadouts.astra.relic).enhance=g.enhance-1];
   for(const mutate of mutations){const s=C.clone(base);mutate(s);const before=C.clone(s);assert.equal(C.dungeonReadiness(s,stage).ready,false);assert.ok(C.battle(s,stage,'dungeon').error);assert.ok(C.sweepPreview(s,stage,1,'dungeon').error);assert.ok(C.sweep(s,stage,1000000,Math.random,'dungeon').error);assert.deepEqual(s,before);}
  }
 });
@@ -42,10 +42,10 @@ test('SP 1% and SSP 0.1% intervals work at boundaries and reach all three equipm
   for(let i=0;i<3;i++){let n=0;const r=C.sweep(s,stage,1,()=>n++===0?.999999:n===2?(i+.5)/3:.4,'dungeon');assert.equal(r.gear[0].template,pool[i].id);}
  }
 });
-test('both high-tier bosses are winnable at their entry requirements across all 462 UR+ formations',()=>{
- const ids=C.HEROES.filter(h=>C.rankOf(h)>=4).map(h=>h.id);
- for(const stage of [6,7])for(const five of combos(ids,5)){const s=ready(stage,five);assert.equal(finish(C.battle(s,stage,'dungeon')).phase,'win',`${stage}: ${s.team}`);}
+test('high-tier dungeons allow low-rarity heroes with the required growth and equipment',()=>{
+ for(const stage of [6,7])for(const ids of [['bran','lark','scarlet','flora','milo'],['bront','tam','keres','finch','flora'],['selene','vega','scarlet','nyx','milo']]){const s=ready(stage,ids);assert.ok(C.dungeonReadiness(s,stage).ready);assert.equal(finish(C.battle(s,stage,'dungeon')).phase,'win',`${stage}: ${ids}`);}
 });
+
 test('SP and SSP enhancements, same-template ascension costs, ownership and affixes survive reload',()=>{
  for(const rank of ['SP','SSP']){let s=C.freshState();s.dust=10000000;const g=C.addGear(s,'weapon-'+rank.toLowerCase(),G.seeded(91));C.equip(s,'milo',g.uid);const original=C.stats(s,'milo');
   for(let star=0;star<5;star++){const m=C.addGear(s,g.template),before=s.dust;assert.equal(C.ascendGear(s,g.uid,m.uid,star,G.seeded(star+75)).stars,star+1);assert.equal(before-s.dust,(rank==='SP'?1440:4320)*(star+1));}

@@ -76,8 +76,8 @@
   combatEffect(ev,speed,immediate){
    const d=immediate?0:(ev.ultimate?.86:.32)/speed,pan=ev.actor?.side==='enemy'?.38:-.38;
    if(ev.combos?.length){
-    if(ev.combos.some(x=>x.includes('破盾'))){this.sample('impact',d,.55);this.noise(.25,{at:d,gain:.06,freq:3400,end:700});[523,784,1047].forEach((f,i)=>this.bell(f,d+i*.045,.035));}
-    else {this.bell(ev.combos.includes('碎冰')?1760:880,d,.035);this.tone(220,.18,{at:d,gain:.03,end:440});}
+    if(ev.combos.some(x=>x.includes('破盾')||x.includes('破韧'))){this.sample('impact',d,.55);this.noise(.25,{at:d,gain:.06,freq:3400,end:700});[523,784,1047].forEach((f,i)=>this.bell(f,d+i*.045,.035));}
+    else {const tones={'汽幕':[440,660],'裂爆':[196,294],'燎原':[330,660],'余灯':[523,784],'蚀燃':[174,261],'引流':[392,784],'回涌':[587,880],'润生':[659,988],'沉眠':[220,330],'疾电':[740,1109],'鸣钟':[523,1047],'断律':[277,554],'归航':[494,740],'迷径':[247,370],'归名':[440,880]},name=ev.combos.find(x=>tones[x]),notes=tones[name]||[440,660];notes.forEach((f,i)=>this.bell(f,d+i*.065,.035));this.sample(['裂爆','疾电','引流'].includes(name)?'thunder':['汽幕','润生','归名','余灯'].includes(name)?'heal':'chime',d,.32);}
    }
    if(ev.kind==='round'){this.tone(260,.1,{gain:.035});return;}
    if(ev.kind==='guard'){this.tone(330,.25,{gain:.035,pan});this.bell(660,.08,.02);return;}

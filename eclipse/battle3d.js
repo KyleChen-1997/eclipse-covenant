@@ -155,7 +155,7 @@ export class BattleScene {
    if(target&&!ranged&&!this.reduced){const to=target.home.clone().lerp(source.home,.27);source.motion={start:this.time,duration:.98,from:source.home.clone(),to};source.root.rotation.y=Math.atan2(target.home.x-source.home.x,target.home.z-source.home.z);}
    source.disc.material.opacity=1;
   }
-  if(ev.ultimate){const hero=this.core.hero(ev.actor.id);this.announcement.style.setProperty('--cast-color',ev.color);this.announcement.innerHTML=`<div class="cutin-art" style="background-image:url(assets/heroes/${hero.art||hero.id+'-v6'}.png)"></div><div class="cutin-copy"><small>${hero.title} · ${hero.rarity==='SSP'?'IRIDESCENT SSP':hero.rarity==='SP'?'CRIMSON SP':'MYTHIC'}</small><strong>${ev.label}</strong><span>${hero.quote}</span></div>`;this.announcement.classList.add('show');}
+  if(ev.ultimate&&this.core.rankOf(this.core.hero(ev.actor.id))>=4){const hero=this.core.hero(ev.actor.id);this.announcement.style.setProperty('--cast-color',ev.color);this.announcement.innerHTML=`<div class="cutin-art" style="background-image:url(assets/heroes/${hero.art||hero.id+'-v6'}.png)"></div><div class="cutin-copy"><small>${hero.title} · ${hero.rarity==='SSP'?'IRIDESCENT SSP':hero.rarity==='SP'?'CRIMSON SP':'MYTHIC'}</small><strong>${ev.label}</strong><span>${hero.quote}</span></div>`;this.announcement.classList.add('show');}
   for(const h of ev.impacts){const u=this.units.get(h.side+'-'+h.id);if(u&&u.data.hp<=0&&!u.dead)u.deathAt=this.time+(ev.ultimate?.88:.34);}
  }
  impactEvent(ev){

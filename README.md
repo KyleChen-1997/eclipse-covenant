@@ -10,13 +10,13 @@
 
 <p>
 搜集 108 位契约者 · 踏破 48 关星蚀远征<br>
-在实时 3D 战场上，缔结属于你的星之契约
+在六相共鸣战场上，缔结属于你的星之契约
 </p>
 
 <p>
 <a href="https://kylechen-1997.github.io/eclipse-covenant/"><img src="https://img.shields.io/badge/%E2%96%B6%20%E7%AB%8B%E5%8D%B3%E6%B8%B8%E7%8E%A9-%E5%9C%A8%E7%BA%BF%E8%AF%95%E7%8E%A9-8b5cf6?style=for-the-badge" alt="立即游玩"></a>
-<img src="https://img.shields.io/badge/%E8%AF%95%E7%8E%A9%E7%89%88%E6%9C%AC-V11-eab308?style=for-the-badge" alt="试玩版本 V11">
-<img src="https://img.shields.io/badge/130%20%E9%A1%B9%E6%B5%8B%E8%AF%95-%E5%85%A8%E9%83%A8%E9%80%9A%E8%BF%87-22c55e?style=for-the-badge" alt="130 项测试全部通过">
+<img src="https://img.shields.io/badge/%E8%AF%95%E7%8E%A9%E7%89%88%E6%9C%AC-V15-eab308?style=for-the-badge" alt="试玩版本 V15">
+<img src="https://img.shields.io/badge/179%20%E9%A1%B9%E6%B5%8B%E8%AF%95-%E5%85%A8%E9%83%A8%E9%80%9A%E8%BF%87-22c55e?style=for-the-badge" alt="179 项测试全部通过">
 <img src="https://img.shields.io/badge/%E8%BF%90%E8%A1%8C%E6%97%B6%E4%BE%9D%E8%B5%96-%E9%9B%B6-0ea5e9?style=for-the-badge" alt="运行时依赖为零">
 </p>
 
@@ -51,7 +51,7 @@
 - **七档稀有度**：N / R / SR / SSR / UR / SP / SSP，每一位都有独立技能、实时三维形象与卡面设计。
 - **108 人名录**：新增 77 张 1024 × 1536 独立角色立绘，40 位 SSR 及以上角色拥有动态展示，图鉴采用按需加载。
 - **会呼吸的立绘**：高稀有度角色发丝轻摆、自然眨眼、衣摆随手势摇曳，背景纹丝不动——仿佛真的「活着」。
-- **五人编队**：前排承伤、后排输出；领域、时停、回生、神佑、群攻、群体灼烧……自由搭配。
+- **五人编队**：前排承伤、后排接力；保护、治疗、破盾、削韧、星痕与契约代价共同决定配队。
 - **重复也有价值**：重复角色保留为升星材料，并额外奉上星尘；参战全员共享经验，退场成员也不例外。
 
 <img src="eclipse/qa/sovereign-team-cards.png" width="100%" alt="旅团编队">
@@ -141,7 +141,7 @@ npm run build   # 生成 dist/ 静态网站
 
 - **零运行时依赖**：原生 JavaScript + 内置 Three.js 0.160.1（MIT），无 CDN、无后端、无框架。
 - **全本地素材**：11 种音效为本项目离线合成（本地 PCM 素材叠加 Web Audio），立绘、装备原画与三维模型均随仓库分发。
-- **可验证**：130 项测试覆盖抽卡概率与保底、自动战斗、经验与升星、批量结算一致性、存档迁移与装备词条。
+- **可验证**：179 项测试覆盖抽卡概率与保底、自动战斗、经验与升星、批量结算一致性、存档迁移与装备词条。
 - **素材来源**：原画见 `eclipse/assets/visual/`，CC0 骨骼与怪物记录于 `eclipse/assets/models/manifest.json`，音频见 `eclipse/assets/audio/README.md`。
 
 </details>
@@ -155,3 +155,18 @@ npm run build   # 生成 dist/ 静态网站
 16 战区 / 48 关加入独立战前对白与战后发现，8 个阵营各有承诺和利益。第 6、21、36 关的决定记入旅途档案，影响阵营态度与终章文字；不改变战斗数值。既有通关存档可在档案里补作决定。
 
 自动跳过动画的设置保存到本地，结算页集中显示下一征程、再次挑战、返回章节与扫荡；下一关仍检查解锁和编队门槛。新增 5 位 SP、3 位 SSP 与 8 张独立立绘，单角色基础概率保持 0.01% / 0.001%。西里乌斯采用用户提供的视频循环立绘，离屏和后台暂停，失败回退为静态图。
+
+
+## V15 · 星契共鸣
+
+108 位角色已替换为独立被动、主动技与终式，全部核心机制在 0 星开放。焰、潮、霆、岚、辉、幽组成 15 种共鸣，星相不代表阵营善恶。
+
+- 普攻、防御免费；每轮 5 AP，保留最多 2 AP。主动技消耗 1～2 AP、冷却 2 轮。每人积累 3 契能释放终式，可重新充能。
+- 编队可设置行动偏好、目标优先、指定搭档、双人联结，以及是否允许契约承伤和消耗己方护盾。
+- 战场展示星痕、弱点、抗性、韧性、个人资源和下一步行动；战报记录挂痕助攻、净化、保护与削韧。
+- 主线终章移除角色品质硬锁；60 级和 SSR 装备是养成建议。高阶装备秘境保留等级和装备条件，但不限定角色稀有度。
+- 保留已有角色、同名卡、等级、装备词条、资源和通关记录；基础属性按职业重新计算，每星加成为 4%。
+
+运行 `npm test` 验证规则、经济、存档与自动战斗；`node scripts/check-covenant-balance.cjs --write` 重跑 4 套队伍 × 8 类敌人 × 50 个固定装备种子的基准。该基准用于回归，不代表所有配队都已达到相同强度。
+
+技能文案源在 `eclipse/qa/skills-v15/roster-draft.txt`。修改后依次运行 `node eclipse/qa/skills-v15/build-catalog.cjs` 和 `node scripts/build-skill-catalog.cjs`；真实结算位于 `covenant-engine.js` 与 `covenant-skills.js`。审核页和测试数据不随 Pages 构建发布。
