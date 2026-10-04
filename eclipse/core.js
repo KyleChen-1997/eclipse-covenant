@@ -214,11 +214,18 @@
   }
   function eventFor(actor,kind,label,fx='slash',color='#e6c898') {return {actor,kind,label,fx,color,impacts:[]};}
   function impact(ev,side,id,value,type='damage') {ev?.impacts.push({side,id,value,type});}
+  function absorbWard(b,enemy,amount,ev){
+    const ward=enemy.boss;if(ward?.phase!=='ward')return amount;
+    const absorbed=Math.min(ward.ward,amount);ward.ward-=absorbed;
+    if(absorbed)impact(ev,'enemy',enemy.id,absorbed,'absorb');
+    if(ward.ward===0){ward.phase='exposed';ward.until=b.round+1;}
+    return amount-absorbed;
+  }
   function damage(b,enemy,amount,actor,ev) {
     if(!enemy||enemy.hp<=0)return 0;
     if(actor&&b.field>0&&!actor.fieldHit){amount+=25*actor.scale;actor.fieldHit=true;}
     if(enemy.marked){amount*=1.25;enemy.marked=false;}
-    amount=Math.round(amount);const actual=Math.min(enemy.hp,amount);enemy.hp=Math.max(0,enemy.hp-amount);
+    amount=absorbWard(b,enemy,Math.round(amount),ev);const actual=Math.min(enemy.hp,amount);enemy.hp=Math.max(0,enemy.hp-amount);
     impact(ev,'enemy',enemy.id,actual);log(b,`${actor?hero(actor.id).name:'反击'} → ${enemy.name}：${amount} 伤害`);return actual;
   }
   function heal(b,a,power,ev){const value=Math.min(a.maxHp-a.hp,Math.round(power));a.hp+=value;impact(ev,'ally',a.id,value,'heal');log(b,`${hero(a.id).name}恢复 ${value} 生命。`);}
@@ -280,7 +287,7 @@
     if(b.phase!=='enemy')return {error:'敌方无法行动。'};
     if(b.enemyCursor===-1){
       b.enemyCursor=0;const ev=eventFor(null,'burn','余烬灼烧','fire','#ff987d');
-      for(const e of b.enemies)if(e.hp>0&&e.burn>0){const value=Math.min(e.hp,e.burnPower);e.hp-=value;e.burn--;impact(ev,'enemy',e.id,value);log(b,`${e.name}受到 ${value} 点灼烧。`);}
+      for(const e of b.enemies)if(e.hp>0&&e.burn>0){const value=Math.min(e.hp,absorbWard(b,e,e.burnPower,ev));e.hp-=value;e.burn--;impact(ev,'enemy',e.id,value);log(b,`${e.name}受到 ${value} 点灼烧。`);}
       if(outcome(b)||ev.impacts.length)return {ok:true,event:ev};
     }
     while(b.enemyCursor<b.enemies.length){

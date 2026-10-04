@@ -208,7 +208,7 @@ export class BattleScene {
  die(u){if(u.dead)return;u.dead=true;u.root.children.forEach(child=>{if(child!==u.rig.parent&&child!==u.avatar?.root)child.visible=false;});u.motion=null;u.root.position.copy(u.home);this.play(u,['death','die'],false,1);u.returnAt=Infinity;u.disc.material.opacity=.12;if(![...u.clips.keys()].some(k=>k.includes('death')))u.rig.rotation.z=Math.PI/2;}
  clearEvent(){if(this.activeEvent?.projectiles)this.activeEvent.projectiles.forEach(p=>this.removeMesh(p.mesh));this.activeEvent=null;this.announcement.classList.remove('show');this.announcement.replaceChildren();}
  frame(now){
-  if(this.disposed)return;const dt=Math.min((now-this.lastFrame)/1000,.07)*(this.running?this.speed:0);this.lastFrame=now;this.time+=dt;
+  if(this.disposed)return;const dt=Math.max(0,Math.min((now-this.lastFrame)/1000,.07))*(this.running?this.speed:0);this.lastFrame=now;this.time+=dt;
   if(dt){
    for(const u of this.units.values()){
     if(u.deathAt<=this.time)this.die(u);u.mixer.update(dt);u.headBone?.scale.setScalar(.8);if(u.capeUniform)u.capeUniform.value=this.time;

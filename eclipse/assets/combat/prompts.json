@@ -1,0 +1,38 @@
+{
+  "initial": [
+    {
+      "key": "party",
+      "args": {
+        "prompt": "Use case identity-preserve. Use attached five-character illustration as identity reference. Create a production 2D tactical RPG sprite atlas on genuinely transparent background. Wide landscape canvas divided conceptually into FIVE EXACT EQUAL WIDTH columns. Each column contains exactly one full-body character, feet on same baseline, centered in its own column, no overlap, 12% empty margin inside each column. From left to right: Milo dark-haired adult male lantern bearer in black travel cloak holding a small warm lantern; Lark auburn short-haired young adult female scout with teal scarf and goggles and mechanical bird; Scarlet black-haired adult female red-coated fire tailor with ornate scissors; Selene silver-haired adult female knight in navy silver armor with large moon shield; Astra long silver-haired adult male celestial sovereign in black-gold robes with a small dark orb. Preserve their source faces, genders, colors and costume motifs. Elegant painted high-end fantasy RPG character cutouts, full body, face subtly turned to the RIGHT for a side-view battle, balanced relaxed ready stance, detailed readable silhouettes, coherent cinematic cool light with gold accents. NOT cards: remove ALL frames, text, rarity emblems, backgrounds and ground shadows. Every character entirely inside its equal-width column. True transparent alpha.",
+        "referenced_image_paths": [
+          "eclipse/assets/card-concepts.png"
+        ],
+        "transparent_background": true
+      }
+    },
+    {
+      "key": "enemies",
+      "args": {
+        "prompt": "Use case identity-preserve. Reference attached three enemies. Create production transparent 2D tactical RPG sprite atlas with THREE EXACT EQUAL WIDTH columns, each full-body enemy centered in its column, same feet baseline, generous transparent gap. Left dark iron knight with cracked crimson armor, middle floating violet-robed white-haired astral sorcerer, right large black-gold eclipse sovereign with void face and spiked sun crown. Preserve reference identities but show complete bodies, strong distinct silhouettes, subtly face LEFT, coherent polished painterly fantasy art matching premium illustrated card game, intricate armor, restrained glow. No text, cards, frames, environment, background or ground shadows. Entire figures inside separate columns. True alpha transparency.",
+        "referenced_image_paths": [
+          "eclipse/assets/enemies.png"
+        ],
+        "transparent_background": true
+      }
+    },
+    {
+      "key": "elysium",
+      "args": {
+        "prompt": "Use case identity-preserve. Create a full-body transparent 2D battle sprite of the same adult woman Elysium in reference: recognizable silver-haired face, delicate golden crystal crown, white gold detailed dress and crystal jewels, iridescent butterfly-like crystal wings. Painterly premium fantasy RPG illustration, graceful ready pose with hands separated from waist holding a small floating prism between open palms, facing slightly RIGHT, crown to gold shoes entirely visible. Wings clearly separated visually from arms, broad elegant translucent faceted rainbow wings behind shoulders. Keep spectacular original clothing details, NOT a 3D model. No scenery, no halo larger than body, no text or card border, no ground shadow. Isolated character cutout on true transparent background, ample margin.",
+        "referenced_image_paths": [
+          "eclipse/assets/heroes/elysium-sp.png"
+        ],
+        "transparent_background": true
+      }
+    }
+  ],
+  "extra": "Create a premium 2.5D JRPG battle sprite atlas on TRUE TRANSPARENT BACKGROUND. Four equally spaced separate full-body characters, each in its own equal-width vertical quarter, no overlap across quarters. Head-to-toe feet visible, consistent scale, 90% canvas height, front three-quarter view looking right, neutral powerful combat-ready stance. Preserve identity, face, costume, hair, weapon from references in EXACT left-to-right order: Seraphine platinum-haired red-and-black gothic queen with thin red rapier; Ragnar masculine brown-haired black-gold armored king with ember greatsword; Caelum masculine long dark-blue-haired white/navy/gold dragon emperor with sword; Sirius long blond-haired black/gold/navy celestial priest with tall star staff. High-end detailed painterly anime-realistic illustration. No environment, no ground, no frames, no text, no decorative card backing, no checkerboard. Isolated clean alpha silhouettes. All clothing and hands fully within own quarter. Characters stand on same baseline. Wide landscape atlas.",
+  "mythic": "Create a premium 2.5D JRPG battle sprite atlas on TRUE TRANSPARENT BACKGROUND. Five equally spaced separate full-body characters, each entirely inside its own equal-width vertical fifth with safe transparent padding, NO OVERLAP across fifths. Head-to-toe feet visible, 90% canvas height, equal scale, all on same baseline. Preserve identities, costumes, hair, face and items of references in EXACT LEFT TO RIGHT ORDER: Aurelia golden-haired white-gold sun queen with gold staff; Noctis long dark silver-haired male black-violet time swordsman; Vega long lavender-haired woman violet gown holding a small planet; Astreus long purple-black-haired male sorcerer holding an armillary; Solara blonde gold-armored woman with white cape and sun staff. Three-quarter combat ready stance looking slightly right. Original detailed high-end painterly anime-realistic fantasy. No environment or background, no card frames, no labels or text, no checkerboard. Clean alpha silhouettes, all capes and weapons inside each fifth. Wide landscape format.",
+  "crimson": "Create a premium 2.5D JRPG battle sprite atlas on TRUE TRANSPARENT BACKGROUND. Equal-width columns, one character per column, each fully contained with transparent padding and no overlap. Full body head to toe, equal scale 90% canvas height on same baseline, three-quarter combat-ready stance looking slightly right. Preserve each referenced character identity, face, hair, costume, weapon. Detailed high-end painterly anime-realistic style. NO background or environment, no frames, no text, no ground or checkerboard. Wide landscape. EXACT FIVE characters left to right: Valeria short wavy auburn-haired woman red-black-gold judicial regalia carrying scales staff and sealed book; Severin mature silver-haired bearded man red-black robes, red gem cane and gold book; Morwen long black-haired red velvet queen carrying red lantern and book; Thalor masculine teal-black-haired red-black coral armored king with trident; Aevor short white-haired young man black-red armored longcoat with crimson greatsword.",
+  "prismatic": "Create a premium 2.5D JRPG battle sprite atlas on TRUE TRANSPARENT BACKGROUND. Equal-width columns, one character per column, each fully contained with transparent padding and no overlap. Full body head to toe, equal scale 90% canvas height on same baseline, three-quarter combat-ready stance looking slightly right. Preserve each referenced character identity, face, hair, costume, weapon. Detailed high-end painterly anime-realistic style. NO background or environment, no frames, no text, no ground or checkerboard. Wide landscape. EXACT THREE characters left to right: Anamnesis long pale lavender-haired woman in white-gold iridescent robe with scroll; Causalia long violet-black-haired woman black-white-gold iridescent gown with hands holding glowing threads and tiny planets; Nullion masculine long white-haired man wearing black-white iridescent coat and crystal crown, one hand extended. No background halos or scenery beyond small head crowns."
+}

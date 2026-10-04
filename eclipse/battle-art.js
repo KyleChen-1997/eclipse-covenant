@@ -25,7 +25,7 @@ export class SanctumArt {
   const seal=new THREE.Group();seal.position.y=.071;scene.add(seal);for(let i=0;i<8;i++){const line=this.mesh(new THREE.BoxGeometry(.018,.005,3.55),gold,point(),seal);line.rotation.y=i*Math.PI/4;line.castShadow=false;}for(const r of [1.2,1.8,2]){const ring=this.mesh(new THREE.TorusGeometry(r,.014,4,96),gold,point(),seal);ring.rotation.x=-Math.PI/2;ring.castShadow=false;}
   // A pair of worn stairs and staggered broken columns establishes real depth.
   for(let i=0;i<4;i++)this.mesh(new THREE.BoxGeometry(5.2+i*.6,.16,1),stone,point(0,-.22-i*.15,7.3+i*.65));
-  for(const side of [-1,1])for(let n=0;n<3;n++){
+  if(!s.illustrated)for(const side of [-1,1])for(let n=0;n<3;n++){
    const p=point(side*(7.8+n*.3),0,-3.3-n*3.8),height=4.3+n*.95;
    this.mesh(new THREE.BoxGeometry(1.15,.4,1.15),edge,p.clone());this.mesh(new THREE.BoxGeometry(.88,.15,.88),gold,p.clone().add(point(0,.25,0)));
    this.mesh(new THREE.CylinderGeometry(.28,.39,height,12),stone,p.clone().add(point(0,height/2+.3,0)));
@@ -34,12 +34,13 @@ export class SanctumArt {
    const top=this.mesh(new THREE.BoxGeometry(.93,.26,.93),stone,p.clone().add(point(0,height+.32,0)));top.rotation.y=.15*side;
    const crystal=this.mesh(new THREE.OctahedronGeometry(.23),light(s.palette[2],1.8),p.clone().add(point(0,height+.92,0)));this.moving.push({object:crystal,base:crystal.position.y,kind:'crystal',phase:n});this.glow(crystal.position,s.palette[2],2,.35);
   }
-  for(const side of [-1,1]){
+  if(!s.illustrated)for(const side of [-1,1]){
    const arch=new THREE.Group();arch.position.set(side*7.9,0,-10);scene.add(arch);
    for(let n=0;n<15;n++){const angle=n/14*Math.PI,block=this.mesh(new THREE.BoxGeometry(.5,.65,.75),stone,point(Math.cos(angle)*2.8,5.4+Math.sin(angle)*3.2,0),arch);block.rotation.z=angle-Math.PI/2;}
   }
   // Keep the painted distant skyline behind world-space architecture at every camera angle.
-  new THREE.TextureLoader().load('assets/visual/celestial-sanctum-v6.png',texture=>{
+  const background=['ember','dawn','frost'].includes(theme)?`assets/combat/scene-${theme}.png`:'assets/visual/celestial-sanctum-v6.png';
+  new THREE.TextureLoader().load(background,texture=>{
    if(s.disposed){texture.dispose();return;}texture.colorSpace=THREE.SRGBColorSpace;this.textures.push(texture);this.backdrop=texture;scene.background=texture;scene.backgroundIntensity=.72;this.resize(s.width,s.height);s.render();
   },undefined,()=>{});
   const positions=[];for(let i=0;i<90;i++)positions.push(Math.sin(i*71)*11,1+(i*.13)%7,Math.cos(i*43)*9-2);const pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));this.motes=new THREE.Points(pg,new THREE.PointsMaterial({map:this.glowMap,size:.14,color:theme==='ember'?'#ffc684':'#c5deff',transparent:true,opacity:.65,depthWrite:false,blending:THREE.AdditiveBlending}));scene.add(this.motes);

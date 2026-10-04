@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b1020">
-  <meta name="description" content="星蚀契约：群星回响。收集 N 至 SSP 契约者，组建五人旅团，探索 48 个关卡与 8 座装备秘境，体验 3D 自动战斗。免费网页即玩。">
+  <meta name="description" content="星蚀契约：群星回响。收集 N 至 SSP 契约者，组建五人旅团，探索 48 个关卡与 8 座装备秘境，体验立绘策略战斗。免费网页即玩。">
   <meta property="og:title" content="星蚀契约：群星回响 · Eclipse Covenant">
-  <meta property="og:description" content="在群星黯淡之际，与你的契约者并肩而行。幻想卡牌收集与 3D 自动战斗，打开网页即可游玩。">
+  <meta property="og:description" content="在群星黯淡之际，与你的契约者并肩而行。幻想卡牌收集与立绘策略战斗，打开网页即可游玩。">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="zh_CN">
   <title>星蚀契约：群星回响 · Eclipse Covenant</title>
@@ -23,6 +23,7 @@
   <script defer src="gear-system.js"></script><script defer src="inventory.js"></script><script defer src="story.js"></script>
   <script defer src="portrait-videos.js"></script>
   <script defer src="core.js"></script>
+  <script defer src="journey.js"></script><script defer src="journey-ui.js"></script>
   <script defer src="battle-player.js"></script>
   <script defer src="audio.js"></script>
   <script type="importmap">{"imports":{"three":"./vendor/three/three.module.js"}}</script>
@@ -36,6 +37,7 @@
   <link rel="stylesheet" href="card-footer.css">
   <link rel="stylesheet" href="team-showcase.css">
   <script defer src="video-portraits.js"></script>
+  <link rel="stylesheet" href="journey.css">
 </head>
 <body>
   <div class="sky" aria-hidden="true"></div>
@@ -49,11 +51,12 @@
       <button data-tab="equipment" class="nav-item">星铸装备</button>
       <button data-tab="adventure" class="nav-item">星蚀远征</button>
       <button data-tab="dungeon" class="nav-item">星铸秘境</button>
+      <button data-tab="explore" class="nav-item">星蚀探索</button>
     </nav>
     <div class="wallet"><span title="用于招募角色"><i>✧</i> <b id="tickets">200</b><small>星契</small></span><span title="用于提升角色等级"><i>❖</i> <b id="dust">300</b><small>星尘</small></span><button id="sound" class="icon-button" aria-label="关闭音效" title="切换音效">♫</button><button id="audio-settings" class="icon-button" aria-label="声音设置" title="声音设置">☷</button><button id="help" class="icon-button" aria-label="玩法说明">?</button></div>
   </header>
   <main id="main"></main>
-  <footer class="footer"><span><span class="online-dot"></span>单机试玩 · 进度保存在当前浏览器</span><span>一百零八位星契角色 · 3D 自动战斗 <span class="footer-divider">/</span> VOL. 12</span></footer>
+  <footer class="footer"><span><span class="online-dot"></span>单机试玩 · 进度保存在当前浏览器</span><span>一百零八位星契角色 · 立绘策略战斗 <span class="footer-divider">/</span> VOL. 14</span></footer>
   <div id="toast" role="status" aria-live="polite"></div>
   <dialog id="dialog" aria-label="游戏详情"></dialog>
   <noscript>此游戏需要启用 JavaScript 才能进行抽卡与战斗。</noscript>

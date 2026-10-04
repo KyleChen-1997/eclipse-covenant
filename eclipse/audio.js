@@ -75,6 +75,10 @@
   }
   combatEffect(ev,speed,immediate){
    const d=immediate?0:(ev.ultimate?.86:.32)/speed,pan=ev.actor?.side==='enemy'?.38:-.38;
+   if(ev.combos?.length){
+    if(ev.combos.some(x=>x.includes('破盾'))){this.sample('impact',d,.55);this.noise(.25,{at:d,gain:.06,freq:3400,end:700});[523,784,1047].forEach((f,i)=>this.bell(f,d+i*.045,.035));}
+    else {this.bell(ev.combos.includes('碎冰')?1760:880,d,.035);this.tone(220,.18,{at:d,gain:.03,end:440});}
+   }
    if(ev.kind==='round'){this.tone(260,.1,{gain:.035});return;}
    if(ev.kind==='guard'){this.tone(330,.25,{gain:.035,pan});this.bell(660,.08,.02);return;}
    if(ev.ultimate){this.sample('portal',0,.65,pan);this.sample('thunder',d,.85,-pan);this.noise(.6/speed,{gain:.13,freq:200,end:2800,pan});this.tone(90,.85/speed,{end:300,gain:.1,pan});[220,329.63,440,659.25].forEach((f,i)=>this.tone(f,.8,{at:d+i*.025,gain:.06,type:'triangle'}));this.tone(70,.55,{at:d,gain:.21,end:28});this.noise(.55,{at:d,gain:.22,freq:1800,end:120,filter:'lowpass'});return;}
