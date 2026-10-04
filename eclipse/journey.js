@@ -17,7 +17,7 @@ const NODE={battle:{name:'裂隙遭遇',icon:'⚔',desc:'常规战斗 · 胜利�
 function install(Base){
  const C={...Base,TACTICS,BLESSINGS,ROUTES,NODE};
  const fresh=()=>({tactic:'balanced',renderer:'illustrated',cinematic:true,healAt:.68});
- function normalize(s,raw){s.battleSettings={...s.battleSettings,...fresh(),...s.battleSettings};if(!TACTICS[s.battleSettings.tactic])s.battleSettings.tactic='balanced';s.battleSettings.renderer=s.battleSettings.renderer==='legacy'?'legacy':'illustrated';s.battleSettings.healAt=clamp(s.battleSettings.healAt,.3,.85);s.battleSettings.cinematic=s.battleSettings.cinematic!==false;
+ function normalize(s,raw){s.battleSettings={...s.battleSettings,...fresh(),...s.battleSettings};if(!TACTICS[s.battleSettings.tactic])s.battleSettings.tactic='balanced';s.battleSettings.renderer='illustrated';s.battleSettings.healAt=clamp(s.battleSettings.healAt,.3,.85);s.battleSettings.cinematic=s.battleSettings.cinematic!==false;
  s.exploration={wins:Math.floor(clamp(raw?.exploration?.wins,0,100000)),serial:Math.floor(clamp(raw?.exploration?.serial,0,100000000)),trust:{},run:null};
  for(const f of ['dawn','moon','forge'])s.exploration.trust[f]=clamp(raw?.exploration?.trust?.[f],-10,10);
  const r=raw?.exploration?.run;if(r&&Array.isArray(r.party)&&r.party.length&&r.party.length<=5&&new Set(r.party).size===r.party.length&&r.party.every(id=>s.owned[id])&&['route','battle','blessing','event','complete','failed','retired'].includes(r.phase)&&Number.isInteger(r.step)&&r.step>=0&&r.step<=6&&(!['route','battle','blessing','event'].includes(r.phase)||r.step<6)){

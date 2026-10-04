@@ -12,7 +12,7 @@ fs.mkdirSync(gameOutput, { recursive: true });
 // Keep the same URLs for branch publishing and Actions publishing.
 fs.copyFileSync(path.join(root, 'index.html'), path.join(output, 'index.html'));
 for (const entry of fs.readdirSync(source, { withFileTypes: true })) {
-  if (entry.isFile() && (entry.name === 'index.html' || /\.(js|css)$/.test(entry.name))) {
+  if (!['team-showcase.js', 'team-showcase.css'].includes(entry.name) && entry.isFile() && (entry.name === 'index.html' || /\.(js|css)$/.test(entry.name))) {
     fs.copyFileSync(path.join(source, entry.name), path.join(gameOutput, entry.name));
   }
 }

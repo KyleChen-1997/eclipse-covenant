@@ -1,7 +1,7 @@
 {
   "name": "eclipse-covenant",
   "version": "1.1.0",
-  "description": "星蚀契约：群星回响 — 幻想卡牌收集、角色养成与 3D 自动战斗网页游戏",
+  "description": "星蚀契约：群星回响 — 幻想卡牌收集、角色养成与 2.5D 立绘自动战斗网页游戏",
   "main": "index.js",
   "scripts": {
     "start": "node eclipse/serve.cjs",
